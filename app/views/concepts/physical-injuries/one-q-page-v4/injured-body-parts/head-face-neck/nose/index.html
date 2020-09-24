@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select any injuries to the nose - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherNoseInjury",
+        name: "otherNoseInjury",
+        value: data['otherNoseInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "noseInjuries",
+        name: "noseInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the nose",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken nose",
+            text: "Broken nose",
+            checked: checked("noseInjuries", "Broken nose"),
+            id: "Broken nose"
+          },
+          {
+            value: "Bloody nose",
+            text: "Bloody nose",
+            checked: checked("noseInjuries", "Bloody nose"),
+            id: "Bloody nose"
+          },
+          {
+            value: "Loss of smell or taste",
+            text: "Loss of smell or taste",
+            checked: checked("noseInjuries", "Loss of smell or taste"),
+            id: "Loss of smell or taste"
+          },
+          {
+            value: "Loss of nose",
+            text: "Loss of nose",
+            checked: checked("noseInjuries", "Loss of nose"),
+            id: "Loss of nose"
+          },
+          {
+            value: "Broken ethmoid (bone at base of nose)",
+            text: "Broken ethmoid (bone at base of nose)",
+            checked: checked("noseInjuries", "Broken ethmoid (bone at base of nose)"),
+            id: "Broken ethmoid"
+          },
+          {
+            value: "Broken ethmoid (bone at base of nose) needing operation",
+            text: "Broken ethmoid (bone at base of nose) needing operation",
+            checked: checked("noseInjuries", "Broken ethmoid (bone at base of nose) needing operation"),
+            id: "Broken ethmoid needing operation"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("noseInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

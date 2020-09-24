@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <p class="govuk-body-l">Use this service to claim compensation if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you or your child were the victim of a sexual assault or abuse</li>
+        <li>you suffered mental injuries because of a violent crime</li>
+        <li>you suffered physical injuries because of a violent crime</li>
+        <li>you saw a violent crime happen to a loved one, or were there immediately afterwards</li>
+        <li>a close relative died because of a violent crime</li>
+        <li>you paid for the funeral of someone who died because of a violent crime</li>
+      </uL>
+
+      <p class="govuk-body">You cannot get compensation if the crime has not been reported to the police.</p>
+      <p class="govuk-body">The crime must have happened in England, Wales, Scotland or <a href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#incident-location"  target="_blank">another relevant place</a>.</p>
+      <p class="govuk-body">There is a different service for <a href="https://www.justice-ni.gov.uk/topics/justice-and-law/compensation-services"  target="_blank">Northern Ireland</a>.</p>
+
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="declaration" role="button">Start now</a>
+
+
+
+      <h2 class="govuk-heading-l">
+        Before you start
+      </h2>
+      <p class="govuk-body">Some of the things you'll need are:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the crime reference number</li>
+        <li>the approximate date that the crime happened</li>
+        <li>the name of the police force that's dealing with the crime</li>
+        <li>the location where the crime happened</li>
+        <li>an email address</li>
+      </ul>
+      <p class="govuk-body">If you're a parent making a claim for your child, you'll also need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>their full birth certificate</li>
+        <li>proof that your names have changed, if they have</li>
+      </ul>
+      <p class="govuk-body">Compensation is paid by the government, not the offender. We may be able to pay compensation even if the offender is not identified or convicted.</p>
+
+
+
+      <h2 class="govuk-heading-l">
+        Eligibility
+      </h2>
+
+      <p class="govuk-body">Usually you must apply within 2 years of when the crime happened. An exception may be made if one or both of the following applies:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you were under 18 at the time</li>
+        <li>you can show that you could not apply earlier</li>
+      </ul>
+
+
+
+      <h2 class="govuk-heading-l">
+        Other ways to apply
+      </h2>
+
+      <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
+
+      <p class="govuk-body">Our phone lines are open Monday to Friday 8:30am to 5pm except Wednesday when they open at 10am.</p>
+
+      <h2 class="govuk-heading-l">
+        Help and support
+      </h2>
+
+      <p class="govuk-body">You can get practical or emotional support depending on where you live:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>in England and Wales <a href="https://www.victimandwitnessinformation.org.uk/">visit the Victim and Witness Information website</a></li>
+        <li>in Scotland <a href="https://www.mygov.scot/victim-witness-support/">visit the mygov.scot website</a></li>
+      </ul>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
+                A guide to the Criminal Injuries Compensation Scheme
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+</main>
+</div>
+
+{% endblock %}

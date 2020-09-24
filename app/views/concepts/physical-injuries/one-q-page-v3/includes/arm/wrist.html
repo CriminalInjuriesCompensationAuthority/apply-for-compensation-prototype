@@ -1,0 +1,7 @@
+{% if data['wristInjuries'] and data['wristInjuries'].includes("Broken wrist") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken wrist</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['wristInjuries'] and data['wristInjuries'].includes("Sprained wrist") %}
+  <tr><th class="govuk-table__cell govuk-body">Sprained wrist</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

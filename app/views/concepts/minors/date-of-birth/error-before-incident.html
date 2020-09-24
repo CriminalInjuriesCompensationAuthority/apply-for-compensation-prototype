@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error: {{ dateOfBirthQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: errorBeforeIncident,
+                  href: "#dob-day"
+                }
+              ]
+            }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+            id: 'dob',
+            name: 'dob',
+            fieldset: {
+            legend: {
+            text: "Enter your date of birth",
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+            }
+            },
+            hint: {
+            text: 'For example, 31 3 1980'
+            },
+            errorMessage: {
+              text: errorBeforeIncident
+            },
+            items:[
+            {
+            classes: "govuk-input--width-2",
+            name: 'day',
+            value: data['dob-day']
+            },
+            {
+            classes: "govuk-input--width-2",
+            name: 'month',
+            value: data['dob-month']
+            },
+            {
+            classes: "govuk-input--width-4",
+            name: 'year',
+            value: data['dob-year']
+            }
+            ]
+            })
+            }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

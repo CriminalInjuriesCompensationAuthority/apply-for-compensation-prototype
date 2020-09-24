@@ -38,27 +38,32 @@ GOV.UK Prototype Kit
 
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#past-day">
+          <a class="govuk-tabs__tab" href="#current-prototype">
             Current
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#past-week">
+          <a class="govuk-tabs__tab" href="#concepts">
+            Concepts
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#previous-versions">
             Previous versions
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#past-month">
+          <a class="govuk-tabs__tab" href="#archive">
             Archive
           </a>
         </li>
       </ul>
 
       <!-- Current tab -->
-      <section class="govuk-tabs__panel" id="past-day">
-        <h2 class="govuk-heading-l">Non-complex sexual assault applications</h2>
-        <p>This is the <strong>final MVP prototype</strong> in our the beta phase, currently being developed to move into private beta.</p>
-        <p>It only covers applications for users who have been victims of sexual violence.</p>
+      <section class="govuk-tabs__panel" id="current-prototype">
+        <h2 class="govuk-heading-l">Complex sexual assault applications</h2>
+        <p>This is the <strong>work in progress</strong> prototype, iterating what was put into private beta.</p>
+        <p>The options page has been removed and we are building in the mental injuries questions.</p>
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">
@@ -69,16 +74,24 @@ GOV.UK Prototype Kit
           <div class="govuk-details__text">
             <p>The following are improvements from the last release following UR:</p>
             <ul class="govuk-list govuk-list--bullet">
-              <li>moved the declaration to the beginning of the application</li>
-              <li>content changes to the screen that is displayed if the crime was not reported to the police</li>
-              <li>police force lookup</li>
-              <li>re-design start page</li>
-              <li>re-design OCJ page</li>
+              <li>moved declaration to the end of the flow</li>
+              <li>moved 'Who are you applying for' to beginning of flow</li>
+              <li>added custom transition screens which give context based on the screen you were previously on</li>
+              <li>added context pages to break up sections and let people know what we are about to ask about</li>
+              <li>Changed the 'Other compensation' questions from 2 screens to 6 and made one thing per page</li>
+              <li>added in screens for confirmation preference - SMS / email</li>
+              <li>updated the 'Check your answers' screen with all changes</li>
+              <li>updated content on various screens</li>
             </ul>
-            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-11" target="_blank">View all the notes for this release</a>
+
+            The following documents detail the changes:
+            <ul>
+              <li><a href="https://docs.google.com/drawings/d/1HLft-vWCkG0Q5YYKPoqyEtAz7q5DXT8TS5QuCPGKtFI/edit?usp=sharing" target="_blank">Flow changes documented</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/10AQkyl3HTSBP9gHtk1ftM4FQyhhK3XNVxMMr54C4RUk/edit?usp=sharing" target="_blank">Spreadsheet with changes documented</a></li>
+            </ul>
           </div>
         </details>
-        <a href="/application/consent" role="button" draggable="false" class="govuk-button govuk-button--start">
+        <a href="/application/start-page" role="button" draggable="false" class="govuk-button govuk-button--start">
           Start prototype
         </a>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -93,11 +106,31 @@ GOV.UK Prototype Kit
           <li><a class="govuk-link" href="/application/application-submitted-email">Application submitted confirmation email</a></li>
           <li><a class="govuk-link" href="/srr">'Same roof' rule</a></li>
         </ul>
+      </section>
 
-        <!-- Concepts section -->
-        <h2 class="govuk-heading-m">Concepts</h2>
+
+
+      <!-- Concepts tab -->
+
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="concepts">
+        <h2 class="govuk-heading-l">Concepts</h2>
+
         <p>The prototypes below detail ideas for improvement for discussion only.</p>
+
         <ul class="govuk-list">
+          <li><a class="govuk-link" href="/concepts/confirmation-page/index-feedbak-cta">Highlighting the feedback section of the confirmation page</a></li>
+          <li><a class="govuk-link" href="/concepts/indicent-type/">Incident type and description</a></li>
+          <li><a class="govuk-link" href="/concepts/dental-treatment/">Dental treatment</a></li>
+          <li><a class="govuk-link" href="/concepts/webchat/">Web chat</a></li>
+          <li><a class="govuk-link" href="/concepts/physical-injuries/">Physical Injuries</a></li>
+          <li><a class="govuk-link" href="/concepts/transition-OCJ/new-concept-2404.html">Transition pages</a></li>
+          <li><a class="govuk-link" href="/concepts/confirmation-choice/">Making email address optional (SMS confirmation)</a></li>
+          <li><a class="govuk-link" href="/concepts/invitation/">Invitation page</a></li>
+          <li><a class="govuk-link" href="/concepts/mental-injuries/">Mental injuries questions</a></li>
+          <li><a class="govuk-link" href="/concepts/error-pages">Error pages</a></li>
+          <li><a class="govuk-link" href="/concepts/minors">Minors</a></li>
+          <li><a class="govuk-link" href="/concepts/forces-mockups">Forces mockups Oct 2019</a></li>
+          <li><a class="govuk-link" href="/concepts/date-validation">Date validation after CYA</a></li>
           <li><a class="govuk-link" href="/concepts/survey/optin"> Equality questions (5 + Opt in)</a></li>
           <li><a class="govuk-link" href="/concepts/compensation/index">Compensation question</a></li>
           <li><a class="govuk-link" href="/concepts/other-compensation/index">Compensation question, other</a></li>
@@ -110,8 +143,9 @@ GOV.UK Prototype Kit
         </ul>
       </section>
 
+
       <!-- Previous releases - UR prototypes tab -->
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="previous-versions">
         <h2 class="govuk-heading-l">Previously tested iterations</h2>
         <p>These prototypes show the iterations that were tested as part of UR to inform the final MVP.
         </p>
@@ -127,10 +161,40 @@ GOV.UK Prototype Kit
       </section>
 
       <!-- Archive Tab -->
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="archive">
         <h2 class="govuk-heading-l">Archive</h2>
         <p>These releases are previous iterations of the MVP.</p>
 
+        <h3 class="govuk-heading-m"><a href="https://cica-mvp-v1-0.herokuapp.com/" target="_blank">Private Beta 1.0</a> <span class="govuk-caption-m">4 November 2019</span></h3>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Changes in this release</span>
+            </summary>
+
+            <p>Not all changes are documented here due to the gap between content and interaction designers leaving / joining.</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>prototype updated to v9.5.0 of the govuk-prototype-kit</li>
+              <li>updated guidance pages</li>
+              <li>general content review and update</li>
+              <li>removed country police force screens and added police force screen with accessible autocomplete picker</li>
+              <li>exploring concepts for:
+                <ul>
+                  <li>SMS / Email confirmation options - making email not mandatory</li>
+                  <li>invitation page for Private Beta</li>
+                  <li>mental injuries</li>
+                  <li>errors</li>
+                  <li>minors journey</li>
+                  <li>asking for investigating police force</li>
+                  <li>exploring date validation</li>
+              </li>
+            </ul>
+
+            <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/MVP-archive-1.0">Archive availabe from</a>
+          </details>
+
+          <br>
 
         <h3 class="govuk-heading-m">Release 17 <span class="govuk-caption-m">19 September 2019</span></h3>
 
@@ -146,7 +210,6 @@ GOV.UK Prototype Kit
           </ul>
 
           <a href="https://github.com/CriminalInjuriesCompensationAuthority/apply-for-compensation-prototype/releases/tag/sprint-9">Read full release notes</a>
-          </div>
         </details>
 
         <br>

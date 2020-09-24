@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select any injuries to the tissue on your legs - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherLegTissueInjury",
+        name: "otherLegTissueInjury",
+        value: data['otherLegTissueInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "legTissueInjuries",
+        name: "legTissueInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the tissue on your legs or feet",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Muscle",
+            text: "Muscle",
+            checked: checked("legTissueInjuries", "Muscle"),
+            id: "Muscle damage on leg"
+          },
+          {
+            value: "Ligament",
+            text: "Ligament",
+            checked: checked("legTissueInjuries", "Ligament"),
+            id: "Ligament damage on leg"
+          },
+          {
+            value: "Tendon",
+            text: "Tendon",
+            checked: checked("legTissueInjuries", "Tendon"),
+            id: "Tendon damage on leg"
+          },
+          {
+            value: "Cartilage",
+            text: "Cartilage",
+            checked: checked("legTissueInjuries", "Cartilage"),
+            id: "Cartilage damage on leg"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("legTissueInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

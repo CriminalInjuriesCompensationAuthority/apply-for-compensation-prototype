@@ -25,8 +25,13 @@
           {{ notEligibleHeading }}
         </label>
       </h1>
-      <p class="govuk-body">If the crime has not been reported to the police we cannot pay compensation.</p>
-      <p class="govuk-body">You may continue your application, but any future application for the same injuries will be refused.</p>
+      <p class="govuk-body">You cannot get compensation if the crime has not been reported to the police.</p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+        If you submit a claim before the crime has been reported to the police, the claim will be refused and you will not be able to try again.
+        </strong>
     </div>
     <form class="form" method="post">
       {{ govukButton({
@@ -34,7 +39,5 @@
             }) }}
     </form>
   </div>
-</div>
-</main>
 </div>
 {% endblock %}

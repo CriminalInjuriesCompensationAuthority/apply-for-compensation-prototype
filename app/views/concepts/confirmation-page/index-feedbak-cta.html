@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Application submitted - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+      <h2 class="govuk-panel__title">
+        Application submitted
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number is<br><strong>CICA2123GW</strong>
+        <p class="govuk-body-l" style="color:white"><br>We have sent a confirmation email to<br><strong>{{ data['emailAddress'] }}</strong></p>
+      </div>
+    </div>
+    <p>
+    </p>
+    <p class="govuk-body">Thank you for submitting your application.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>We will:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ask the police for evidence</li>
+      <li>ask you for more information if we need it</li>
+      <li>make a decision</li>
+      <li>send our decision letter by post</li>
+    </ul>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must inform us immediately if any of the information you have given us changes, especially your address, telephone number or email address.
+      </strong>
+    </div>
+
+    <h2 class="govuk-heading-m">Contact us</h2>
+    <p class="govuk-body">You can contact us on 0300 003 3601. Select option 8.</p>
+
+    <div id="feedback-panel">
+      <h2 class="govuk-heading-m">Feedback</h2>
+      <p class="govuk-body">Your feedback will <a href="/">help us improve this service</a>.</p>
+    </div>
+
+  </div>
+</div>
+</main>
+
+</div>
+
+{% endblock %}

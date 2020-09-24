@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ whoIsMakingTheApplicationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }} <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "direct-applicant",
+            "name": "direct-applicant",
+            "fieldset": {
+            "legend": {
+            "text": whoIsMakingTheApplicationQuestion,
+            "isPageHeading": true,
+            "classes": 'govuk-fieldset__legend--xl'
+            }
+            },
+            "items": [
+            {
+            "value": "Myself",
+            "text": "Myself"
+            },
+            {
+            "value": "Someone else",
+            "text": "Someone else"
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

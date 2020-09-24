@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Application submitted - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6" style="background:#f47738; color: black;">
+      <h2 class="govuk-panel__title">
+        Application submitted
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number is<br><strong>CICA2123GW</strong>
+        <p class="govuk-body-l"><br>We've sent a confirmation email to<br><strong>name@example.com</strong></p>
+      </div>
+    </div>
+    <p>
+    </p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must send a copy of your child's full birth certificate before your claim can be processed. This is to confirm you have the right to claim on behalf of your child.
+      </strong>
+    </div>
+  <h2 class="govuk-heading-m">What you must do next</h2>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Scan or take a photo of the birth certificate.</li>
+      <li>If any names on the birth certificate have changed, scan or take a photo of a document that shows the changes. For example, a marriage certificate, deed poll, or Gender Recognition Certificate.</li>
+      <li>Send the files to info@cica.gov.uk with <strong>CICA2123GW</strong> in the subject line.</li>
+
+    </ol>
+    <h2 class="govuk-heading-m">If you cannot send documents by email</h2>
+      <p class="govuk-body">You can send copies of documents by post. Do not send original documents.</p>
+<p class="govuk-body govuk-!-margin-bottom-0">Criminal Injuries Compensation Authority</p>
+<p class="govuk-body govuk-!-margin-bottom-0">Alexander Bain House</p>
+<p class="govuk-body govuk-!-margin-bottom-0">Atlantic Quay</p>
+<p class="govuk-body govuk-!-margin-bottom-0">15 York Street</p>
+<p class="govuk-body govuk-!-margin-bottom-0">Glasgow</p>
+<p class="govuk-body govuk-!-margin-bottom-0">G2 8JQ</p>
+<p class="govuk-body">United Kingdom</p>
+
+  <h2 class="govuk-heading-m">If you do not have the full birth certificate</h2>
+  <p class="govuk-body"><a href=https://www.gov.uk/order-copy-birth-death-marriage-certificate>Order a copy of a full birth certificate</a>. We cannot accept short (abbreviated) birth certificates.
+<p class="govuk-body">You can send an adoption order if you adopted your child.</p>
+
+<h2 class="govuk-heading-m">Help us improve this service</h2>
+<p class="govuk-body">You can complete a short survey to help us improve this service.</p>
+<p class="govuk-body">It does not ask for any details about your case, and has no effect on your application.</p>
+    <p><a href="/">Tell us what you think of our service</a> (takes 10 minutes)</p>
+    <h2 class="govuk-heading-m">Contact</h2>
+            <p class="govuk-body">
+              Email: <br>
+              <strong><a href="mailto:info@cica.gov.uk?Subject=Private%20beta">info@cica.gov.uk</a></strong>
+            </p>
+            <p class="govuk-body">
+              Telephone: <br>
+              <strong>0300 003 3601</strong> option 8
+            </p>
+
+  </div>
+</div>
+</main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+localStorage.setItem('headPages', 0);
+var headPageCount = localStorage.getItem('headPages');
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form"method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "neckInjuries",
+        name: "neckInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to yiour neck",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: neckInjuriesQuestionHint
+        },
+        items: [
+        {
+          value: "Broken hyoid (throat bone)",
+          text: "Broken hyoid (throat bone)",
+          checked: checked("neckInjuries", "Broken hyoid (throat bone)")
+        },
+        {
+          value: "Whiplash",
+          text: "Whiplash",
+          checked: checked("neckInjuries", "Whiplash")
+        },
+        {
+          value: "none",
+          text: "I do not have these injuries",
+          checked: checked("neckInjuries", "none"),
+          id: "none"
+        }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html"%}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  }) }}
+
+<a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="/apply/submission/confirm" novalidate="">
+      <h1 class="govuk-heading-xl">There's a problem with the date you entered</h1>
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#passport-issued-error">The date reported must be after the date of the crime</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="govuk-body">Correct the dates below to continue.</p>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 January 1989
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/concepts/date-validation/date-of-birth">
+              Change<span class="govuk-visually-hidden"> Date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            When did the crime happen?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 January 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="date-of-incident">
+              Change<span class="govuk-visually-hidden"> When did the crime happen?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            When was the crime reported?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 December 2018
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="date-reported">
+              Change<span class="govuk-visually-hidden"> When was the crime reported?</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <a href="../../date-validation" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

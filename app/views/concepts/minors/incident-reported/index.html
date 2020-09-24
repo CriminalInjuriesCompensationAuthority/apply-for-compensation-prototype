@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ minorIncidentReportedQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+              idPrefix: "minorCrimeReported",
+              name: "minorCrimeReported",
+              currentValue : data['minorCrimeReported'],
+              classes: "govuk-radios--inline",
+              fieldset: {
+                legend: {
+                  text: minorIncidentReportedQuestion,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("minorCrimeReported", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("minorCrimeReported", "No")
+                }
+              ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I do not know if the crime was reported to the police
+            </span>
+        </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
+              <p class="govuk-body">Our phone lines are open Monday to Friday 8:30am to 5pm except Wednesday when they open at 10am.</p>
+              <!-- <p class="govuk-body">To get information about the crime you can <a class="govuk-body" href="https://www.police.uk/contact/101/" target="_blank">contact the police</a>. -->
+            </div>
+      </details>
+
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

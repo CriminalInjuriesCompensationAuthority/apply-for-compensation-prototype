@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukCheckboxes({
+            "classes": "govuk-checkboxes",
+            "idPrefix": "muscleLigamentTendonInjury",
+            "name": "muscleLigamentTendonInjury",
+            "fieldset": {
+              "legend": {
+                "text": "Where are your muscle, ligament or tendon injuries?",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Head, neck or face",
+                "text": "Head, neck or face",
+                checked: checked("muscleLigamentTendonInjury", "Head, neck or face")
+              },
+              {
+                "value": "Torso",
+                "text": "Torso",
+                checked: checked("muscleLigamentTendonInjury", "Torso")
+              },
+              {
+                "value": "Arm or hand",
+                "text": "Arm or hand",
+                checked: checked("muscleLigamentTendonInjury", "Arm or hand")
+              },
+              {
+                "value": "Leg or foot",
+                "text": "Leg or foot",
+                checked: checked("muscleLigamentTendonInjury", "Leg or foot")
+              },
+              {
+                value: "none",
+                text: "I do not have these injuries",
+                checked: checked("muscleLigamentTendonInjury", "none"),
+                id: "none"
+              }
+              ]
+          })
+        }}
+
+        {{ govukButton({
+          "text": "Continue"
+        }) }}
+
+    </form>
+
+    {% include "../includes/answers-template.html"%}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

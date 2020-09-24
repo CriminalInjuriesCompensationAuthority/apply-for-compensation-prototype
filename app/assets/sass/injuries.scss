@@ -1,0 +1,60 @@
+form.injuries {
+  .govuk-checkboxes__item:last-child{
+    margin-top: 40px;
+    &:before {
+      content: "or";
+      position: absolute;
+      top: -32px;
+      left: 9px;
+   }
+  }
+}
+
+table.your-injuries {
+  td,th {
+    text-transform: lowercase;
+    &:first-letter {text-transform: uppercase;}
+  }
+}
+
+
+// From the LAA prototype
+
+div.injury-list-row {
+  padding: 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+div.injury-list-row:hover {
+  background-color: #e7f4fb;
+}
+
+div.no-results {
+  margin-left: 0px;
+  font-family: "nta", Arial;
+  font-size: 19px;
+  padding-bottom: 20px;
+}
+
+.change-link {
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+ul.injury-list {
+  padding: 0px;
+  margin-top: 22px;
+}
+
+li.injury__list-item {
+  display: inline-block;
+}
+
+.injury-item {
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px;
+}
+
+div.clear-search {
+  padding-top: 8px;
+}

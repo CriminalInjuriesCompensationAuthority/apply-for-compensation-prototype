@@ -1,0 +1,146 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  }) }}
+
+  <a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for="police-forces">
+          Which police force is investigating the crime?
+        </label>
+      </h1>
+
+
+        <div class="autocomplete__wrapper govuk-form-group">
+          <select name="investigating-force" id="investigating-force">
+            <option value="">Select a country</option>
+            <option value="territory:AE-AZ">Avon And Somerset Constabulary</option>
+            <option value="territory:AE-AZ">British Transport Police</option>
+            <option value="territory:AE-AZ">Cambridgeshire Constabulary</option>
+            <option value="territory:AE-AZ">Cheshire Constabulary</option>
+            <option value="territory:AE-AZ">City Of London Police</option>
+            <option value="territory:AE-AZ">Cleveland Police</option>
+            <option value="territory:AE-AZ">Cumbria Constabulary</option>
+            <option value="territory:AE-AZ">Derbyshire Constabulary</option>
+            <option value="territory:AE-AZ">Devon &amp; Cornwall Police</option>
+            <option value="territory:AE-AZ">Dorset Police</option>
+            <option value="territory:AE-AZ">Durham Constabulary</option>
+            <option value="territory:AE-AZ">Essex Police</option>
+            <option value="territory:AE-AZ">Gloucestershire Constabulary</option>
+            <option value="territory:AE-AZ">Greater Manchester Police</option>
+            <option value="territory:AE-AZ">Hampshire Constabulary</option>
+            <option value="territory:AE-AZ">Hertfordshire Constabulary</option>
+            <option value="territory:AE-AZ">Humberside Police</option>
+            <option value="territory:AE-AZ">Kent Police</option>
+            <option value="territory:AE-AZ">Lancashire Constabulary</option>
+            <option value="territory:AE-AZ">Leicestershire Police</option>
+            <option value="territory:AE-AZ">Lincolnshire Police</option>
+            <option value="territory:AE-AZ">Merseyside Police</option>
+            <option value="territory:AE-AZ">Metropolitan Barking</option>
+            <option value="territory:AE-AZ">Metropolitan Barnet</option>
+            <option value="territory:AE-AZ">Metropolitan Bexley</option>
+            <option value="territory:AE-AZ">Metropolitan Brent</option>
+            <option value="territory:AE-AZ">Metropolitan Bromley</option>
+            <option value="territory:AE-AZ">Metropolitan Camden</option>
+            <option value="territory:AE-AZ">Metropolitan Croydon</option>
+            <option value="territory:AE-AZ">Metropolitan Ealing</option>
+            <option value="territory:AE-AZ">Metropolitan Enfield</option>
+            <option value="territory:AE-AZ">Metropolitan Greenwich</option>
+            <option value="territory:AE-AZ">Metropolitan Hackney</option>
+            <option value="territory:AE-AZ">Metropolitan Hammersmith</option>
+            <option value="territory:AE-AZ">Metropolitan Haringey</option>
+            <option value="territory:AE-AZ">Metropolitan Harrow</option>
+            <option value="territory:AE-AZ">Metropolitan Havering</option>
+            <option value="territory:AE-AZ">Metropolitan Hillingdon</option>
+            <option value="territory:AE-AZ">Metropolitan Hounslow</option>
+            <option value="territory:AE-AZ">Metropolitan Islington</option>
+            <option value="territory:AE-AZ">Metropolitan Kensington</option>
+            <option value="territory:AE-AZ">Metropolitan Kingston</option>
+            <option value="territory:AE-AZ">Metropolitan Lambeth</option>
+            <option value="territory:AE-AZ">Metropolitan Lewisham</option>
+            <option value="territory:AE-AZ">Metropolitan Merton</option>
+            <option value="territory:AE-AZ">Metropolitan Newham</option>
+            <option value="territory:AE-AZ">Metropolitan Redbridge</option>
+            <option value="territory:AE-AZ">Metropolitan Richmond</option>
+            <option value="territory:AE-AZ">Metropolitan Southwark</option>
+            <option value="territory:AE-AZ">Metropolitan Sutton</option>
+            <option value="territory:AE-AZ">Metropolitan Tower Hamlets</option>
+            <option value="territory:AE-AZ">Metropolitan Waltham Forest</option>
+            <option value="territory:AE-AZ">Metropolitan Wandsworth</option>
+            <option value="territory:AE-AZ">Metropolitan Westminster</option>
+            <option value="territory:AE-AZ">Norfolk Constabulary</option>
+            <option value="territory:AE-AZ">North Yorkshire Police</option>
+            <option value="territory:AE-AZ">Northamptonshire Police</option>
+            <option value="territory:AE-AZ">Northumbria Police</option>
+            <option value="territory:AE-AZ">Nottinghamshire Police</option>
+            <option value="territory:AE-AZ">South Yorkshire Police</option>
+            <option value="territory:AE-AZ">Staffordshire Police</option>
+            <option value="territory:AE-AZ">Suffolk Constabulary</option>
+            <option value="territory:AE-AZ">Surrey Police</option>
+            <option value="territory:AE-AZ">Sussex Police</option>
+            <option value="territory:AE-AZ">Thames Valley Police</option>
+            <option value="territory:AE-AZ">Warwickshire Police</option>
+            <option value="territory:AE-AZ">West Mercia Police</option>
+            <option value="territory:AE-AZ">West Midlands Police</option>
+            <option value="territory:AE-AZ">West Yorkshire Police</option>
+            <option value="territory:AE-AZ">Wiltshire Police</option>
+            <option value="territory:AE-AZ">Dyfed-Powys</option>
+            <option value="territory:AE-AZ">Gwent</option>
+            <option value="territory:AE-AZ">North Wales</option>
+            <option value="territory:AE-AZ">South Wales</option>
+            <option value="territory:AE-AZ">Police Scotland Argyll and West Dunbartonshire</option>
+            <option value="territory:AE-AZ">Police Scotland Ayrshire</option>
+            <option value="territory:AE-AZ">British Transport Police</option>
+            <option value="territory:AE-AZ">Police Scotland Dumfries and Galloway</option>
+            <option value="territory:AE-AZ">Police Scotland Edinburgh</option>
+            <option value="territory:AE-AZ">Police Scotland Fife</option>
+            <option value="territory:AE-AZ">Police Scotland Forth Valley</option>
+            <option value="territory:AE-AZ">Police Scotland Greater Glasgow</option>
+            <option value="territory:AE-AZ">Police Scotland Highland and Islands</option>
+            <option value="territory:AE-AZ">Police Scotland Lanarkshire</option>
+            <option value="territory:AE-AZ">Police Scotland North East</option>
+            <option value="territory:AE-AZ">Police Scotland Renfrewshire and Inverclyde</option>
+            <option value="territory:AE-AZ">Police Scotland Tayside</option>
+            <option value="territory:AE-AZ">Police Scotland The Lothians and Scottish Borders</option>
+          </select>
+        </div>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with police forces
+                </span>
+            </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">See a list of all <a href="/concepts/forces-mockups/v1/police-force/list-of-forces.html" target="_blank">police forces in England, Scotland and Wales</a> (opens in a new tab)</p>
+                </div>
+          </details>
+
+        <a href="/concepts/forces-mockups/v1/do-you-know-offender/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+
+
+    </div>
+</div>
+
+{% endblock %}

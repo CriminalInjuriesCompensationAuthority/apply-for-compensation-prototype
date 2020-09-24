@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  var armPageCount = localStorage.getItem('armPages');
+  var newArmPageCount = (armPageCount*1 + 1);
+  $(".pageNumber").text(newArmPageCount);
+  localStorage.setItem('armPages', newArmPageCount);
+</script>
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">
+             <span class="pageNumber"></span> / {{ data['armsInjuredParts'] | length + 1 }} questions about your arm</span>
+          <h1 class="govuk-fieldset__heading">
+            Select any injuries to your arm
+          </h1>
+      </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "armsInjuries",
+        name: "armsInjuries",
+        hint: {
+          text: armsInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Broken arm",
+            text: "Broken arm",
+            checked: checked("armsInjuries", " Broken arm")
+          },
+          {
+            value: " Loss of arm",
+            text: "Loss of arm",
+            checked: checked("armsInjuries", " Loss of arm")
+          },
+          {
+            value: " Paralysed arm",
+            text: "Paralysed arm",
+            checked: checked("armsInjuries", " Paralysed arm")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

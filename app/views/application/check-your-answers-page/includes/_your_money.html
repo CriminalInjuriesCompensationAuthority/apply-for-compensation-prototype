@@ -1,0 +1,79 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Money
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Have you been unable to work for more than 28 weeks?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['workCapacity'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/work-capacity">
+        Change<span class="govuk-visually-hidden"> Have you been unable to work for more than 28 weeks?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['workCapacity'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Did you have a job when the crime happened?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['lossEarningsClaim'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/lost-earnings">
+        Change<span class="govuk-visually-hidden">Did you have a job when the crime happened? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if data['lossEarningsClaim'] === 'No' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Reason for not having paid work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['workDetails'] }}
+      {% if data['otherWorkDetails'] %}
+        {{ data['otherWorkDetails']}}
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/work-details">
+        Change<span class="govuk-visually-hidden">Reason for not having paid work </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if data['workCapacity'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Expenses
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['specialExpenses'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/special-expenses">
+        Change<span class="govuk-visually-hidden">Did you have a job when the crime happened? </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+</dl>

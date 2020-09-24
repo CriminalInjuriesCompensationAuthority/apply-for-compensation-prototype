@@ -9,7 +9,7 @@ module.exports = function (router, content) {
     //setting the session variable for check your answer page to false
     req.session.checking_answers = false
     // If the variable is any other value (or is missing) render the page requested
-    res.redirect('/application/british-citizen')
+    res.redirect('/application/confirmation-page')
     //}
   })
 

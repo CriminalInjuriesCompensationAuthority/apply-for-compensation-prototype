@@ -9,7 +9,7 @@ module.exports = function (router, content) {
 
 
     // If the variable is any other value (or is missing) render the page requesteds
-    res.redirect('/application/do-you-know-offender')
+    res.redirect('/application/do-you-know-offender-name')
 
     req.session.data['applicationDelay'] = null; // this line is here to clear the data if the user had given a date over 2 years, and filled in a reason why but then change the incident date to something that is ok now, so the reason should be clear to not be displayed on the CYA page
     // else we're under 2 years

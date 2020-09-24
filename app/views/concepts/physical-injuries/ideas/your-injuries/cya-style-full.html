@@ -1,0 +1,508 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your injuries
+    </h1>
+
+    <h2 class="govuk-heading-m">Head, neck or face
+      <a class="govuk-link" href="#" style="float:right;">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Head or brain
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your head or brain
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> head or brain injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Face or jaw
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Face numbness<br />
+          Broken cheekbone <br/>
+          Broken jaw
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> face or jaw injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eye or eyesight
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your eye or eyesight
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> eye or eyesight injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ear or hearing
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your ear or hearing
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> ear or hearing injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Nose
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your nose
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> nose injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mouth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Damaged or broken teeth
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> mouth injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Neck
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your neck
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> neck injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Skin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your skin
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> skin injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Muscle, ligament or tendon
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your muscle, ligament or tendons
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> muscle, ligament or tendon injuries</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Torso
+      <a class="govuk-link" href="#" style="float:right;">
+        Change<span class="govuk-visually-hidden"> torso injuries</span>
+      </a>
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Shoulder
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Dislocated shoulder
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> shoulder injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chest
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your chest
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> chest injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Abdomen
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your abdomen
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> abdomen injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Back
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Back strain
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> back injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Pelvis
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your pelvis
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> pelvis injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Genitals
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your genitals
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> genitals injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Skin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your skin
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> skin injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Muscle, ligament and tendons
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your muscle, ligament and tendons
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> muscle, ligament and tendon injuries</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Arms
+      <a class="govuk-link" href="#" style="float:right;">
+        Change<span class="govuk-visually-hidden"> arm injuries</span>
+      </a>
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Shoulder
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your shoulder
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> shoulder injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Arm
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your arm
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> arm injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Elbow
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your elbow
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> elbow injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Wrist
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your wrist
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> wrist injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Hand
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your hand
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> hand injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Finger and thumb
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your finger and thumb
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> finger and thumb injuries</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Skin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your skin
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> skin injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Muscle, ligament and tendons
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your muscle, ligament and tendons
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> muscle, ligament and tendon injuries</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+
+    <h2 class="govuk-heading-m">Legs
+      <a class="govuk-link" href="#" style="float:right;">
+        Change<span class="govuk-visually-hidden"> legs injuries</span>
+      </a>
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Hip
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your hip
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> hip injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Leg
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your leg
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> leg injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Knee
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your knee
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> knee injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Ankle
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your ankle
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> ankle injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Foot
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your foot
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> foot injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Skin
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your skin
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> skin injuries</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Muscle, ligament and tendons
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No injuries to your muscle, ligament and tendons
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> muscle, ligament and tendon injuries</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+
+
+
+
+
+   <form class="form" method="post">
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

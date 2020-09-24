@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextContactWithOffenderHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ contextContactWithOffenderHeading }}
+    </h1>
+
+    <p class="govuk-body">We’re going to ask:
+      <ul class="govuk-list govuk-list--bullet">
+       <li>the offender's name (if you know it)</li>
+       <li>if you have contact with the offender</li></ul>
+    <p class="govuk-body">This is so we can make sure the offender does not benefit from any compensation you get.</p>
+    <p class="govuk-body">We will never contact the offender.</p>
+    <form class="form" method="post">
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

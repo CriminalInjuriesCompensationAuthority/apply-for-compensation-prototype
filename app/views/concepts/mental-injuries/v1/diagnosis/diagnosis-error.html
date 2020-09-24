@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Error: {{ britishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h1 class="govuk-heading-xl govuk-visually-hidden">
+          Have you applied for compensation from any other sources?
+        </h1> -->
+
+    <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: britishCitizenError,
+                  href: "#haveOtherName"
+                }
+              ]
+            }) }}
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "britishCitizen",
+            "name": "britishCitizen",
+            currentValue: data['britishCitizen'],
+            "fieldset": {
+              "legend": {
+                "text": britishCitizenQuestion,
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            errorMessage: {
+            text: britishCitizenError
+          },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes"
+              },
+              {
+                "value": "No",
+                "text": "No"
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

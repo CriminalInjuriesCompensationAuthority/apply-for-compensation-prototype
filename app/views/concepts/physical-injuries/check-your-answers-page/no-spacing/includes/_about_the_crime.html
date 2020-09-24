@@ -1,0 +1,220 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  About the crime
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Did the crime happen once or over a period of time?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Once
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="single-or-multiple-incidents">
+        Change<span class="govuk-visually-hidden"> {{ singleOrMultipleIncidentsQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      When did the crime happen?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      01/01/2020
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="incident-date">
+        Change<span class="govuk-visually-hidden"> {{ incidentDateHeading }}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['single-or-multiple-incidents'] === 'Over a period of time' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ periodOfAbuseStartQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['period-of-abuse-start-month'] }}/{{ data['period-of-abuse-start-year'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="period-of-abuse-start">
+        Change<span class="govuk-visually-hidden"> start of the crimes</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ periodOfAbuseEndQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['period-of-abuse-end-month'] }}/{{ data['period-of-abuse-end-year'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="period-of-abuse-end">
+        Change<span class="govuk-visually-hidden"> end of the crimes</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+<!-- App delay questions -->
+
+  {% if data['reportingDelay'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
+      Reasons for the delay in reporting the crime
+    </dt>
+    <dd class="govuk-summary-list__value" style="border:none">
+      {{ data['reportingDelay'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border:none">
+      <a href="application-delay">
+        Change<span class="govuk-visually-hidden"> {{ whyDelayQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['delayApplyExplanation'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ delayApplyExplanation }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['delay-application'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+    </dd>
+  </div>
+  {% endif %}
+
+  <!-- Location Questions -->
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Where did the crime happen?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Scotland
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="incident-location">
+        Change<span class="govuk-visually-hidden"> where the crime happened</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['incidentlocation'] === 'England' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ englandLocationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['EnglandLocation'] }}, {{ data['EnglandTown'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="england-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+    {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Where in Scotland did it happen?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Harbour, Glasgow
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="scotland-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['incidentlocation'] === 'Wales' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ walesLocationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['WalesLocation'] }}, {{ data['WalesTown'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="wales-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+    {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do you know the offender's name?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="do-you-know-offender">
+        Change<span class="govuk-visually-hidden"> {{ doYouKnowOffenderQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['know-offender'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Offender's name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      John Smith
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="offender-name">
+        Change<span class="govuk-visually-hidden"> {{ offenderNameQuestionCA }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Do you have contact with the offender?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="what-is-relationship">
+        Change<span class="govuk-visually-hidden"> {{ contactWithOffenderQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['contact-offender'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Describe your contact with the offender
+    </dt>
+    <dd class="govuk-summary-list__value">
+        {{ data['relationship-text'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="what-is-relationship">
+        Change<span class="govuk-visually-hidden"> {{ whatIsRelationshipQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+
+</dl>

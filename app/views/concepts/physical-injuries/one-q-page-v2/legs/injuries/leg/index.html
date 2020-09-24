@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  var legPageCount = localStorage.getItem('legPages');
+  var newLegPageCount = (legPageCount*1 + 1);
+  $(".pageNumber").text(newLegPageCount);
+  localStorage.setItem('legPages', newLegPageCount);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">
+             <span class="pageNumber"></span> / {{ data['legInjuredParts'] | length + 1 }} questions about your leg</span>
+          <h1 class="govuk-fieldset__heading">
+            Select any injuries to your leg
+          </h1>
+      </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "legInjuries",
+        name: "legInjuries",
+        hint: {
+          text: legInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Broken leg",
+            text: "Broken leg",
+            checked: checked("legInjuries", " Broken leg")
+          },
+          {
+            value: " Keyhole surgery to leg",
+            text: "Keyhole surgery to leg",
+            checked: checked("legInjuries", " Keyhole surgery to leg")
+          },
+          {
+            value: " Amputated leg",
+            text: "Amputated leg",
+            checked: checked("legInjuries", " Amputated leg")
+          },
+          {
+            value: " Paralysed leg",
+            text: "Paralysed leg",
+            checked: checked("legInjuries", " Paralysed leg")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

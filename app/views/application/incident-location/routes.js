@@ -25,7 +25,7 @@ module.exports = function (router, content) {
             res.redirect('/application/wales-location')
           }
 
-          if (yourChoice === 'Somewhere else') {
+          if (yourChoice === 'somewhere-else') {
             // Redirect to the relevant page
             res.redirect('/application/somewhere-else')
           }

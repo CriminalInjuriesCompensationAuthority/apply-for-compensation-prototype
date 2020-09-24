@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your injuries
+    </h1>
+
+
+    {% if data['pi-details'] or data['nonSpecificBodyParts'] or data['headFaceNeckInjuries'] or data['armInjuries'] or data['legInjuries'] or data['torsoInjuries'] %}
+
+    <table class="govuk-table govuk-!-margin-bottom-9 your-injuries">
+      <caption class="govuk-heading-m" style="text-align: left;">
+        You have told us you have these injuries
+      </caption>
+      <tbody class="govuk-table__body">
+
+        {% if data['nonSpecificBodyParts'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['nonSpecificBodyParts'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+        {% if data['headFaceNeckInjuries'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['headFaceNeckInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+        {% if data['armInjuries'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['armInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+        {% if data['torsoInjuries'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['torsoInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+        {% if data['legInjuries'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['legInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+        {% if data['pi-details'] %}
+          <tr><th class="govuk-table__cell govuk-body">{{ data['pi-details'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+        {% endif %}
+
+
+        </tbody>
+
+      </table>
+    {% endif %}
+
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "changed-name",
+      name: "changed-name",
+      fieldset: {
+        legend: {
+          text: "Are these injuries correct?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+
+    <form class="form" method="post">
+      {{ govukButton({
+      "text": "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "fingerInjuries",
+        name: "fingerInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your finger or thumb",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Dislocated thumb",
+          text: "Dislocated thumb",
+          checked: checked("fingerInjuries", "Dislocated thumb")
+        },
+          {
+            value: "Dislocated index finger",
+            text: "Dislocated index finger",
+            checked: checked("fingerInjuries", "Dislocated index finger")
+          },
+          {
+            value: "Dislocated finger on one hand",
+            text: "Dislocated finger on one hand",
+            checked: checked("fingerInjuries", "Dislocated finger on one hand")
+          },
+          {
+            value: "Dislocated fingers on both hands",
+            text: "Dislocated fingers on both hands",
+            checked: checked("fingerInjuries", "Dislocated fingers on both hands")
+          },
+          {
+            value: "Broken thumb",
+            text: "Broken thumb",
+            checked: checked("fingerInjuries", "Broken thumb")
+          },
+          {
+            value: "Broken index finger",
+            text: "Broken index finger",
+            checked: checked("fingerInjuries", "Broken index finger")
+          },
+          {
+            value: "Broken finger on one hand",
+            text: "Broken finger on one hand",
+            checked: checked("fingerInjuries", "Broken finger on one hand")
+          },
+          {
+            value: "Broken fingers on both hands",
+            text: "Broken fingers on both hands",
+            checked: checked("fingerInjuries", "Broken fingers on both hands")
+          },
+          {
+            value: "Loss of finger",
+            text: "Loss of finger",
+            checked: checked("fingerInjuries", "Loss of finger")
+          },
+          {
+            value: "Loss of part of finger",
+            text: "Loss of part of finger",
+            checked: checked("fingerInjuries", "Loss of part of finger")
+          },
+          {
+            value: "Loss of fingernail",
+            text: "Loss of fingernail",
+            checked: checked("fingerInjuries", "Loss of fingernail")
+          },
+          {
+            value: "none",
+            text: "I do not have these injuries",
+            checked: checked("headInjury", "none"),
+            id: "none"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

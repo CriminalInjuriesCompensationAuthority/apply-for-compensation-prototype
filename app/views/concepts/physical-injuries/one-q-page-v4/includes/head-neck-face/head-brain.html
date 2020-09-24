@@ -1,0 +1,35 @@
+{% if data['headInjuries'] and data['headInjuries'].includes("Concussion, headaches or loss of balance lasting 28 weeks or more") %}
+  <tr><th class="govuk-table__cell govuk-body">Concussion, headaches or loss of balance lasting 28 weeks or more</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Brain damage") %}
+  <tr><th class="govuk-table__cell govuk-body">Brain damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Fractured skull") %}
+  <tr><th class="govuk-table__cell govuk-body">Fractured skull</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Hair pulled out") %}
+  <tr><th class="govuk-table__cell govuk-body">Hair pulled out</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Epilepsy") %}
+  <tr><th class="govuk-table__cell govuk-body">Epilepsy</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Nerve damage") %}
+  <tr><th class="govuk-table__cell govuk-body">Nerve damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Quadriplegia or tetraplegia (paralysis of all 4 limbs)") %}
+  <tr><th class="govuk-table__cell govuk-body">Quadriplegia or tetraplegia (paralysis of all 4 limbs)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headInjuries'] and data['headInjuries'].includes("Hemiplegia (paralysis of one side of the the body)") %}
+  <tr><th class="govuk-table__cell govuk-body">Hemiplegia (paralysis of one side of the the body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherHeadInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherHeadInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

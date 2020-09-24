@@ -1,0 +1,285 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+
+  var selectEl = document.querySelector('#injury-selector')
+  if(selectEl) {
+    accessibleAutocomplete.enhanceSelectElement({
+      autoselect: true,
+      confirmOnBlur: true,
+      defaultValue: "",
+      minLength: 2,
+      selectElement: selectEl
+    })
+  }
+
+  // hide the code for myInjuries list
+  $("#injuriesListWrapper").hide();
+
+  // Set number of injuries to 0
+  var myInjuries = 0;
+
+  // Add an injury to the list from the autocomplete
+  $('#addToList').click( function() {
+
+    // Show the myInjuries list
+    $("#injuriesListWrapper").show();
+
+    // get the injury selected
+    var newInjury = $("input#injury-selector").val();
+
+    // create the new table row to be inserted
+    var markup = "<tr class='govuk-table__row'><th class='govuk-table__cell govuk-body'>" + newInjury + "</th><td class='govuk-table__cell govuk-body govuk-table__cell--numeric'><a href='#' class='removeInjury'>Remove <span class='govuk-visually-hidden'>" + newInjury + "</span></a></td></tr>";
+
+    // add the new table row
+    $("table#myInjuriesList tbody").append(markup);
+
+    // increment the number of injuries by 1
+    myInjuries ++
+    if (myInjuries >= 2) {
+      $(".injuriesTotal").text(myInjuries + ' injuries');
+    }
+
+    // clear the input
+    $('input#injury-selector').val('');
+
+  })
+
+  // Remove an injury from the list
+  $(document).on('click', '.removeInjury', function() {
+    // remove the table row
+    $(this).closest('tr').remove();
+
+    // remove 1 from the injuries total
+    myInjuries --
+
+    // Update the number of unjuries
+    if (myInjuries >= 2) {
+      $(".injuriesTotal").text(myInjuries + ' injuries');
+
+    } else if (myInjuries === 1) {
+      $(".injuriesTotal").text(myInjuries + ' injury');
+
+    } else if (myInjuries === 0) {
+      // hide the code for myInjuries list
+      $("#injuriesListWrapper").hide();
+    }
+
+  });
+
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  })
+}}
+
+<a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+      <h1 class="govuk-heading-xl">
+          What injuries do you have as a result of the crime?
+      </h1>
+
+
+      <div id="injuriesListWrapper">
+        <h2 class="govuk-heading-m">You have selected <span class="injuriesTotal">1 injury</span></h2>
+
+        <table id="myInjuriesList" class="govuk-table govuk-!-margin-bottom-9">
+        <tbody class="govuk-table__body">
+          <!--
+          <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-body" scope="row">Example</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <a href="search">Remove <span class="govuk-visually-hidden">blank</span></a>
+            </td>
+            </tr>
+            -->
+          </tbody>
+        </table>
+
+      </div>
+
+
+      <label class="govuk-heading-m" for="search">
+        Search for injuries
+      </label>
+
+        <div class="autocomplete-wrapper govuk-!-width-two-thirds govuk-!-margin-right-5" style="float:left;">
+          <select name="injury-selector" id="injury-selector">
+            <option value=""></option>
+            <option value="Burns on head, neck, or face">Burns on head, neck, or face</option>
+            <option value="Scars on head">Scars on head</option>
+            <option value="Scars on neck">Scars on neck</option>
+            <option value="Scars on face">Scars on face</option>
+            <option value="Brain damage">Brain damage</option>
+            <option value="Epilepsy">Epilepsy</option>
+            <option value="Nerve damage">Nerve damage</option>
+            <option value="Broken ear bone">Broken ear bone</option>
+            <option value="Deafness/hearing loss">Deafness/hearing loss</option>
+            <option value="Loss of ear">Loss of ear</option>
+            <option value="One perforated eardrum">One perforated eardrum</option>
+            <option value="Two perforated eardrums">Two perforated eardrums</option>
+            <option value="Ringing in ears">Ringing in ears</option>
+            <option value="Dizziness">Dizziness</option>
+            <option value="Broken eye socket">Broken eye socket</option>
+            <option value="Temporary blurred vision">Temporary blurred vision</option>
+            <option value="Permanent blurred vision">Permanent blurred vision</option>
+            <option value="Cataract">Cataract</option>
+            <option value="Scratched eye">Scratched eye</option>
+            <option value="Permanent loss of peripheral vision">Permanent loss of peripheral vision</option>
+            <option value="Dislocated lens">Dislocated lens</option>
+            <option value="Glaucoma">Glaucoma</option>
+            <option value="Blood in the eye/Bloodshot eye">Blood in the eye/Bloodshot eye</option>
+            <option value="Loss of eye">Loss of eye</option>
+            <option value="Blindness">Blindness</option>
+            <option value="Sight loss">Sight loss</option>
+            <option value="Floater">Floater</option>
+            <option value="Damaged or detatched retina">Damaged or detatched retina</option>
+            <option value="Pierced eye">Pierced eye</option>
+            <option value="Damaged eye drain">Damaged eye drain</option>
+            <option value="Broken nose">Broken nose</option>
+            <option value="Broken jaw">Broken jaw</option>
+            <option value="Face/facial fractures">Face/facial fractures</option>
+            <option value="Face numbness">Face numbness</option>
+            <option value="Broken cheekbone">Broken cheekbone</option>
+            <option value="Broken hyoid">Broken hyoid</option>
+            <option value="Whiplash">Whiplash</option>
+            <option value="Loss of smell or taste">Loss of smell or taste</option>
+            <option value="Loss of nose">Loss of nose</option>
+            <option value="Fractured skull">Fractured skull</option>
+            <option value="Broken teeth/tooth damage/tooth knocked out">Broken teeth/tooth damage/tooth knocked out</option>
+            <option value="Loose teeth">Loose teeth</option>
+            <option value="Difficulty speaking">Difficulty speaking</option>
+            <option value="Loss of speech">Loss of speech</option>
+            <option value="Loss of tongue">Loss of tongue</option>
+            <option value="Cuts">Cuts on face</option>
+            <option value="Bruises">Bruises</option>
+            <option value="Muscle, ligament, or tendon injury">Muscle, ligament, or tendon injury</option>
+            <option value="Black eye">Black eye</option>
+            <option value="Bloody nose/Nosebleed">Bloody nose/Nosebleed</option>
+            <option value="Hair pulled out">Hair pulled out</option>
+            <option value="Burns on torso">Burns on torso</option>
+            <option value="Scar on torso">Scar on torso</option>
+            <option value="Keyhole surgery on torso">Keyhole surgery on torso</option>
+            <option value="Chest incision">Chest incision</option>
+            <option value="Keyhole surgery on torso/body">Keyhole surgery on torso</option>
+            <option value="Stoma">Stoma</option>
+            <option value="Spine fracture/Broken back">Spine fracture/Broken back</option>
+            <option value="Slipped disc">Slipped disc</option>
+            <option value="Back strain">Back strain</option>
+            <option value="Chest incision">Chest incision</option>
+            <option value="Separated shoulder">Separated shoulder</option>
+            <option value="Broken collarbone">Broken collarbone</option>
+            <option value="Broken tailbone">Broken tailbone</option>
+            <option value="Genital injury">Genital injury</option>
+            <option value="Infertility">Infertility</option>
+            <option value="Hernia">Hernia</option>
+            <option value="Loss of kidney">Loss of kidney</option>
+            <option value="Kidney injury">Kidney injury</option>
+            <option value="Punctured lung">Punctured lung</option>
+            <option value="Collapsed lung">Collapsed lung</option>
+            <option value="Lung damage from smoke or chemicals">Lung damage from smoke or chemicals</option>
+            <option value="Loss of pancreas">Loss of pancreas</option>
+            <option value="Broken pelvis">Broken pelvis</option>
+            <option value="Broken rib">Broken rib</option>
+            <option value="Broken shoulder">Broken shoulder</option>
+            <option value="Loss of spleen">Loss of spleen</option>
+            <option value="Broken breast bone">Broken breast bone</option>
+            <option value="Cuts to torso/body">Cuts on body</option>
+            <option value="Bruised torso/body">Bruised body</option>
+            <option value="Muscle, ligament, or tendon injury to torso/body">Muscle, ligament, or tendon injury to torso/body</option>
+            <option value="Burns on arm">Burns on arm</option>
+            <option value="Scars on arm">Scars on arm</option>
+            <option value="Loss of arm">Loss of arm</option>
+            <option value="Paralysed arm">Paralysed arm</option>
+            <option value="Dislocated elbow">Dislocated elbow</option>
+            <option value="Broken elbow">Broken elbow</option>
+            <option value="Dislocated finger">Dislocated finger</option>
+            <option value="Broken thumb">Broken thumb</option>
+            <option value="Broken finger">Broken finger</option>
+            <option value="Loss of finger">Loss of finger</option>
+            <option value="Loss of part of finger">Loss of part of finger</option>
+            <option value="Broken hand">Broken hand</option>
+            <option value="Use of hand">Use of hand</option>
+            <option value="Loss of grip">Loss of grip</option>
+            <option value="Broken arm">Broken arm</option>
+            <option value="Dislocated shoulder">Dislocated shoulder</option>
+            <option value="Frozen shoulder">Frozen shoulder</option>
+            <option value="Keyhole surgery on shoulder">Keyhole surgery on shoulder</option>
+            <option value="Damaged arm tendon, ligament, or cartilage">Damaged arm tendon, ligament, or cartilage</option>
+            <option value="Broken wrist">Broken wrist</option>
+            <option value="Sprained wrist">Sprained wrist</option>
+            <option value="Loss of fingernail">Loss of fingernail</option>
+            <option value="Cuts to arm">Cuts on arm</option>
+            <option value="Bruises to arm">Bruises to arm</option>
+            <option value="Muscle, ligament, or tendon injury to arm">Muscle, ligament, or tendon injury to arm</option>
+            <option value="Burns on a">Burns on leg</option>
+            <option value="Scars on leg">Scars on leg</option>
+            <option value="Dislocated ankle">Dislocated ankle</option>
+            <option value="Broken ankle">Broken ankle</option>
+            <option value="Sprained ankle">Sprained ankle</option>
+            <option value="Broken leg">Broken leg</option>
+            <option value="Broken foot">Broken foot</option>
+            <option value="Broken heel">Broken heel</option>
+            <option value="Dislocated hip">Dislocated hip</option>
+            <option value="Broken hip">Broken hip</option>
+            <option value="Keyhole surgery to leg">Keyhole surgery to leg</option>
+            <option value="Dislocated kneecap">Dislocated kneecap</option>
+            <option value="Broken kneecap">Broken kneecap</option>
+            <option value="Removal of kneecap">Removal of kneecap</option>
+            <option value="Amputated leg">Amputated leg</option>
+            <option value="Paralysed leg">Paralysed leg</option>
+            <option value="Damaged arm tendon, ligament, or cartilage">Damaged arm tendon, ligament, or cartilage</option>
+            <option value="Broken big toe">Broken big toe</option>
+            <option value="Broken toe (not including big toe)">Broken toe (not including big toe)</option>
+            <option value="Amputated big toe">Amputated big toe</option>
+            <option value="Amputated toe">Amputated toe</option>
+            <option value="Amputation of part of big toe">Amputation of part of big toe</option>
+            <option value="Cuts to leg">Cuts on leg</option>
+            <option value="Bruises to legs">Bruises to legs</option>
+            <option value="Paralysis affecting one side of the body">Paralysis affecting one side of the body</option>
+            <option value="Paralysis affecting the lower part of the body">Paralysis affecting the lower part of the body</option>
+            <option value="Paralysis of the upper and lower part of the body">Paralysis of the upper and lower part of the body</option>
+            <option value="Loss of pregnancy">Loss of pregnancy</option>
+            <option value="HIV">HIV</option>
+            <option value="Hepatitis B">Hepatitis B</option>
+            <option value="Hepatitis C">Hepatitis C</option>
+          </select>
+        </div>
+
+        <a id="addToList" style="float:left;" class="govuk-button govuk-button--secondary govuk-button--secondary govuk-!-width-one-quarter" data-module="govuk-button">
+          Select
+        </a>
+
+
+          {{ govukButton({
+                text: "Continue",
+                href: "/concepts/physical-injuries/basic-autocomplete/end"
+          }) }}
+
+          </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextMedicalDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ contextMedicalDetailsHeading }}
+    </h1>
+
+    <p class="govuk-body">We’re going to ask for some details about your treatment.</p>
+
+    <p class="govuk-body">We’ll use these to understand:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>if you've told your GP about your injuries</li>
+        <li>who can has evidence of your injuries</li>
+    </ul>
+    <p class="govuk-body">We will not contact your GP or ask to see your medical records without your consent.</p>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          "text": "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

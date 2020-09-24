@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "headFaceNeckInjuries",
+        name: "headFaceNeckInjuries",
+        fieldset: {
+          legend: {
+            text: headFaceNeckInjuriesQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: headFaceNeckInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Black eye",
+            text: "Black eye",
+            checked: checked("headFaceNeckInjuries", " Black eye ")
+          },
+          {
+            value: " Bloody nose",
+            text: "Bloody nose",
+            checked: checked("headFaceNeckInjuries", " Bloody nose ")
+          },
+          {
+            value: " Broken ear bone",
+            text: "Broken ear bone",
+            checked: checked("headFaceNeckInjuries", " Broken ear bone ")
+          },
+          {
+            value: " Broken hyoid (throat bone)",
+            text: "Broken hyoid (throat bone)",
+            checked: checked("headFaceNeckInjuries", " Broken hyoid (throat bone) ")
+          },
+          {
+            value: " Broken nose",
+            text: "Broken nose",
+            checked: checked("headFaceNeckInjuries", " Broken nose ")
+          },
+          {
+            value: " Bruises",
+            text: "Bruises",
+            checked: checked("headFaceNeckInjuries", " Bruises")
+          },
+          {
+            value: " Cuts",
+            text: "Cuts",
+            checked: checked("headFaceNeckInjuries", " Cuts")
+          },
+          {
+            value: " Hair pulled out",
+            text: "Hair pulled out",
+            checked: checked("headFaceNeckInjuries", " Hair pulled out")
+          },
+          {
+            value: " Loose teeth",
+            text: "Loose teeth",
+            checked: checked("headFaceNeckInjuries", " Loose teeth")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("headFaceNeckInjuries", " Muscle, ligament, or tendon injury")
+          },
+          {
+            value: " One perforated eardrum",
+            text: "One perforated eardrum",
+            checked: checked("headFaceNeckInjuries", " One perforated eardrum")
+          },
+          {
+            value: " Scratched eye",
+            text: "Scratched eye",
+            checked: checked("headFaceNeckInjuries", "Scratched eye")
+          },
+          {
+            value: " Temporary blurred vision",
+            text: "Temporary blurred vision",
+            checked: checked("headFaceNeckInjuries", "Temporary blurred vision")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

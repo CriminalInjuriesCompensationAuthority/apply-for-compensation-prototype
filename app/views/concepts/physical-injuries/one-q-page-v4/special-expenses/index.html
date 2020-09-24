@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ specialExpensesQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+            "classes": "govuk-checkboxes",
+            "idPrefix": "specialExpenses",
+            "name": "specialExpenses",
+            currentValue: data['specialExpenses'],
+            "fieldset": {
+              "legend": {
+                text: "What expenses have you had?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            "items": [
+              {
+                "value": "equipment",
+                "text": "Buying or repairing physical aids",
+                checked: checked("specialExpenses", "equipment")
+              },
+              {
+                "value": "home alterations",
+                "text": "Alterations to my home",
+                checked: checked("home alterations", "No")
+              },
+              {
+                "value": "care",
+                "text": "Home care",
+                checked: checked("home alterations", "care")
+              },
+              {
+                "value": "NHS treatment",
+                "text": "NHS treatment I've paid for",
+                hint: {
+                  text: "Or treatment from a state health service in another country"
+                },
+                checked: checked("home alterations", "NHS treatment")
+              },
+              {
+                "value": "I do not want to claim for any special expenses",
+                "text": "I have not had these expenses",
+                checked: checked("home alterations", "I do not want to claim for special expenses"),
+                id: "none"
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

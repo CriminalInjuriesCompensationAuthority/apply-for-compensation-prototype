@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error - {{ whyDelayQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: whyDelayErrorExplain,
+                  href: "#delay-application"
+                }
+              ]
+            }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+            idPrefix: "applicationDelay",
+            name: "applicationDelay",
+            currentValue: data['applicationDelay'],
+            fieldset: {
+              legend: {
+                text: whyDelayQuestion,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: "Select all options that apply to you."
+            },
+            items: [
+            {
+              value: "I was under 18",
+              text: "I was under 18"
+            },
+            {
+              value: "I was advised to wait",
+              text: "I was advised to wait"
+            },
+            {
+              value: "Medical reasons",
+              text: "Medical reasons"
+            },
+            {
+              value: "Other reasons",
+              text: "Other reasons"
+            }
+            ]
+          }) }}
+
+          {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+            {{ govukTextarea({
+                  name: "delay-application",
+                  id: "delay-application",
+                  currentValue: data['delay-application'],
+                  label: {
+                    text: delayApplyExplanation },
+                    errorMessage: {
+                    text: whyDelayErrorExplain
+                  },
+                    classes: "govuk-label--l"
+
+                }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sorry, the service is unavailable - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Page not found</h1>
+      <p class="govuk-body">
+        If you typed the web address, check it is correct.
+      </p>
+      <p class="govuk-body">
+        If you pasted the web address, check you copied the entire address.
+      </p>
+      <p class="govuk-body">
+        You can try again or apply by telephone.
+      </p>
+      <h2 class="govuk-heading-l">Contact</h2>
+              <p class="govuk-body">
+                Email: <br>
+                <strong><a href="mailto:info@cica.gov.uk?Subject=Private%20beta">info@cica.gov.uk</a></strong>
+              </p>
+              <p class="govuk-body">
+                Telephone: <br>
+                <strong>0300 003 3601</strong> option 8
+              </p>
+              <table class="govuk-table">
+                <caption class="govuk-table__caption">Opening times</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Day</th>
+                    <th scope="col" class="govuk-table__header">Opening times</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Monday</th>
+                    <td class="govuk-table__cell">8:30am to 5pm</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Tuesday</th>
+                    <td class="govuk-table__cell">8:30am to 5pm</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Wednesday</th>
+                    <td class="govuk-table__cell">10am to 5pm</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Thursday</th>
+                    <td class="govuk-table__cell">8:30am to 5pm</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Friday</th>
+                    <td class="govuk-table__cell">8:30am to 5pm</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="govuk-body"><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges</a></p>
+
+
+
+{% endblock %}

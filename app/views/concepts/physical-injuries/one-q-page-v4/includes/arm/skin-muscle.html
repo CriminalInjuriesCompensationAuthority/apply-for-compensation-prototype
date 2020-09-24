@@ -1,0 +1,23 @@
+{% if data['armSkinInjuries'] and data['armSkinInjuries'].includes("Cuts") %}
+  <tr><th class="govuk-table__cell govuk-body">Cuts on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armSkinInjuries'] and data['armSkinInjuries'].includes("Bruises") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armSkinInjuries'] and data['armSkinInjuries'].includes("Scars") %}
+  <tr><th class="govuk-table__cell govuk-body">Scars on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armSkinInjuries'] and data['armSkinInjuries'].includes("Burns") %}
+  <tr><th class="govuk-table__cell govuk-body">Burns on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Muscle, ligament, or tendon injury") %}
+  <tr><th class="govuk-table__cell govuk-body">Muscle, ligament, or tendon injury on arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherArmSkinInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherArmSkinInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

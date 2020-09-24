@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Error: {{ yourChoicesHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: yourChoicesError,
+                  href: "#"
+                }
+              ]
+            }) }}
+            {{ yourChoicesHeading }}
+    </h1>
+
+
+    <p class="govuk-body-l">We decide what enquiries to make depending on how the crime affected you.</p>
+
+    <h2 class="govuk-heading-m">
+      Option 1: Sexual assault or abuse
+    </h2>
+
+    <p class="govuk-body">Any compensation we pay acknowledges the emotional distress the crime caused you.</p>
+    <p class="govuk-body">We normally make a decision based on your application and the information we get from the police.</p>
+    <p class="govuk-body">We will usually make a decision within 4 months.  This is because we do not normally need to see your medical records.</p>
+
+    <h2 class="govuk-heading-m">
+      Option 2: Sexual assault or abuse and other injuries or losses
+    </h2>
+
+    <p class="govuk-body">We can also pay compensation for:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>lost earnings because you were unable to work</li>
+      <li>physical injuries</li>
+      <li>pregnancy, sexually transmitted disease or loss of foetus</li>
+      <li>disabling mental injuries that are additional to the emotional distress you already suffered</li>
+    </ul>
+
+    <form class="form" method="post">
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a disabling mental injury?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+        <p>A disabling mental injury has a substantial adverse effect on your ability to carry out day-to-day activities. For example, reduced performance at school or work, or effects on your social or sexual relationships.</p>
+        </div>
+      </details>
+
+      <p class="govuk-body">We may ask a psychiatrist or clinical psychologist to confirm that you have a disabling mental injury if you do not already have a diagnosis.</p>
+  <p class="govuk-body">We will usually make a decision within 12 months. This is because we may need to examine your medical records, get medical reports and assess any losses.</p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            If you need help or support
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
+          <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
+          <p class="govuk-body">You can get practical or emotional support depending on where you live:</p>
+            <ul class="govuk-list govuk-list--bullet">
+             <li>in England and Wales <a href="https://www.victimandwitnessinformation.org.uk/">visit the Victim and Witness Information website</a></li>
+             <li>in Scotland <a href="https://www.mygov.scot/victim-witness-support/">visit the mygov.scot website</a></li>
+            </ul>
+        </div>
+      </details>
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "yourChoice",
+            "name": "yourChoice",
+            currentValue: data['yourChoice'],
+            "fieldset": {
+              "legend": {
+                "text": 'Select the option that applies to you',
+                "isPageHeading": false,
+                "classes": 'govuk-fieldset__legend--m'
+              }
+            }
+            ,
+            errorMessage: {
+            text: yourChoicesError
+          },
+            "items": [
+            {
+              value: "Sexual assault or abuse",
+              text: "Option 1: Sexual assault or abuse",
+              label: {
+                classes: "govuk-label--s"
+              }
+            },
+            {
+              "value": "Sexual assault or abuse and other injuries or losses",
+              "text": "Option 2: Sexual assault or abuse and other injuries or losses",
+              label: {
+                classes: "govuk-label--s"
+              }
+            }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

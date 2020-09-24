@@ -1,0 +1,119 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Select any injuries to the ear or hearing - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form"method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherEarInjury",
+        name: "otherEarInjury",
+        value: data['otherEarInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "earInjuries",
+        name: "earInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the ear or hearing",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken ear bone",
+            text: "Broken ear bone",
+            checked: checked("earInjuries", "Broken ear bone"),
+            id: "Broken ear bone"
+          },
+          {
+            value: "Hearing loss",
+            text: "Hearing loss",
+            checked: checked("earInjuries", "Hearing loss"),
+            id: "Hearing loss"
+          },
+          {
+            value: "Loss of ear",
+            text: "Loss of ear",
+            checked: checked("earInjuries", "Loss of ear"),
+            id: "Loss of ear"
+          },
+          {
+            value: "1 perforated eardrum",
+            text: "1 perforated eardrum",
+            checked: checked("earInjuries", "1 perforated eardrum"),
+            id: "1 perforated eardrum"
+          },
+          {
+            value: "2 perforated eardrums",
+            text: "2 perforated eardrums",
+            checked: checked("earInjuries", "2 perforated eardrums"),
+            id: "2 perforated eardrums"
+          },
+          {
+            value: "Ringing in ears",
+            text: "Tinnitus",
+            checked: checked("earInjuries", "Ringing in ears"),
+            id: "Ringing in ears"
+          },
+          {
+            value: "Dizziness",
+            text: "Injury affecting balance",
+            checked: checked("earInjuries", "Dizziness"),
+            id: "Dizziness"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("earInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html"%}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

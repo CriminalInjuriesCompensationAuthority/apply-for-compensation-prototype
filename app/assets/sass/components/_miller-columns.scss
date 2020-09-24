@@ -1,0 +1,32 @@
+.miller-columns {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+
+  li {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+  }
+
+}
+
+.miller-columns .has-children > a:after {
+    content: " »"
+}
+
+.miller-columns .expanded > ul {
+    overflow: visible;
+    width: auto;
+}
+
+.miller-columns li ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding-left: 1em;
+    width: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,86 @@
+<!-- ** Your details including eligibility ************************************************************************************************************************ -->
+
+<h2 class="govuk-heading-l">
+  Your details
+</h2>
+
+<!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+<!--   * `app-check-your-answers--short` for short questions -->
+<!--   * `govuk-summary-list__key govuk-!-width-one-halfs-long` for long questions -->
+<!--   * none for single group of q&a -->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half ">
+      Your name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="name">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{nameOtherQuestion}}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['haveOtherName'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="name-have-other">
+        Change<span class="govuk-visually-hidden">have you ever been known by any other names</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['haveOtherName'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Other names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['nameOther'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="name-other">
+        Change<span class="govuk-visually-hidden"> other name</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="date-of-birth">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ britishCitizenQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['britishCitizen'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="british-citizen">
+        Change<span class="govuk-visually-hidden"> {{ britishCitizenQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+
+</dl>
+<!-- ** /Your eligibility ************************************************************************************************************************ -->

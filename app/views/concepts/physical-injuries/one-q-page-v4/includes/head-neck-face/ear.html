@@ -1,0 +1,31 @@
+{% if data['earInjuries'] and data['earInjuries'].includes("Broken ear bone") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken ear bone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("Hearing loss") %}
+  <tr><th class="govuk-table__cell govuk-body">Hearing loss</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("Loss of ear") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of ear</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("One perforated eardrum") %}
+  <tr><th class="govuk-table__cell govuk-body">1 perforated eardrum</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("Two perforated eardrums") %}
+  <tr><th class="govuk-table__cell govuk-body">2 perforated eardrums</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("Ringing in ears") %}
+  <tr><th class="govuk-table__cell govuk-body">Ringing in ears</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['earInjuries'] and data['earInjuries'].includes("Dizziness") %}
+  <tr><th class="govuk-table__cell govuk-body">Dizziness</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherEarInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherEarInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

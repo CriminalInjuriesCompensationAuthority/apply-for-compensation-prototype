@@ -24,19 +24,21 @@
             "name": "direct-applicant",
             "fieldset": {
             "legend": {
-            "text": whoIsMakingTheApplicationQuestion,
+            "text": "Who are you applying for?",
             "isPageHeading": true,
             "classes": 'govuk-fieldset__legend--xl'
             }
             },
             "items": [
             {
-            "value": "Myself",
-            "text": "Myself"
+              "value": "Myself",
+              "text": "Myself",
+              checked: checked("direct-applicant", "Myself")
             },
             {
-            "value": "Someone else",
-            "text": "Someone else"
+              "value": "Someone else",
+              "text": "Someone else",
+              checked: checked("direct-applicant", "Someone else")
             }
             ]
             }) }}

@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your injuries
+    </h1>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">Head, neck or face</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Face or jaw
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Face numbness<br />
+            Broken cheekbone <br/>
+            Broken jaw
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> face or jaw injuries</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mouth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Damaged or broken teeth
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> mouth injuries</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-body"><a class="govuk-link" href="#">Go back to head, face and neck injuries</a></p>
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">Torso</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Shoulder
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dislocated shoulder
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> shoulder injuries</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Back
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Back strain
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> back injuries</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-body"><a class="govuk-link" href="#">Go back to torso injuries</a></p>
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+
+      <h2 class="govuk-heading-m">Arms</h2>
+      <p class="govuk-body">No injuries to your arms</p>
+      <p class="govuk-body"><a class="govuk-link" href="#">Go back to arm injuries</a></p>
+
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+
+      <h2 class="govuk-heading-m">Legs</h2>
+      <p>No injuries to your legs</p>
+      <p class="govuk-body"><a class="govuk-link" href="#">Go back to leg injuries</a></p>
+
+    </section>
+
+
+   <form class="form" method="post">
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue",
+      href: "any-other-injuries.html"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,11 @@
+{% if data['elbowInjuries'] and data['elbowInjuries'].includes("Dislocated elbow") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated elbow</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['elbowInjuries'] and data['elbowInjuries'].includes("Broken elbow") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken elbow</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherElbowInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherElbowInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

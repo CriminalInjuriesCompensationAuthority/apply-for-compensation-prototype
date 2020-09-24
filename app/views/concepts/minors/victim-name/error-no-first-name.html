@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error: {{ nameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: nameErrorNoFirstName,
+                        href: "#first-name"
+                      }
+                    ]
+                  }) }}
+            {{ nameQuestion }}
+          </label>
+        </h1>
+      </div>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+
+      {{ govukInput({
+            "label": {
+            "text": nameTitleField
+            },
+            "classes": "govuk-input--width-10",
+            "id": "title",
+            "name": "title",
+            "value": data['title']
+            }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              label: {
+                "text": nameFirstNameField
+              },
+              id: "first-name",
+              name: "first-name",
+              value: data['first-name'],
+              errorMessage: {
+              text: nameErrorNoFirstName
+              }
+            }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              label: {
+                "text": nameLastNameField
+              },
+              id: "last-name",
+              name: "last-name",
+              value: data['last-name']
+            }) }}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukButton({
+                "text": "Continue"
+                }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

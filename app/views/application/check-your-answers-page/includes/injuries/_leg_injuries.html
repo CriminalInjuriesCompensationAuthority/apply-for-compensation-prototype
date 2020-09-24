@@ -1,0 +1,162 @@
+{% if data['legInjuredParts'] %}
+<!--
+<h3 class="govuk-heading-m">Leg and foot injuries</h3>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+-->
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Hip") %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Hip injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['hipInjuries'] }}
+    {% if data['otherHipInjury'] %}
+      {{ data['otherHipInjury']}}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/hip">
+      Change<span class="govuk-visually-hidden">Hip injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Leg") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Leg injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['legInjuries'] }}
+    {% if data['otherLegInjury'] %}
+      {{ data['otherLegInjury']}}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/leg">
+      Change<span class="govuk-visually-hidden">Leg injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Knee") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Knee injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['kneeInjuries'] }}
+    {% if data['otherKneeInjury'] %}
+      {{ data['otherKneeInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/knee">
+      Change<span class="govuk-visually-hidden">Knee injuries </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Ankle") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Ankle injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['ankleInjuries'] }}
+    {% if data['otherAnkleInjury'] %}
+      {{ data['otherAnkleInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/ankle">
+      Change<span class="govuk-visually-hidden">Ankle injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Foot") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Foot injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['footInjuries'] }}
+    {% if data['otherFootInjury'] %}
+      {{ data['otherFootInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/foot">
+      Change<span class="govuk-visually-hidden">Foot injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Toes") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Toe injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['toeInjuries'] }}
+    {% if data['otherToeInjury'] %}
+      {{ data['otherToeInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/toes">
+      Change<span class="govuk-visually-hidden">Toe injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Skin") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Skin on your legs or feet injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['legSkinInjuries'] }}
+    {% if data['otherLegSkinInjury'] %}
+      {{ data['otherLegSkinInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/skin">
+      Change<span class="govuk-visually-hidden">Neck injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['legInjuredParts'] and data['legInjuredParts'].includes("Tissue") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Tissue on your legs or feet injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['legTissueInjuries'] }}
+    {% if data['otherLegTissueInjury'] %}
+      {{ data['otherLegTissueInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/legs/tissue">
+      Change<span class="govuk-visually-hidden">Tissue on your legs or feet injuries injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+<!--
+</dl>
+-->
+{% endif %}

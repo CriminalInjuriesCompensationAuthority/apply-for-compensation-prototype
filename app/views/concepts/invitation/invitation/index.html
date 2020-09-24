@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+New way to claim criminal injuries compensation - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">New way to claim compensation</h1>
+            <p class="govuk-body">There’s a new, simpler way to claim criminal injuries compensation.</p>
+<p class="govuk-body">We need your help to get people using the new application form.</p>
+
+<h2 class="govuk-heading-l">Benefits</h2>
+<p class="govuk-body">The new application form is:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>less traumatic - the applicant does not have to give details about what happened to them</li>
+<li>shorter - around half as many questions</li>
+<li>easier - the questions are easier to read</li>
+</ul>
+
+<h2 class="govuk-heading-l">Who it's for</h2>
+<p class="govuk-body">It's for people who are:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>victims of sexual assault or abuse</li>
+<li>over 18</li>
+<li>applying without a named representative</li>
+</ul>
+
+<h2 class="govuk-heading-l">Find out more</h2>
+<p class="govuk-body">Call Julie Allan on 07889 401 510 or email julie.allan@cica.gov.uk to find out more.</p>
+<p class="govuk-body">The new service is in a ‘private beta’ phase. This means you can only use it by invitation, so we can check it’s working well with a small number of users.</p>
+
+{% endblock %}

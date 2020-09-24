@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the leg were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherLegInjury",
+        name: "otherLegInjury",
+        value: data['otherLegInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "legInjuries",
+        name: "legInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the leg",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+
+        items: [
+          {
+            value: "Broken leg",
+            text: "Broken leg",
+            checked: checked("legInjuries", "Broken leg"),
+            id: "Broken leg"
+          },
+          {
+            value: "Nerve damage",
+            text: "Nerve damage",
+            checked: checked("legInjuries", "Nerve damage"),
+            id: "Nerve damage"
+          },
+          {
+            value: "Keyhole surgery to leg",
+            text: "Keyhole surgery to leg",
+            checked: checked("legInjuries", "Keyhole surgery to leg"),
+            id: "Keyhole surgery to leg"
+          },
+          {
+            value: "Amputated leg",
+            text: "Amputated leg",
+            checked: checked("legInjuries", "Amputated leg"),
+            id: "Amputated leg"
+          },
+          {
+            value: "Paralysed leg",
+            text: "Paralysed leg",
+            checked: checked("legInjuries", "Paralysed leg"),
+            id: "Paralysed leg"
+          },
+          {
+            value: "Paraplegia (paralysis of lower half of the body)",
+            text: "Paraplegia (paralysis of lower half of the body)",
+            checked: checked("legInjuries", "Paraplegia (paralysis of lower half of the body)"),
+            id: "Paraplegia"
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("legInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("legInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

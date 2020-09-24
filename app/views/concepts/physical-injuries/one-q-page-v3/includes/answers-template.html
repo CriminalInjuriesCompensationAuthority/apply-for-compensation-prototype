@@ -1,0 +1,65 @@
+{% if data['scarsOn'] or data['bruisesOn'] or data['burnsOn'] or data['cutsOn'] or data['muscleLigamentTendonInjury'] or data['scarsOn'] or data['tongueInjuries'] or data['teethInjuries'] or data['noseInjuries'] or data['neckInjuries'] or data['headInjuries'] or data['faceInjuries'] or data['eyeInjuries'] or data['earInjuries'] or data['abdomenInjuries'] or data['backInjuries'] or data['breastBoneInjuries'] or data['chestInjuries'] or data['collarBoneInjuries'] or data['genitalsInjuries'] or data['internalOrgansInjuries'] or data['pelvisInjuries'] or data['ribInjuries'] or data['shoulderBladeInjuries'] or data['tailBoneInjuries'] or data['armInjuries'] or data['wristInjuries'] or data['shoulderInjuries'] or data['handInjuries'] or data['fingerInjuries'] or data['elbowInjuries'] or data['footInjuries'] or data['hipInjuries'] or data['kneeInjuries'] or data['legInjuries'] or data['toeInjuries'] or data['ankleInjuries'] %} 
+
+<table class="govuk-table govuk-!-margin-top-5">
+  <caption class="govuk-heading-m" style="text-align: left;">
+    You have selected these injuries
+    </caption>
+  <tbody class="govuk-table__body">
+
+    <!-- Soft tissue injuries -->
+
+    {% include "../includes/soft-tissue/answers-cuts.html" %}
+    {% include "../includes/soft-tissue/answers-bruises.html" %}
+    {% include "../includes/soft-tissue/answers-scars.html" %}
+    {% include "../includes/soft-tissue/answers-burns.html" %}
+    {% include "../includes/soft-tissue/answers-muscle.html" %}
+
+    <!-- Paralysis, infection, loss of pregnancy -->
+    {% include "../includes/paralysis.html" %}
+    {% include "../includes/infection.html" %}
+    {% include "../includes/pregnancy-loss.html" %}
+
+    <!-- Head, face or neck injuries -->
+    {% include "../includes/head-neck-face/head-brain.html" %}
+    {% include "../includes/head-neck-face/face.html" %}
+    {% include "../includes/head-neck-face/neck.html" %}
+    {% include "../includes/head-neck-face/eye.html" %}
+    {% include "../includes/head-neck-face/ear.html" %}
+    {% include "../includes/head-neck-face/nose.html" %}
+    {% include "../includes/head-neck-face/teeth.html" %}
+    {% include "../includes/head-neck-face/tongue.html" %}
+
+    <!-- Torso -->
+    {% include "../includes/torso/shoulder-blade.html" %}
+    {% include "../includes/torso/collarbone.html" %}
+    {% include "../includes/torso/chest.html" %}
+    {% include "../includes/torso/breast-bone.html" %}
+    {% include "../includes/torso/ribs.html" %}
+    {% include "../includes/torso/abdomen.html" %}
+    {% include "../includes/torso/internal-organs.html" %}
+    {% include "../includes/torso/back.html" %}
+    {% include "../includes/torso/tailbone.html" %}
+    {% include "../includes/torso/pelvis.html" %}
+    {% include "../includes/torso/genitals.html" %}
+
+    <!-- Arm or hand injuries -->
+    {% include "../includes/arm/shoulder.html" %}
+    {% include "../includes/arm/arm.html" %}
+    {% include "../includes/arm/elbow.html" %}
+    {% include "../includes/arm/wrist.html" %}
+    {% include "../includes/arm/hand.html" %}
+    {% include "../includes/arm/fingers.html" %}
+
+    <!-- Leg or foot injuries -->
+    {% include "../includes/leg/hip.html" %}
+    {% include "../includes/leg/leg.html" %}
+    {% include "../includes/leg/knee.html" %}
+    {% include "../includes/leg/ankle.html" %}
+    {% include "../includes/leg/foot.html" %}
+    {% include "../includes/leg/toes.html" %}
+
+    </tbody>
+
+  </table>
+
+{% endif %}

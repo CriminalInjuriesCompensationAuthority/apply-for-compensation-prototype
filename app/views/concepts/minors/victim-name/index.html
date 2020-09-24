@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ minorVictimNameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl" for="name">
+            {{ minorVictimNameQuestion }}
+          </label>
+        </h1>
+      </div>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+            "label": {
+            "text": minorVictimNameTitleField
+            },
+            "classes": "govuk-input--width-10",
+            "id": "victim-title",
+            "name": "victim-title",
+            "value": data['victim-title']
+            }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              label: {
+                "text": minorVictimNameFirstNameField
+              },
+              id: "victim-first-name",
+              name: "victim-first-name",
+              value: data['victim-first-name']
+            }) }}
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+              label: {
+                "text": minorVictimNameLastNameField
+              },
+              id: "victim-last-name",
+              name: "victim-last-name",
+              value: data['victim-last-name']
+            }) }}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukButton({
+                "text": "Continue"
+                }) }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

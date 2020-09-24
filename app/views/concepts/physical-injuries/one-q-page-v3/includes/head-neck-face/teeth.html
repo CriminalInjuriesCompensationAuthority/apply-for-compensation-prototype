@@ -1,0 +1,7 @@
+{% if data['teethInjuries'] and data['teethInjuries'].includes("Teeth knocked out") %}
+  <tr><th class="govuk-table__cell govuk-body">Teeth knocked out</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['teethInjuries'] and data['teethInjuries'].includes("Loose teeth") %}
+  <tr><th class="govuk-table__cell govuk-body">Loose teeth</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

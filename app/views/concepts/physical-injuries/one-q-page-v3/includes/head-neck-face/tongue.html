@@ -1,0 +1,11 @@
+{% if data['tongueInjuries'] and data['tongueInjuries'].includes("Impaired speech") %}
+  <tr><th class="govuk-table__cell govuk-body">Impaired speech</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['tongueInjuries'] and data['tongueInjuries'].includes("Permanent loss of speech") %}
+  <tr><th class="govuk-table__cell govuk-body">Permanent loss of speech</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['tongueInjuries'] and data['tongueInjuries'].includes("Loss of tongue") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of tongue</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

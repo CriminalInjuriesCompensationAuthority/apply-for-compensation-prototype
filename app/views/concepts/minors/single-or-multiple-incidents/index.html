@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ singleOrMultipleIncidentsQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+                classes: "govuk-radios",
+                idPrefix: "minor-single-or-multiple-incidents",
+                name: "minor-single-or-multiple-incidents",
+                currentValue: data['minor-single-or-multiple-incidents'] ,
+                fieldset: {
+                  legend: {
+                    text: singleOrMultipleIncidentsQuestion,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                items: [
+                  {
+                    value: itemOneValue,
+                    text: itemOneValue,
+                    checked: checked("minor-single-or-multiple-incidents", itemOneValue)
+                  },
+                  {
+                    value: itemTwoValue,
+                    text: itemTwoValue,
+                    checked: checked("minor-single-or-multiple-incidents", itemTwoValue)
+                  }
+                ]
+              }) }}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+              "text": "Continue"
+              }) }}
+
+
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "brokenBonesArms",
+        name: "brokenBonesArms",
+        fieldset: {
+          legend: {
+            text: "Select the broken bones in your arm or hand",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: " Arm",
+            text: "Arm",
+            checked: checked("brokenBonesArms", " Arm")
+          },
+          {
+            value: " Elbow",
+            text: "Elbow",
+            checked: checked("brokenBonesArms", " Elbow")
+          },
+          {
+            value: " Wrist",
+            text: "Wrist",
+            checked: checked("brokenBonesArms", " Wrist")
+          },
+          {
+            value: " Hand",
+            text: "Hand",
+            checked: checked("brokenBonesArms", " Hand")
+          },
+          {
+            value: " Finger",
+            text: "Finger",
+            checked: checked("brokenBonesArms", " Finger")
+          },
+          {
+            value: " Thumb",
+            text: "Thumb",
+            checked: checked("brokenBonesArms", " Thumb")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+    {% include "../../../includes/answers-template.html" %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

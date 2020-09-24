@@ -2,7 +2,7 @@
 {% block pageTitle %}
 {{ crimeReferenceNumberQuestion }} - {{ serviceName }} - GOV.UK
 {% endblock %}
-
+​
 {% block beforeContent %}
 {% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
 {{ govukPhaseBanner({
@@ -11,16 +11,16 @@
     },
     html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
   }) }}
-
+​
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% endblock %}
-
+​
 {% block content %}
-
+​
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-
+​
       {% from "govuk/components/input/macro.njk" import govukInput %}
       <!-- @todo the variable crimeReferenceNumberHint is not displaying but I dont knwo why It didn't display as text either so I've moved it out as a variable fior the time being  -->
       {{ govukInput({
@@ -37,16 +37,17 @@
             "name": "crimeReferenceNumber",
             value: data['crimeReferenceNumber']
             }) }}
-
+      {{ govukDetails({
+        summaryText: crimeReferenceWarningSummary,
+        text: crimeReferenceWarningText
+      }) }}
       {% from "govuk/components/button/macro.njk" import govukButton %}
-
+​
       {{ govukButton({
             "text": "Continue"
-            }) }}
-
+      }) }}
+​
     </form>
   </div>
-</div>
-</main>
 </div>
 {% endblock %}

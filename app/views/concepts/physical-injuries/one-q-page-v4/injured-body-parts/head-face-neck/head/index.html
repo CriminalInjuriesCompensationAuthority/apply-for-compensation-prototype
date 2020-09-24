@@ -1,0 +1,125 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Select any injuries to the head - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form"method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherHeadInjury",
+        name: "otherHeadInjury",
+        type: "text",
+        value: data['otherHeadInjury'],
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "headInjuries",
+        name: "headInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the head or brain",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Concussion, headaches or loss of balance lasting 28 weeks or more",
+          text: "Head injury causing concussion, headaches or loss of balance",
+          checked: checked("headInjuries", "Concussion, headaches or loss of balance lasting 28 weeks or more"),
+          id: "Concussion, headaches or loss of balance lasting 28 weeks or more"
+        },
+        {
+          value: "Brain damage",
+          text: "Brain damage",
+          checked: checked("headInjuries", "Brain damage"),
+          id: "Brain damage"
+        },
+        {
+          value: "Fractured skull",
+          text: "Fractured skull",
+          checked: checked("headInjuries", "Fractured skull"),
+          id: "Fractured skull"
+        },
+        {
+          value: "Hair pulled out",
+          text: "Hair pulled out",
+          checked: checked("headInjuries", "Hair pulled out"),
+          id: "Hair pulled out"
+        },
+        {
+          value: "Epilepsy",
+          text: "Epilepsy",
+          checked: checked("headInjuries", "Epilepsy"),
+          id: "Epilepsy"
+        },
+        {
+          value: "Dizziness",
+          text: "Injury affecting balance",
+          checked: checked("earInjuries", "Dizziness"),
+          id: "Dizziness"
+        },
+        {
+          value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+          checked: checked("headInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+          id: "Quadriplegia or tetraplegia"
+        },
+        {
+          value: "Hemiplegia (paralysis of one side of the the body)",
+          text: "Hemiplegia (paralysis of one side of the the body)",
+          checked: checked("headInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+          id: "Hemiplegia"
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked("headInjuries", "Other"),
+          conditional: {
+            html: otherHtml
+          }
+        }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html"%}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

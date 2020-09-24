@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sorry, the service is unavailable - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Sorry, the service is unavailable</h1>
+<p class="govuk-body">The chat is open from 10am to 3pm, Monday to Friday.</p>
+    <p class="govuk-body">Email <a href="mailto:someone@example.com">info@cica.gov.uk</a> if you need to contact us.</p>
+
+    <form class="form" method="post">
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

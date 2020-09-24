@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Chat to us online - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Chat to us online</h1>
+<p class="govuk-body">You can ask about claiming compensation or discuss your claim.</p>
+<p class="govuk-body">The chat is open from 10am to 3pm, Monday to Friday.</p>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Start a chat"
+    })}}
+    <h2 class="govuk-heading-l">Other ways to contact us</h2>
+    <p class="govuk-body">Discuss your claim by:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>email at <a href="mailto:someone@example.com">info@cica.gov.uk</a></li>
+          <li>telephone on 0300 003 3601</li>
+        </ul>
+
+    <form class="form" method="post">
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

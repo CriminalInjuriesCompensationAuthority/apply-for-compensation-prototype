@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error - {{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: previousApplicationError,
+                  href: "#previous-applications"
+                }
+              ]
+            }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {% set referenceHtml %}
+      {{ govukInput({
+            id: "previous-reference",
+            name: "previous-reference",
+            value: data['previous-reference'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: previousReferenceHint
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "previous-applications",
+            "name": "previous-applications",
+            currentValue: 'previous-applications',
+            "fieldset": {
+              "legend": {
+              "text": previousApplicationsQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-fieldset__legend--xl'
+              }
+              },
+              errorMessage: {
+              text: previousApplicationError
+            },
+            "items": [
+            {
+            "value": "Yes",
+            "text": "Yes",
+            conditional: {
+                html: referenceHtml
+              }
+            },
+            {
+            "value": "No",
+            "text": "No"
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+
+</div>
+</main>
+</div>
+{% endblock %}

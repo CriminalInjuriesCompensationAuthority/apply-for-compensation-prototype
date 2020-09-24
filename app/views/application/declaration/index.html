@@ -22,7 +22,12 @@
     <h1 class="govuk-heading-xl">
       {{ declarationHeading }}
     </h1>
-    <p class="govuk-body">By continuing, you confirm that the information you will give is true as far as you know.</p>
+    <p class="govuk-body">By submitting the application you agree that:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the information you’ve given is true as far as you know</li>
+      <li>we can share the details in your application with the police</li>
+    </ul>
+      <p class="govuk-body">Read our privacy notice to see <a href=https://www.gov.uk/guidance/cica-privacy-notice>how we use your data</a>.</p>
     {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
     {{ govukWarningText({
@@ -34,7 +39,7 @@
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-            "text": "Continue"
+            "text": "Agree and submit"
           }) }}
 
     </form>

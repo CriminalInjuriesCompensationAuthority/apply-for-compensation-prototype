@@ -1,0 +1,7 @@
+{% if data['footInjuries'] and data['footInjuries'].includes("Broken foot") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken foot</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['footInjuries'] and data['footInjuries'].includes("Broken heel") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken heel</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

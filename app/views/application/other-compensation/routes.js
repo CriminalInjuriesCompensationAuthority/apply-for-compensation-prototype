@@ -3,11 +3,20 @@ module.exports = function (router, content) {
   // File: compensation
   // Variable: otherCompensation
 
-  router.post('/application/other-compensation', function (req, res) {
-    if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
-    return res.redirect('/application/check-your-answers-page')
-  }
-  res.redirect('/application/name')
+ router.post('/application/other-compensation', function (req, res) {
+   // Get the answer from the query string
+   var otherCompensation = req.session.data['other-compensation']
+
+   if (otherCompensation === 'No') {
+     // Redirect to the relevant page
+     res.redirect('/application/other-compensation-why-not')
+   } else {
+     if (req.session.checking_answers) { //the user was coming from the check your answer page, we are returning them there
+       return res.redirect('/application/check-your-answers-page')
+     }
+     // If the variable is any other value (or is missing) render the page requested
+     res.redirect('/application/other-compensation-provider')
+   }
  })
 
  // Pass the question in to the page
@@ -15,24 +24,14 @@ module.exports = function (router, content) {
    res.render('application/other-compensation/index', content)
  })
 
- // Pass the Error state in to the page when user enters no text in the amount field
- router.get('/application/other-compensation/error-amount', function (req, res) {
-   res.render('application/other-compensation/error-amount', content)
+ // Pass the Error state in to the page when no radios are selected
+ router.get('/application/other-compensation/error-no-radio', function (req, res) {
+   res.render('application/other-compensation/error-no-radio', content)
  })
 
- // Pass the Error state in to the page when user enters no text in source field
- router.get('/application/other-compensation/error-who', function (req, res) {
-   res.render('application/other-compensation/error-who', content)
- })
-
- // Pass the Error state in to the page when user does not select a radio button
- router.get('/application/other-compensation/error-radios', function (req, res) {
-   res.render('application/other-compensation/error-radios', content)
- })
-
- // Pass the Error state in to the page when user does not enter a date after selecting no
- router.get('/application/other-compensation/error-when', function (req, res) {
-   res.render('application/other-compensation/error-when', content)
+ // Pass the Error state in to the page when No is selected but user enters no text in explanation field
+ router.get('/application/other-compensation/error-no-why-not', function (req, res) {
+   res.render('application/other-compensation/error-no-why-not', content)
  })
   // END__######################################################################################################
 }

@@ -1,0 +1,7 @@
+{% if data['pelvisInjuries'] and data['pelvisInjuries'].includes("Broken pelvis") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken pelvis</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherPelvisInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherPelvisInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

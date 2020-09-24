@@ -1,0 +1,15 @@
+{% if data['bruisesOn'] and data['bruisesOn'].includes("Head, neck or face") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on head, neck or face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['bruisesOn'] and data['bruisesOn'].includes("Torso") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['bruisesOn'] and data['bruisesOn'].includes("Arm or hand") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['bruisesOn'] and data['bruisesOn'].includes("Leg or foot") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on leg or foot</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+
+        {% include "./includes/_about_the_application.html" %}
+
+        {% include "./includes/_victim_details.html" %}
+
+        {% include "./includes/_about_the_crime.html" %}
+
+        {% include "./includes/_police_report.html" %}
+
+        {% include "./includes/_other_compensation.html" %}
+
+        {% include "./includes/_contact_details.html" %}
+
+    <h2 class="govuk-heading-l">Agree and submit your application</h2>
+    <p class="govuk-body">By submitting this application you agree that we can share the details in it with the police. This helps us get the police information that we need to make a decision.<p>
+    <p class="govuk-body">To find out more about how we handle your data <a class="govuk-body" href="https://www.gov.uk/guidance/cica-privacy-notice" target="">read our privacy notice</a>.</p>
+
+
+    <form class="form" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton(
+            { "text": "Agree and submit" })
+          }}
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice">Crime, justice and the law</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/justice/reporting-crimes-compensation">Reporting crimes and getting compensation</a>
+    </li>
+  </ol>
+</div>
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <h2 class="govuk-heading-l">
+        Make a claim
+      </h2>
+      <p class="govuk-body">You can claim for compensation online.</p>
+<p class="govuk-body">If the crime happened between 1 August 1964 and 30 September 1979 and you lived with the attacker as a family member at the time of the incident, you can also <a href="/claim-compensation-criminal-injury/victim-lived-with-attacker-before-october-1979">request someone to call you</a> to start your claim.</p>
+
+<p class="govuk-body">When you make a claim to the Criminal Injuries Compensation Authority (CICA), you may need to provide:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the date and location of the crime</li>
+ <li>the name of the police station where the crime was reported</li>
+ <li>your crime reference number</li>
+ <li>your GP’s name and address</li>
+ <li>your dentist’s name and address (if you had dental treatment because of your injuries)</li>
+ <li>details of any previous applications you’ve made to <abbr title="Criminal Injuries Compensation Authority">CICA</abbr>
+</li>
+ <li>details of any unspent criminal convictions</li>
+</ul>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You will not be eligible for compensation (or might get less compensation) if you provide information you know is wrong or misleading. You can be prosecuted.
+  </strong>
+<p class="govuk-body">You’ll be asked if you’ve tried to get compensation or other money you’re entitled to, for example:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>by claiming benefits</li>
+<li>through insurance payments</li>
+<li>from a civil court claim</li>
+<li>from a criminal court case (if the crime went to court)</li>
+</ul>
+<p class="govuk-body">You do not need to wait for the outcome of other claims before you apply.</p>
+<p class="govuk-body">It does not cost anything to apply and you do not have to use a legal adviser.</p>
+</div>
+
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="/application/who-is-making-the-application" role="button">Start now</a>
+
+      <h2 class="govuk-heading-l">Help making a claim</h2>
+
+      <p class="govuk-body">Contact <abbr title="Criminal Injuries Compensation Authority">CICA</abbr> if you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do not have a computer or internet access</li>
+        <li>need help using the online service</li>
+      </ul>
+
+      <div class="contact">
+      <p><strong><abbr title="Criminal Injuries Compensation Authority">CICA</abbr></strong><br>
+      Inside the UK: 0300 003 3601   <br>
+      Outside the UK: +44 (0)203 684 2517<br>
+      Monday and Tuesday, 8:30am to 5pm<br>
+      Wednesday, 10am to 5pm <br>
+      Thursday and Friday, 8.30am to 5pm<br>
+      <a href="/call-charges">Find out about call charges</a></p>
+      </div>
+
+      <p class="govuk-body">A friend or relative can also make the application on your behalf. You’ll need to confirm that you want them to deal with your claim.</p>
+
+      <div role="note" aria-label="Information" class="application-notice info-notice">
+        <p class="govuk-body">You cannot claim the cost of using a legal adviser.</p>
+      </div>
+
+    </div>
+
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a target="_blank" href="https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide">
+                A guide to the Criminal Injuries Compensation Scheme
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+  </div>
+</main>
+
+{% endblock %}

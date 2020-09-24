@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<main role="main" class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Help us improve this service</h1>
+
+      <p class="govuk-body-l">We’d like to ask you some questions after you’ve made your claim.</p>
+      <p class="govuk-body">Your feedback will help us make it easier to claim in future.</p>
+
+      <h2 class="govuk-heading-l">What we’ll do</h2>
+      <p class="govuk-body">We may:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>phone or email you after you’ve made your claim</li>
+        <li>ask you what was easy or hard about it</li>
+        <li>use your feedback to improve the service</li>
+      </ul>
+
+
+      <h2 class="govuk-heading-l">Your consent</h2>
+      <p class="govuk-body">By selecting 'Agree and continue' you give us consent to contact you for feedback.</p>
+      <a class="govuk-button govuk-button--start govuk-!-mt-r2 govuk-!-mb-r8" href="/concepts/confirmation-choice/v2/start-page" role="button">Agree and continue</a>
+
+      <h2 class="govuk-heading-l">If you do not want to consent</h2>
+      <p class="govuk-body">You can apply for compensation using our <a href="https://www.cica.gov.uk/OAS/Account/create" target="_blank">current online service</a> if you do not want to consent.</p>
+
+      <h2 class="govuk-heading-l">Contact us</h2>
+      <p class="govuk-body">You can contact us if you have any questions.</p>
+
+      <p class="govuk-body">
+        Email: <br>
+        <strong><a href="mailto:info@cica.gov.uk?Subject=Private%20beta">info@cica.gov.uk</a></strong>
+      </p>
+      <p class="govuk-body">
+        Telephone: <br>
+        <strong>0300 003 3601</strong> option 8
+      </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Opening times</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Day</th>
+            <th scope="col" class="govuk-table__header">Opening times</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Monday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Tuesday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Wednesday</th>
+            <td class="govuk-table__cell">10am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Thursday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Friday</th>
+            <td class="govuk-table__cell">8:30am to 5pm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="govuk-body"><a href="https://www.gov.uk/call-charges" target="_blank">Find out about call charges</a></p>
+
+    </div>
+
+  </div>
+</main>
+</div>
+
+{% endblock %}

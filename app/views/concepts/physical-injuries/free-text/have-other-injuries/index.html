@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you have any other injuries as a result of the crime?
+            </h1>
+          </legend>
+
+          <span id="changed-name-hint" class="govuk-hint">
+            {% if data['nonSpecificBodyParts'] or data['headFaceNeckInjuries'] or data['armInjuries'] or data['torsoInjuries'] or data['legInjuries'] %}
+              You have told us that you have
+              <ul>
+                {% if data['nonSpecificBodyParts'] %}
+                  <li>{{ data['nonSpecificBodyParts'] }}</li>
+                {% endif %}
+
+                {% if data['headFaceNeckInjuries'] %}
+                  <li>{{ data['headFaceNeckInjuries'] }}</li>
+                {% endif %}
+
+                {% if data['torsoInjuries'] %}
+                  <li>{{ data['torsoInjuries'] }}</li>
+                {% endif %}
+
+                {% if data['armInjuries'] %}
+                  <li>{{ data['armInjuries'] }}</li>
+                {% endif %}
+                {% if data['legInjuries'] %}
+                  <li>{{ data['legInjuries'] }}</li>
+                {% endif %}
+
+              </ul>
+            {% endif %}
+          </span>
+
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveOtherInjuries" name="haveOtherInjuries" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="haveOtherInjuries">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveOtherInjuries-2" name="haveOtherInjuries" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="haveOtherInjuries-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+          "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

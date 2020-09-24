@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error: {{ crimeReportedDateQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-width-container">
+    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "beta"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+    <main role="main" class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+            {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+            {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: reportedDateErrorBlank,
+                  href: "#incidentReported-day"
+                }
+              ]
+            }) }}
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+            {{ govukDateInput({
+              id: 'incidentReported',
+              name: 'incidentReported',
+            fieldset: {
+            legend: {
+            text: crimeReportedDateQuestion,
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
+            }
+            },
+            hint: {
+            text: 'For example, 31 3 1980'
+            },
+            errorMessage: {
+              text: reportedDateErrorBlank
+            },
+            items:[
+            {
+            name: 'day',
+            value: data['incidentReported-day']
+            },
+            {
+            name: 'month',
+            value: data['incidentReported-month']
+            },
+            {
+            name: 'year',
+            value: data['incidentReported-year']
+            }
+            ]
+            })
+            }}
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+{% endblock %}

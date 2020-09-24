@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "injuryCheckboxes",
+        name: "nonSpecificBodyParts",
+        fieldset: {
+          legend: {
+            text: "Select any injuries you have",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: headNeckFaceInjuryQuestionHint
+        },
+        items: [
+          {
+            value: " Infection with HIV or hepatitis",
+            text: "Infection with HIV or hepatitis",
+            checked: checked("nonSpecificBodyParts", " Infection with HIV or hepatitis")
+          },
+          {
+            value: " Loss of a pregnancy",
+            text: "Loss of a pregnancy",
+            checked: checked("nonSpecificBodyParts", " Loss of a pregnancy")
+          },
+          {
+            value: " Paralysis",
+            text: "Paralysis",
+            checked: checked("nonSpecificBodyParts", " Paralysis")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

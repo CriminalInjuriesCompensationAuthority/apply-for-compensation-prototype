@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "injuryCheckboxes",
+        class: "jen",
+        name: "torsoInjuredParts",
+        fieldset: {
+          legend: {
+            text: "What parts of your torso were injured?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: torsoInjuredPartsQuestionHint
+        },
+        items: [
+          {
+            value: "Abdomen",
+            text: "Abdomen",
+            checked: checked("torsoInjuredParts", "Abdomen")
+          },
+          {
+            value: "Back",
+            text: "Back",
+            checked: checked("torsoInjuredParts", "Back")
+          },
+          {
+            value: "Breast bone",
+            text: "Breast bone",
+            checked: checked("torsoInjuredParts", "Breast bone")
+          },
+          {
+            value: "Chest",
+            text: "Chest",
+            checked: checked("torsoInjuredParts", "Chest")
+          },
+          {
+            value: "Collar bone",
+            text: "Collar bone",
+            checked: checked("torsoInjuredParts", "Collar bone")
+          },
+          {
+            value: "Tail bone",
+            text: "Tail bone",
+            checked: checked("torsoInjuredParts", "Tail bone")
+          },
+          {
+            value: "Genitals",
+            text: "Genitals",
+            checked: checked("torsoInjuredParts", "Genitals")
+          },
+          {
+            value: "Internal organs",
+            text: "Internal organs",
+            checked: checked("torsoInjuredParts", "Internal organs")
+          },
+          {
+            value: "Ribs",
+            text: "Ribs",
+            checked: checked("torsoInjuredParts", "Ribs")
+          },
+          {
+            value: "Shoulder",
+            text: "Shoulder",
+            checked: checked("torsoInjuredParts", "Shoulder")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

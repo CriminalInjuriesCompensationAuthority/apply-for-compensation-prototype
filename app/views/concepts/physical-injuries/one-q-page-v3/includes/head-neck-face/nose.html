@@ -1,0 +1,11 @@
+{% if data['noseInjuries'] and data['noseInjuries'].includes("Broken nose") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken nose</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['noseInjuries'] and data['noseInjuries'].includes("Loss of smell or taste") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of smell or taste</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['noseInjuries'] and data['noseInjuries'].includes("Loss of nose") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of nose</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

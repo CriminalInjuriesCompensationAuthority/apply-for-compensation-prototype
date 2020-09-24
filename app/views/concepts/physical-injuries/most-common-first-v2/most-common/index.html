@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Select any injuries you have
+            </h1>
+          </legend>
+          <span id="waste-hint" class="govuk-hint">
+            These are the most common injuries claimed for.
+          </span>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="eyeInjuries" name="eyeInjuries" type="checkbox" value=" Black eye">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Black eye(s)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="eyeInjuries" name="eyeInjuries" type="checkbox" value=" Broken eye socket">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Broken eye socket
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="facialInjuries" name="facialInjuries" type="checkbox" value=" Broken jaw">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Broken jaw
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="noseInjuries" name="noseInjuries" type="checkbox" value=" Broken nose">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Broken nose
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="teethInjuries" name="teethInjuries" type="checkbox" value=" Broken teeth">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Broken teeth
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="brainInjuries" name="brainInjuries" type="checkbox" value=" Brain damage">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Brain damage
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="headSurfaceInjuries" name="headSurfaceInjuries" type="checkbox" value=" Bruises to head">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Bruises to head
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="headSurfaceInjuries" name="headSurfaceInjuries" type="checkbox" value=" Cuts or grazes to head">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Cuts or grazes to head
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="facialInjuries" name="facialInjuries" type="checkbox" value=" Face numbness">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Face numbness
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="armSurfaceInjuries" name="armSurfaceInjuries" type="checkbox" value=" Scarring to arms">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Scarring to arms
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="faceSurfaceInjuries" name="faceSurfaceInjuries" type="checkbox" value=" Scarring to face">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Scarring to face
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="headSurfaceInjuries" name="headSurfaceInjuries" type="checkbox" value=" Muscle, ligament, or tendon injury to head">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Muscle, ligament, or tendon injury to head
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

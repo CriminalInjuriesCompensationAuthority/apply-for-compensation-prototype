@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set otherInjury %}
+      {{ govukInput({
+        id: "otherArmInjuries",
+        name: "otherArmInjuries",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Other injuries to you arm"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "armInjuries",
+        name: "armInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your arm",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken arm",
+            text: "Broken arm",
+            checked: checked("armInjuries", "Broken arm")
+          },
+          {
+            value: "Loss of arm",
+            text: "Loss of arm",
+            checked: checked("armInjuries", "Loss of arm")
+          },
+          {
+            value: "Paralysed arm",
+            text: "Paralysed arm",
+            checked: checked("armInjuries", "Paralysed arm")
+          },
+          {
+            value: "other",
+            text: "Other",
+            checked: checked("headInjury", "other"),
+            id: "none",
+            conditional: {
+              html: otherInjury
+            }
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Application submitted - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-mb-r6">
+      <h2 class="govuk-panel__title">
+        Application submitted
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number is<br><strong>CICA2123GW</strong>
+        <p class="govuk-body-l" style="color:white"><br>We have sent a confirmation email to<br><strong>{{ data['emailAddress'] }}</strong></p>
+      </div>
+    </div>
+    <p>
+    </p>
+    <p class="govuk-body">Thank you for submitting your application.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p>We will:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>ask the police for evidence</li>
+      <li>use the police evidence to make a decision</li>
+      <li>send our decision letter by post</li>
+    </ul>
+
+    <p class="govuk-body">We will usually make a decision within 4 months.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You must inform us immediately if any of the information you have given us changes, especially your address, telephone number or email address.
+      </strong>
+    </div>
+
+    <p class="govuk-body">You can contact our Customer Service Centre on 0300 003 3601. Select option 8 when the call is answered.</p>
+<h2 class="govuk-heading-m">Help us improve this service</h2>
+<p class="govuk-body">You can complete a short survey to help us improve this service.</p>
+<p class="govuk-body">It does not ask for any details about your case, and has no effect on your application.</p>
+    <p><a href="/">Tell us what you think of our service</a> (takes 10 minutes)</p>
+  </div>
+</div>
+</main>
+
+</div>
+
+{% endblock %}

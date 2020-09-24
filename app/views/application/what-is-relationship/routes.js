@@ -7,7 +7,7 @@ module.exports = function (router, content) {
     if(req.session.checking_answers) {
       return res.redirect('/application/check-your-answers-page')
     }
-    res.redirect('/application/previous-applications')
+    res.redirect('/concepts/physical-injuries/one-q-page-v4/context-physical-injuries')
   })
 
   // Pass the question in to the page

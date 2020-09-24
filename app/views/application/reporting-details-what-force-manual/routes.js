@@ -9,8 +9,8 @@ router.post('/application/reporting-details-what-force-manual', function (req, r
       return res.redirect('/application/check-your-answers-page')
     }
     // If the variable is any other value (or is missing) render the page requesteds
-    res.redirect('/application/do-you-know-offender')
-  
+    res.redirect('/application/do-you-know-offender-name')
+
 })
 
 // Pass the question in to the page

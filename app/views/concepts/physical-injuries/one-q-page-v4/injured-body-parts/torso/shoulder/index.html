@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the shoulder were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherShoulderBladeInjury",
+        name: "otherShoulderBladeInjury",
+        value: data['otherShoulderBladeInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "shoulderBladeInjuries",
+        name: "shoulderBladeInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the shoulder",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken shoulder blade",
+            text: "Broken shoulder blade",
+            checked: checked("shoulderBladeInjuries", "Broken shoulder blade"),
+            id: "Broken shoulder blade (torso)"
+          },
+          {
+            value: "Dislocated shoulder",
+            text: "Dislocated shoulder",
+            checked: checked("shoulderBladeInjuries", "Dislocated shoulder"),
+            id: "Dislocated shoulder (torso)"
+          },
+          {
+            value: "Separated shoulder",
+            text: "Separated shoulder",
+            checked: checked("shoulderBladeInjuries", "Separated shoulder"),
+            id: "Separated shoulder (torso)"
+          },
+          {
+            value: "Frozen shoulder",
+            text: "Frozen shoulder",
+            checked: checked("shoulderBladeInjuries", "Frozen shoulder"),
+            id: "Frozen shoulder (torso)"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("shoulderBladeInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

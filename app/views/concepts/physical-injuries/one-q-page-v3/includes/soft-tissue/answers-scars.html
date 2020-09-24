@@ -1,0 +1,23 @@
+{% if data['scarsOn'] and data['scarsOn'].includes("Head") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on head</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['scarsOn'] and data['scarsOn'].includes("Neck") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['scarsOn'] and data['scarsOn'].includes("Face") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['scarsOn'] and data['scarsOn'].includes("Torso") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['scarsOn'] and data['scarsOn'].includes("Arm or hand") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on arm or hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['scarsOn'] and data['scarsOn'].includes("Leg or foot") %}
+  <tr><th class="govuk-table__cell govuk-body">Scar on leg or foot</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

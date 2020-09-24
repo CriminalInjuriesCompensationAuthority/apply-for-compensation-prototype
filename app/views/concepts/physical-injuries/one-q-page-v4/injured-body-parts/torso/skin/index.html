@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the skin on your torso were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherTorsoSkinInjury",
+        name: "otherTorsoSkinInjury",
+        value: data['otherTorsoSkinInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "torsoSkinInjuries",
+        name: "torsoSkinInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the skin on your torso",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Cuts",
+            text: "Cuts",
+            checked: checked("legSkinInjuredParts", "Cuts"),
+            id: "Cuts to torso"
+          },
+          {
+            value: "Bruises",
+            text: "Bruises",
+            checked: checked("legSkinInjuredParts", "Bruises"),
+            id: "Bruises to torso"
+          },
+          {
+            value: "Scars",
+            text: "Scars",
+            checked: checked("legSkinInjuredParts", "Scars"),
+            id: "Scars to torso"
+          },
+          {
+            value: "Burns",
+            text: "Burns",
+            checked: checked("legSkinInjuredParts", "Burns"),
+            id: "Burns to torso"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("legSkinInjuredParts", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

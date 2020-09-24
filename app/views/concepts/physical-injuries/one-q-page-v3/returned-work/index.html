@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Finacial losses  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "returnedToWork",
+            "name": "returnedToWork",
+            "fieldset": {
+              "legend": {
+                "text": "Have you returned to work?",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("returnedToWork", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("returnedToWork", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

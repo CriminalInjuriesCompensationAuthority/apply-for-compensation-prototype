@@ -1,0 +1,240 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for="police-forces">
+          Police forces
+        </label>
+      </h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#england-forces">
+              England
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#scotland-forces">
+              Scotland
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#wales-forces">
+              Wales
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#other-forces">
+              Other
+            </a>
+          </li>
+        </ul>
+
+        <section class="govuk-tabs__panel" id="england-forces">
+          <h2 class="govuk-heading-l">England</h2>
+
+          <ul class="govuk-list">
+            <li><a href="#northwest-forces">North West<a></li>
+            <li><a href="´#northeast-forces">North East<a></li>
+            <li><a href="´#eastmids-forces">East Midlands<a></li>
+            <li><a href="´#eastern-forces">Eastern<a></li>
+            <li><a href="#london-forces">London<a></li>
+            <li><a href="#southeast-forces">South East<a></li>
+            <li><a href="#southwest-forces">South West<a></li>
+            <li><a href="#westmids-forces">West Midlands<a></li>
+          </ul>
+
+          <h3 class="govuk-heading-s" id="northwest-forces">North West</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Cheshire Constabulary</li>
+            <li>Cumbria Constabulary</li>
+            <li>Greater Manchester Police</li>
+            <li>Lancashire Constabulary</li>
+            <li>Merseyside Police</li>
+          </ul>
+
+          <h3 class="govuk-heading-s" id="northeast-forces">North East</h3>
+          <ul class="govuk-list govuk-list--bullet">
+
+            <li>Cleveland Police</li>
+            <li>Durham Constabulary</li>
+            <li>Humberside Police</li>
+            <li>North Yorkshire Police</li>
+            <li>Northumbria Police</li>
+            <li>South Yorkshire Police</li>
+            <li>West Yorkshire Police</li>
+
+          </ul>
+
+
+
+          <h3 class="govuk-heading-s" id="eastmids-forces">East Midlands</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Derbyshire Constabulary</li>
+            <li>Leicestershire Police</li>
+            <li>Lincolnshire Police</li>
+            <li>Northamptonshire Police</li>
+            <li>Nottinghamshire Police</li>
+
+          </ul>
+
+
+
+          <h3 class="govuk-heading-s" id="eastern-forces">Eastern</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Bedfordshire Police</li>
+            <li>Cambridgeshire Constabulary</li>
+            <li>Essex Police</li>
+            <li>Hertfordshire Constabulary</li>
+            <li>Norfolk Constabulary</li>
+            <li>Suffolk Constabulary</li>
+
+          </ul>
+
+
+
+          <h3 class="govuk-heading-s" id="london-forces">London</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>City Of London Police</li>
+            <li>Metropolitan Barking</li>
+            <li>Metropolitan Barnet</li>
+            <li>Metropolitan Bexley</li>
+            <li>Metropolitan Brent</li>
+            <li>Metropolitan Bromley</li>
+            <li>Metropolitan Camden</li>
+            <li>Metropolitan Croydon</li>
+            <li>Metropolitan Ealing</li>
+            <li>Metropolitan Enfield</li>
+            <li>Metropolitan Greenwich</li>
+            <li>Metropolitan Hackney</li>
+            <li>Metropolitan Hammersmith</li>
+            <li>Metropolitan Haringey</li>
+            <li>Metropolitan Harrow</li>
+            <li>Metropolitan Havering</li>
+            <li>Metropolitan Hillingdon</li>
+            <li>Metropolitan Hounslow</li>
+            <li>Metropolitan Islington</li>
+            <li>Metropolitan Kensington</li>
+            <li>Metropolitan Kingston</li>
+            <li>Metropolitan Lambeth</li>
+            <li>Metropolitan Lewisham</li>
+            <li>Metropolitan Merton</li>
+            <li>Metropolitan Newham</li>
+            <li>Metropolitan Redbridge</li>
+            <li>Metropolitan Richmond</li>
+            <li>Metropolitan Southwark</li>
+            <li>Metropolitan Sutton</li>
+            <li>Metropolitan Tower Hamlets</li>
+            <li>Metropolitan Waltham Forest</li>
+            <li>Metropolitan Wandsworth</li>
+            <li>Metropolitan Westminster</li>
+            <li>Metropolitan Southwark</li>
+          </ul>
+
+
+          <h3 class="govuk-heading-s" id="southeast-forces">South East</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Hampshire Constabulary</li>
+            <li>Kent Police</li>
+            <li>Surrey Police</li>
+            <li>Sussex Police</li>
+            <li>Thames Valley Police</li>
+
+          </ul>
+
+
+          <h3 class="govuk-heading-s" id="southwest-forces">South West</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Avon and Somerset Constabulary</li>
+            <li>Devon & Cornwall Police</li>
+            <li>Dorset Police</li>
+            <li>Gloucestershire Constabulary</li>
+            <li>Wiltshire Police</li>
+
+          </ul>
+
+
+          <h3 class="govuk-heading-s" id="westmids-forces">West Midlands</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Staffordshire Police</li>
+            <li>Warwickshire Police</li>
+            <li>West Mercia Police</li>
+            <li>West Midlands Police</li>
+          </ul>
+
+
+
+        </section>
+
+
+        <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="scotland-forces">
+          <h2 class="govuk-heading-l">Scotland</h2>
+  <p class="govuk-body">Police Scotland has 13 local policing divisions.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Argyll and West Dunbartonshire</li>
+            <li>Ayrshire</li>
+            <li>Dumfries and Galloway</li>
+            <li>Edinburgh</li>
+            <li>Fife</li>
+            <li>Forth Valley</li>
+            <li>Greater Glasgow</li>
+            <li>Highland and Islands</li>
+            <li>Lanarkshire</li>
+            <li>North East</li>
+            <li>Renfrewshire and Inverclyde</li>
+            <li>Tayside</li>
+            <li>The Lothians and Scottish Borders</li>
+          </ul>
+
+        </section>
+
+
+        <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wales-forces">
+          <h2 class="govuk-heading-l">Wales</h2>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Dyfed-Powys Police</li>
+            <li>Gwent Police</li>
+            <li>North Wales Police</li>
+            <li>South Wales Police</li>
+          </ul>
+
+        </section>
+
+        <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="other-forces">
+          <h2 class="govuk-heading-l">Other</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>British Transport Police</li>
+          </ul>
+
+        </section>
+      </div>
+
+    </div>
+</div>
+
+{% endblock %}

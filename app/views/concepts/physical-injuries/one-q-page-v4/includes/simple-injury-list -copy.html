@@ -1,0 +1,51 @@
+{% if data['headInjuries'] or data['otherHeadInjury'] or data['faceInjuries'] or data['otherFaceInjury'] or data['eyeInjuries'] or data['otherEyeInjury'] or data['earInjuries'] or data['otherEarInjury'] or data['noseInjuries'] or data['otherNoseInjury'] or data['mouthInjuries'] or data['otherMouthInjury'] or data['neckInjuries'] or data['otherNeckInjury'] or data['headSkinInjuries'] or data['otherHeadSkinInjury'] or data['shoulderBladeInjuries'] or data['otherShoulderBladeInjury'] or data['chestInjuries'] or data['otherChestInjury'] or data['abdomenInjuries'] or data['otherAbdomenInjury'] or data['backInjuries'] or data['otherBackInjury'] or data['pelvisInjuries'] or data['otherPelvisInjury'] or data['genitalsInjuries'] or data['otherGenitalInjury'] or data['torsoSkinInjuries'] or data['otherTorsoSkinInjury'] or data['shoulderInjuries'] or data['otherShoulderInjury'] or data['armInjuries'] or data['otherArmInjury'] or data['elbowInjuries'] or data['otherElbowInjury'] or data['wristInjuries'] or data['otherWristInjury'] or data['handInjuries'] or data['otherHandInjury'] or data['fingerInjuries'] or data['otherFingerInjury'] or data['armSkinInjuries'] or data['otherArmSkinInjury'] or data['hipInjuries'] or data['otherHipInjury'] or data['legInjuries'] or data['otherLegInjury'] or data['kneeInjuries'] or data['otherKneeInjury'] or data['ankleInjuries'] or data['otherAnkleInjury'] or data['footInjuries'] or data['otherFootInjury'] or data['toeInjuries'] or data['otherToeInjury'] or data['legSkinInjuries'] or data['otherLegSkinInjury'] %}
+
+
+<table class="govuk-table govuk-!-margin-top-5">
+  <caption class="govuk-heading-m" style="text-align: left;">
+    You have selected these injuries
+    </caption>
+  <tbody class="govuk-table__body">
+
+    <!-- Head, face or neck injuries -->
+    {% include "../includes/head-neck-face/head-brain.html" %}
+    {% include "../includes/head-neck-face/face.html" %}
+    {% include "../includes/head-neck-face/eye.html" %}
+    {% include "../includes/head-neck-face/ear.html" %}
+    {% include "../includes/head-neck-face/nose.html" %}
+    {% include "../includes/head-neck-face/mouth.html" %}
+    {% include "../includes/head-neck-face/neck.html" %}
+    {% include "../includes/head-neck-face/skin-muscle.html" %}
+
+    <!-- Torso -->
+    {% include "../includes/torso/shoulder.html" %}
+    {% include "../includes/torso/chest.html" %}
+    {% include "../includes/torso/abdomen.html" %}
+    {% include "../includes/torso/back.html" %}
+    {% include "../includes/torso/pelvis.html" %}
+    {% include "../includes/torso/genitals.html" %}
+    {% include "../includes/torso/skin-muscle.html" %}
+
+    <!-- Arm or hand injuries -->
+    {% include "../includes/arm/shoulder.html" %}
+    {% include "../includes/arm/arm.html" %}
+    {% include "../includes/arm/elbow.html" %}
+    {% include "../includes/arm/wrist.html" %}
+    {% include "../includes/arm/hand.html" %}
+    {% include "../includes/arm/fingers.html" %}
+    {% include "../includes/arm/skin-muscle.html" %}
+
+    <!-- Leg or foot injuries -->
+    {% include "../includes/leg/hip.html" %}
+    {% include "../includes/leg/leg.html" %}
+    {% include "../includes/leg/knee.html" %}
+    {% include "../includes/leg/ankle.html" %}
+    {% include "../includes/leg/foot.html" %}
+    {% include "../includes/leg/toes.html" %}
+    {% include "../includes/leg/skin-muscle.html" %}
+
+    </tbody>
+
+  </table>
+
+{% endif %}

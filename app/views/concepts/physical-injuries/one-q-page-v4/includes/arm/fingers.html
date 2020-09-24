@@ -1,0 +1,55 @@
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Dislocated thumb") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated thumb</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Dislocated index finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated index finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Dislocated finger on one hand") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated finger on one hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Dislocated fingers on both hands") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated fingers on both hands</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken thumb") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken thumb</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken index finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken index finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken finger on one hand") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken finger on one hand</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken fingers on both hands") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken fingers on both hands</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Loss of thumb") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of thumb</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Loss of finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Loss of part of finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of part of finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Broken fingers on both hands") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of fingernail</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['fingerInjuries'] and data['fingerInjuries'].includes("Paralysis of finger") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysis of finger</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherFingerInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherFingerInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

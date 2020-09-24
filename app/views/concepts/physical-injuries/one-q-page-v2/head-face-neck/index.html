@@ -1,0 +1,105 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+localStorage.setItem('headPages', 0);
+var headPageCount = localStorage.getItem('headPages');
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form"method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "headNeckFaceInjuredPart",
+        name: "headNeckFaceInjuredPart",
+        fieldset: {
+          legend: {
+            text: "What parts of your head, face or neck were injured?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: headNeckFaceInjuryQuestionHint
+        },
+        items: [
+          {
+            value: "Ear or hearing",
+            text: "Ear or hearing",
+            checked: checked("headNeckFaceInjuredPart", "Ear or hearing")
+          },
+          {
+            value: "Eye or eyesight",
+            text: "Eye or eyesight",
+            checked: checked("headNeckFaceInjuredPart", "Eye or eyesight")
+          },
+          {
+            value: "Face",
+            text: "Face",
+            checked: checked("headNeckFaceInjuredPart", "Face")
+          },
+          {
+            value: "Head or brain",
+            text: "Head or brain",
+            checked: checked("headNeckFaceInjuredPart", "Head or brain")
+          },
+          {
+            value: "Neck",
+            text: "Neck",
+            checked: checked("headNeckFaceInjuredPart", "Neck")
+          },          {
+            value: "Nose",
+            text: "Nose",
+            checked: checked("headNeckFaceInjuredPart", "Nose")
+          },
+          {
+            value: "Teeth",
+            text: "Teeth",
+            checked: checked("headNeckFaceInjuredPart", "Teeth")
+          },
+          {
+            value: "Tongue",
+            text: "Tongue",
+            checked: checked("headNeckFaceInjuredPart", "Tongue")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../includes/answers-template.html"%}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

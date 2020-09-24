@@ -24,33 +24,50 @@
     <form class="form" method="post">
       {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
       {{ govukDateInput({
-          id: 'incident-date',
-          name: 'incident-date',
-          namePrefix: 'incident-date',
-          fieldset: {
+        id: 'incident-date',
+        name: 'incident-date',
+        namePrefix: 'incident-date',
+        fieldset: {
           legend: {
-          text: incidentDateHeading,
-          isPageHeading: true,
-          classes: 'govuk-fieldset__legend--xl'
+            text: incidentDateHeading,
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
           }
-          },
-          hint: {
+        },
+        hint: {
           text: incidentDateHint
-            }
-          }) }}
-
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  I do not know when the crime happened
-                </span>
-            </summary>
-                <div class="govuk-details__text">
-                  <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
-                  <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
-                  <!-- <p class="govuk-body">To get information about the crime you can <a class="govuk-body" href="https://www.police.uk/contact/101/" target="_blank">contact the police</a>. -->
-                </div>
-          </details>
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["incident-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["incident-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["incident-date-year"]
+          }
+        ]
+      })
+    }}
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not know when the crime happened
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
+          <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
+          <!-- <p class="govuk-body">To get information about the crime you can <a class="govuk-body" href="https://www.police.uk/contact/101/" target="_blank">contact the police</a>. -->
+        </div>
+      </details>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -60,8 +77,6 @@
     </form>
 
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}

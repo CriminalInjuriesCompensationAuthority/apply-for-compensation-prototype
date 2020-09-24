@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "haveParalysis",
+            "name": "haveParalysis",
+            "fieldset": {
+              "legend": {
+                "text": "Do you have paralysis as a result of the crime?",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("haveParalysis", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("haveParalysis", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+    {% include "../includes/answers-template.html" %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

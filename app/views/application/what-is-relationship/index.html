@@ -29,6 +29,7 @@
             name: "relationship-text",
             id: "relationship-text",
             currentValue: data['relationship-text'],
+            value: data['relationship-text'],
             label: {
               text: whatIsRelationshipQuestion,
               isPageHeading: true,
@@ -39,25 +40,6 @@
             }
           }) }}
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {{ govukCheckboxes({
-            idPrefix: "noContactWithOffender",
-            name: "noContactWithOffender",
-            currentValue: data['noContactWithOffender'],
-            fieldset: {
-              legend: {
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            items: [
-              {
-                value: "I have no contact with the offender",
-                text: "I have no contact with the offender"
-              }
-            ]
-          }) }}
-
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
@@ -66,8 +48,6 @@
 
     </form>
   </div>
-</div>
-</main>
 </div>
 
 {% endblock %}

@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the back? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherBackInjury",
+        name: "otherBackInjury",
+        value: data['otherBackInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "backInjuries",
+        name: "backInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the back",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken vertebra",
+            text: "Broken vertebra",
+            checked: checked("backInjuries", "Broken vertebra"),
+            id: "Broken vertebra"
+          },
+          {
+            value: "Slipped disc",
+            text: "Slipped disc",
+            checked: checked("backInjuries", "Slipped disc"),
+            id: "Slipped disc"
+          },
+          {
+            value: "Back strain",
+            text: "Back strain",
+            checked: checked("backInjuries", "Back strain"),
+            id: "Back strain"
+          },
+          {
+            value: "Broken tailbone",
+            text: "Broken tailbone",
+            checked: checked("backInjuries", "Broken tailbone"),
+            id: "Broken tailbone"
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("backInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
+          },
+          {
+            value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            checked: checked("backInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+            id: "Quadriplegia or tetraplegia"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("backInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

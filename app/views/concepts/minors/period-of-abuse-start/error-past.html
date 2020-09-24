@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error: {{ periodOfAbuseStartQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: [
+                {
+                  text: errorAbuseStartPast,
+                  href: "#incident-date"
+                }
+              ]
+            }) }}
+
+              {{ govukDateInput({
+                  id: 'period-of-abuse-start',
+                  name: 'period-of-abuse-start',
+                  namePrefix: 'period-of-abuse-start',
+                  fieldset: {
+                  legend: {
+                  text: periodOfAbuseStartQuestion,
+                  isPageHeading: true,
+                  classes: 'govuk-fieldset__legend--xl'
+                  }
+                  },
+                  hint: {
+                  text: periodOfAbuseHint
+                  },
+                  errorMessage: {
+                    text: errorAbuseStartPast
+                  },
+                  items:[
+                  {
+                  classes: "govuk-input--width-2",
+                  name: 'month',
+                  value: data['period-of-abuse-start-month']
+                  },
+                  {
+                  classes: "govuk-input--width-4",
+                  name: 'year',
+                  value: data['period-of-abuse-start-year']
+                  }
+                  ]
+                  })
+                  }}
+
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        I do not know when the crime started
+                      </span>
+                  </summary>
+                      <div class="govuk-details__text">
+                        <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
+                        <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
+                        <!-- <p class="govuk-body">To get information about the crime you can <a class="govuk-body" href="https://www.police.uk/contact/101/" target="_blank">contact the police</a>. -->
+                    </div>
+                </details>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the toes were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherToeInjury",
+        name: "otherToeInjury",
+        value: data['otherToeInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "toeInjuries",
+        name: "toeInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the toes",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken big toe",
+            text: "Broken big toe",
+            checked: checked("toeInjuries", "Broken big toe"),
+            id: "Broken big toe"
+          },
+          {
+            value: "Broken toe",
+            text: "Broken toe",
+            checked: checked("toeInjuries", "Broken toe"),
+            id: "Broken toe"
+          },
+          {
+            value: "2 or more broken toes",
+            text: "2 or more broken toes",
+            checked: checked("toeInjuries", "2 or more broken toes"),
+            id: "2 or more broken toes"
+          },
+          {
+            value: "Amputated big toe",
+            text: "Amputated big toe",
+            checked: checked("toeInjuries", "Amputated big toe"),
+            id: "Amputated big toe"
+          },
+          {
+            value: "1 amputated toe",
+            text: "1 amputated toe",
+            checked: checked("toeInjuries", "1 amputated toe"),
+            id: "1 amputated toe"
+          },
+          {
+            value: "2 or more amputated toes",
+            text: "2 or more amputated toes",
+            checked: checked("toeInjuries", "2 or more amputated toes"),
+            id: "2 or more amputated toes"
+          },
+          {
+            value: "Paralysed toe",
+            text: "Paralysed toe",
+            checked: checked("toeInjuries", "Paralysed toe"),
+            id: "Paralysed toe"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("toeInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

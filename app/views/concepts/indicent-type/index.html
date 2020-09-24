@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Incident type and description - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'We are currently in the Beta phase.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Incident type and description</h1>
+
+      <h2 class="govuk-heading-s">Flow</h2>
+      <p class="govuk-body govuk-!-margin-bottom-1">Where these screens sit in the flow is documented on Miro</p>
+      <p class="govuk-body"><a href="https://miro.com/app/board/o9J_ktEo9CU=/?moveToWidget=3074457349260819316&cot=12" target="_blank">Injuries and treatment flow</a></p>
+
+      <h2 class="govuk-heading-s">Mockups</h2>
+      <p class="govuk-body"><a href="/concepts/indicent-type/option-c/context-about-the-crime" target="_blank">Option C - with incident description</a></p>
+      <p class="govuk-body"><a href="/concepts/indicent-type/option-d/context-about-the-crime" target="_blank">Option D - without incident description</a></p>
+{% endblock %}

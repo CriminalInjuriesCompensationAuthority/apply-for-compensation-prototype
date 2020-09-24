@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ mentalHealthvisitedHospitalQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "visitedHospital",
+            "name": "visitedHospital",
+            currentValue: data['visitedHospital'],
+            "fieldset": {
+              "legend": {
+                "text": "Did you seek medical help for your injuries?",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            hint: {
+              text: visitedHospitalQuestionHint
+            },
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("visitedHospital", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("visitedHospital", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your injuries
+    </h1>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">What would we call this?</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            HIV or hepatitis
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> HIV or hepatitis</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Loss of a pregnancy
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> loss of pregnancy</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">What was injured</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What was injured
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Head, face or neck<br />
+            Arms or hands
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> what was injured</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What parts of your head, face or neck?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Face or jaw <br/>
+            Mouth
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> face or jaw injuries</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What parts of your torso?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Shoulder <br/>
+            Back
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> torso injuries</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">Head, neck or face injuries</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Face or jaw
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Face numbness<br />
+            Broken cheekbone <br/>
+            Broken jaw
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> face or jaw injuries</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Mouth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Damaged or broken teeth
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> mouth injuries</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="govuk-!-margin-bottom-9">
+      <h2 class="govuk-heading-m">Torso injuries</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Shoulder
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dislocated shoulder
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> shoulder injuries</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Back
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Back strain
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> back injuries</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+   <form class="form" method="post">
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      "text": "Continue",
+      href: "any-other-injuries.html"
+    }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

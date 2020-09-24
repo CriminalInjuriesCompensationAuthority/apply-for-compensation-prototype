@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select any injuries to the eye or sight - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherEyeInjury",
+        name: "otherEyeInjury",
+        value: data['otherEyeInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "eyeInjuries",
+        name: "eyeInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the eye or eyesight",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken eye socket",
+            text: "Broken eye socket",
+            checked: checked("eyeInjuries", "Broken eye socket"),
+            id: "Broken eye socket"
+          },
+          {
+            value: "Temporary blurred vision",
+            text: "Temporary blurred or double vision",
+            checked: checked("eyeInjuries", "Temporary blurred vision"),
+            id: "Temporary blurred vision"
+          },
+          {
+            value: "Permanent blurred vision",
+            text: "Permanent blurred or double vision",
+            checked: checked("eyeInjuries", "Permanent blurred vision"),
+            id: "Permanent blurred vision"
+          },
+          {
+            value: "Permanent loss of peripheral vision",
+            text: "Permanent loss of peripheral vision",
+            checked: checked("eyeInjuries", "Permanent loss of peripheral vision"),
+            id: "Permanent loss of peripheral vision"
+          },
+          {
+            value: "Black eye",
+            text: "Black eye",
+            checked: checked("eyeInjuries", "Black eye"),
+            id: "Black eye"
+          },
+          {
+            value: "Scratched eye",
+            text: "Scratched eye",
+            checked: checked("eyeInjuries", "Scratched eye"),
+            id: "Scratched eye"
+          },
+          {
+            value: "Bleeding in eye",
+            text: "Bleeding in eye",
+            checked: checked("eyeInjuries", "Bleeding in eye"),
+            id: "Bleeding in eye"
+          },
+          {
+            value: "Blindness",
+            text: "Blindness",
+            checked: checked("eyeInjuries", "Blindness"),
+            id: "Blindness"
+          },
+          {
+            value: "Sight loss",
+            text: "Sight loss",
+            checked: checked("eyeInjuries", "Sight loss"),
+            id: "Sight loss"
+          },
+
+          {
+            value: "Damaged or detached retina",
+            text: "Damaged or detached retina",
+            checked: checked("eyeInjuries", "Damaged or detached retina"),
+            id: "Damaged or detached retina"
+          },
+          {
+            value: "Object in eye",
+            text: "Punctured eyeball",
+            checked: checked("eyeInjuries", "Object in eye"),
+            id: "Object in eye"
+          },
+          {
+            value: "Cataract",
+            text: "Cataract",
+            checked: checked("eyeInjuries", "Cataract"),
+            id: "Cataract"
+          },
+          {
+            value: "Dislocated lens",
+            text: "Dislocated lens",
+            checked: checked("eyeInjuries", "Dislocated lens"),
+            id: "Dislocated lens"
+          },
+          {
+            value: "Glaucoma",
+            text: "Glaucoma",
+            checked: checked("eyeInjuries", "Glaucoma"),
+            id: "Glaucoma"
+          },
+          {
+            value: "Loss of eye",
+            text: "Loss of eye",
+            checked: checked("eyeInjuries", "Loss of eye"),
+            id: "Loss of eye"
+          },
+          {
+            value: "Floater",
+            text: "Floater",
+            checked: checked("eyeInjuries", "Floater"),
+            id: "Floater"
+          },
+          {
+            value: "Damaged eye drain",
+            text: "Damaged eye drain",
+            checked: checked("eyeInjuries", "Damaged eye drain"),
+            id: "Damaged eye drain"
+          },
+          {
+            value: "Injury affecting eye movement",
+            text: "Injury affecting eye movement",
+            checked: checked("eyeInjuries", "Injury affecting eye movement"),
+            id: "Injury affecting eye movement"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("eyeInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

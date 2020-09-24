@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ offenderNameQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+      <form action="/form-handler" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="offender-name">
+              {{ minorOffenderNameQuestion }}
+            </label>
+          </h1>
+        </div>
+
+        <div id="offenderName">
+          {{ govukInput({
+            label: {
+              "text": minorOffenderNameHint
+            },
+
+            id: "first-name-offender",
+            name: "first-name-offender",
+            value:  data['first-name-offender']
+          }) }}
+        </div>
+
+        <input class="govuk-button" type="submit" value="Continue">
+      </form>
+    </div>
+  </div>
+</main>
+</div>
+{% endblock %}

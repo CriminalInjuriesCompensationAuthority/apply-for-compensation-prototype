@@ -1,0 +1,82 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link"href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form"method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "headInjuries",
+        name: "headInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your head or brain",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Brain damage",
+          text: "Brain damage",
+          checked: checked("headInjuries", "Brain damage")
+        },
+        {
+          value: "Epilepsy",
+          text: "Epilepsy",
+          checked: checked("headInjuries", "Epilepsy")
+        },
+        {
+          value: "Nerve damage",
+          text: "Nerve damage",
+          checked: checked("headInjuries", "Nerve damage")
+        },
+        {
+          value: "Fractured skull",
+          text: "Fractured skull",
+          checked: checked("headInjuries", "Fractured skull")
+        },
+        {
+          value: "none",
+          text: "I do not have these injuries",
+          checked: checked("headInjuries", "none"),
+          id: "none"
+        }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html"%}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

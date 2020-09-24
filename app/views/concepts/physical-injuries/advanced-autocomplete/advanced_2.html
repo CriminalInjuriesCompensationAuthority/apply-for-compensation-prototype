@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery.hideseek.min.js"></script>
+<script>
+    $('#search').hideseek({
+        highlight: true,
+        min_chars: 3,
+        nodata: "No results found.",
+        hidden_mode: true
+    });
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+tag: {
+text: "beta"
+},
+html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+})
+}}
+
+<a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Injuries WIP</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+            <h2 class="govuk-heading-m">You have selected 1 proceeding</h2>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__cell govuk-body" scope="row">
+                    <h3 class="govuk-body proceeding-item">Non-molestation order</h3>
+                    <li class="govuk-caption-m proceeding__list-item">Family</li>
+                    <li class="govuk-caption-m proceeding__list-item"> > Domestic abuse</li>
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="advanced">
+                    Remove <span class="govuk-visually-hidden">blank</span>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="govuk-!-padding-bottom-4"></div>
+<div id="search-field" class="govuk-form-group">
+    <label class="govuk-heading-m" for="search">
+        Search for injuries
+        <span class="govuk-hint">
+   For example....
+   </span>
+    </label>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <input class="govuk-input" id="search" name="search" type="text" data-list="#proceedings-list">
+        </div>
+        <div class="govuk-grid-column-one-third clear-search">
+            <p><a class="govuk-link" href="advanced">Clear search</a></p>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div id="proceedings-list" class="govuk-grid-column-full ">
+            {% for proceeding in proceedings -%}
+            <div class="govuk-grid-row proceeding-list" id="offence-item-{{loop.index}}" >
+                <div class="govuk-grid-column-two-thirds">
+                    <ul class="proceeding-list">
+                        <h3 class="govuk-body proceeding-item">{{proceeding.proceedingtype | capitalize}}</h3>
+                        <li class="govuk-caption-m proceeding__list-item">{{proceeding.categoryoflaw| capitalize}}</li>
+                        <li class="govuk-caption-m proceeding__list-item"> > {{proceeding.mattertype | capitalize}}</li>
+                    </ul>
+                </div>
+                <div class="govuk-grid-column-one-third" style="text-align:right; padding-top: 25px;">
+                    <a id="offence-item-button-{{loop.index}}" class="govuk-button" role="button" href="#">
+                        Select
+                    </a>
+                </div>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</div>
+<a class="govuk-button" href="#" role="button">
+    Continue
+</a>
+{% endblock %}

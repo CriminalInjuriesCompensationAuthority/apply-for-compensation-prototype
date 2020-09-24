@@ -1,0 +1,847 @@
+[
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Burns",
+   "proceedingtype": "Burns - Head, neck or face"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Scarring",
+   "proceedingtype": "Head"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Scarring",
+   "proceedingtype": "Neck"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Scarring",
+   "proceedingtype": "Face"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Brain",
+   "proceedingtype": "Brain Damage"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Brain",
+   "proceedingtype": "Epilepsy"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Brain",
+   "proceedingtype": "Nerve Damage"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Fracture of ear"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Deafness (partial or total)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Partial loss of ear(s)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Loss of ear(s)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Perforated Ear Drum (one ear)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Perforated Ear Drum (Both ears)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Tinnitus"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Ear",
+   "proceedingtype": "Vestibular damage"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Orbital fracture "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Blurred or double vision (non-permanent) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Blurred or double vision (permanent) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Cataract(s) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Corneal abrasions "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Loss of visual field (permanent) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Dislocation of lens(es) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Glaucoma "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Hyphaema requiring operation (one eye) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Hyphaema requiring operation (Both eyes) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Loss of eye(s) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Loss of sight in eye(s) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Partial loss of vision "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Residual central floater affecting vision "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Damaged or detached retina "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Retina - damage not involving detachment (Both eyes)  "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Retina - Detached (Both eyes) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Significant penetrating injury "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Eye",
+   "proceedingtype": "Traumatic angle recession"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Clicking Jaw "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Dislocated jaw "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Fractured Ethmoid (no operation required) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Fractured Ethmoid (operation required) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Fractured Zygoma "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Fractured jaw Bone(s) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "Multiple fractures to face "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Face",
+   "proceedingtype": "numbness / Loss of feeling"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Neck",
+   "proceedingtype": "Fractured Hyoid "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Neck",
+   "proceedingtype": "Whiplash injury"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Nose",
+   "proceedingtype": "Deviated Nasal Septum "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Nose",
+   "proceedingtype": "Loss of smell "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Nose",
+   "proceedingtype": "Partial loss of nose (at least 10%)"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Skull",
+   "proceedingtype": "Fractureof skull"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Teeth",
+   "proceedingtype": "Damaged tooth / teeth "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Teeth",
+   "proceedingtype": "Fracture tooth / teeth "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Teeth",
+   "proceedingtype": "Loss of crowns "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Teeth",
+   "proceedingtype": "Loss of teeth "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Teeth",
+   "proceedingtype": "Slackening of teeth"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Tongue",
+   "proceedingtype": "Impaired speech "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Tongue",
+   "proceedingtype": "Permanent loss of speech "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Tongue",
+   "proceedingtype": "Loss of tongue"
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Grazings, lacerations, cuts (no scars) - Head & Neck "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Widespread bruising - Head & Neck "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Soft tissue injuries (no permanent disability) - Head & Neck "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Black eye(s) "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Bloody nose "
+ },
+ {
+   "categoryoflaw": "Head & Neck",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Hair pulled from scalp"
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Upper Limbs",
+   "proceedingtype": "Burns - Upper limbs "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Upper Limbs",
+   "proceedingtype": "Scarring - Upper limbs"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Arm",
+   "proceedingtype": "Loss of both arm(s) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Arm",
+   "proceedingtype": "Paralysis of arm(s)"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Elbow",
+   "proceedingtype": "Dislocation of elbow "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Elbow",
+   "proceedingtype": "Fracture of elbow"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Dislocation of finger other than index (one hand) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Dislocation of fingers other than index (both hands)  "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Fracture of thumb "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Fracture of index finger "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Fracture of finger other than index (one hand) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Fracture of finger other than index (both hands) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Loss of finger(s) or thumb(s) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Finger and Thumb",
+   "proceedingtype": "Partial loss of finger(s) of thumb(s) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Hand",
+   "proceedingtype": "Fracture of hand "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Hand",
+   "proceedingtype": "Loss of or equivalent loss of function of hand(s) "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Hand",
+   "proceedingtype": "Permanently impaired grip"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Humerus (upper arm bone)",
+   "proceedingtype": "Fractured humerus (upper arm bone)"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Radius (forearm bone)",
+   "proceedingtype": "Fractured radius (forearm bone)"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Shoulder",
+   "proceedingtype": "Dislocated shoulder "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Shoulder",
+   "proceedingtype": "Frozen shoulder "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Shoulder",
+   "proceedingtype": "Arthroscopy"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Tendon / ligament / cartilage",
+   "proceedingtype": "Tendon, ligament or cartilage damage to arm"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Ulna (forearm bone)",
+   "proceedingtype": "Fractured ulna (forearm bone)"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Wrist",
+   "proceedingtype": "Fracture of distal radius "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Wrist",
+   "proceedingtype": "Fracture of scaphoid "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Wrist",
+   "proceedingtype": "Sprained wrist"
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Loss of fingernail "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Grazings, lacerations, cuts (no scars) - Upper limbs "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Widespread bruising - Upper limbs "
+ },
+ {
+   "categoryoflaw": "Upper Limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Soft tissue injuries (no permanent disability) - Upper limbs "
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Burns and scarring",
+   "proceedingtype": "Burns - Torso "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Burns and scarring",
+   "proceedingtype": "Scarring - Torso"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Abdomen",
+   "proceedingtype": "Injury requiring Laparoscopy (one organ) "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Abdomen",
+   "proceedingtype": "Injury requiring Laparotomy (one organ) "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Abdomen",
+   "proceedingtype": "Injury requiring Laparoscopy / Lararotomy (two organs)  "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Abdomen",
+   "proceedingtype": "Injury requiring Laparoscopy / Lararotomy (three organs)  "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Abdomen",
+   "proceedingtype": "Laparotomy with permanent colostomy / ileostomy / uterostomy"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Back",
+   "proceedingtype": "Fracture of vertebra "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Back",
+   "proceedingtype": "Prolapsed invertebral disc(s) "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Back",
+   "proceedingtype": "Strained back"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Chest",
+   "proceedingtype": "Injury requiring thoracotomy"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Clavicle (collar bone)",
+   "proceedingtype": "Dislocated acromioclavicular joint "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Clavicle (collar bone)",
+   "proceedingtype": "Fractured clavicle"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Coccyx",
+   "proceedingtype": "Fractured coccyx (tail bone)"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Genitalia",
+   "proceedingtype": "Injury requiring medical treatment "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Genitalia",
+   "proceedingtype": "Loss of fertility"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Hernia",
+   "proceedingtype": "Hernia"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Kidney",
+   "proceedingtype": "Loss of Kidney "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Kidney",
+   "proceedingtype": "Permanent damage to or loss of both or only functioning kidney"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Lung",
+   "proceedingtype": "Punctured lung "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Lung",
+   "proceedingtype": "Collapsed lung "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Lung",
+   "proceedingtype": "Permanent damage from smoke / chemical inhilation"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Pancreas",
+   "proceedingtype": "Loss of Pancreas"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Pelvis",
+   "proceedingtype": "Fractured pelvis"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Rib",
+   "proceedingtype": "Fractured rib"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Scapula (shoulder blade)",
+   "proceedingtype": "Fractured scapula (shoulder blade)"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Spleen",
+   "proceedingtype": "Loss of spleen"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Sternum (breast bone)",
+   "proceedingtype": "Fracture of sternum"
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Grazings, lacerations, cuts (no scars) - Torso "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Widespread bruising - Torso "
+ },
+ {
+   "categoryoflaw": "Torso",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Soft tissue injuries (no permanent disability) - Torso"
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Burns and scarring",
+   "proceedingtype": "Burns - Lower limbs "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Burns and scarring",
+   "proceedingtype": "Scarring - Lower limbs"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Ankle",
+   "proceedingtype": "Dislocation of ankle "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Ankle",
+   "proceedingtype": "Fractured ankle "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Ankle",
+   "proceedingtype": "Sprained ankle"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Femur (thigh bone)",
+   "proceedingtype": "Fractured femur (thigh bone)"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Fibula",
+   "proceedingtype": "Fractured fibula (thigh bone)"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Foot",
+   "proceedingtype": "Fractured metatarsal "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Foot",
+   "proceedingtype": "Fractured Tarsal"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Heel",
+   "proceedingtype": "Fractured heel bone"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Hip",
+   "proceedingtype": "Dislocated hip "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Hip",
+   "proceedingtype": "Fractured hip"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Knee",
+   "proceedingtype": "Arthroscopy (no fracture) "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Knee",
+   "proceedingtype": "Dislocated Patella "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Knee",
+   "proceedingtype": "Fractured Patella "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Knee",
+   "proceedingtype": "Removal of knee(s)"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Leg",
+   "proceedingtype": "Loss of one leg(s) (Above or below knee) "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Leg",
+   "proceedingtype": "Paralysis of leg"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Tendon / ligament / cartilage",
+   "proceedingtype": "Tendon, ligament or cartilage damage to leg"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Tibia (shin bone)",
+   "proceedingtype": "Fractured tibia (shin)"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Fractured great toe "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Fractured toe "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Loss of great toe(s) "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Loss of one toe (other than great toe) "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Loss of two or more toes "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Toes",
+   "proceedingtype": "Partial loss of great toe(s)"
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Grazings, lacerations, cuts (no scars) - Lower limbs "
+ },
+ {
+   "categoryoflaw": "Lower limbs",
+   "mattertype": "Minor injuries",
+   "proceedingtype": "Widespread bruising - Lower limbs"
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "Sexual offences",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "Other",
+   "mattertype": "Mental injuries ",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "Major Paralysis (other than as a result of brain damage)",
+   "proceedingtype": "Hemiplegia "
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "Major Paralysis (other than as a result of brain damage)",
+   "proceedingtype": "Paraplegia "
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "Major Paralysis (other than as a result of brain damage)",
+   "proceedingtype": "Quadplegia/Tetraplegia"
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "Loss of foetus ",
+   "proceedingtype": ""
+ },
+ {
+   "categoryoflaw": "",
+   "mattertype": "Infection with one or more of HIV, Hepatitis B or Hepatitis C",
+   "proceedingtype": ""
+ }
+]

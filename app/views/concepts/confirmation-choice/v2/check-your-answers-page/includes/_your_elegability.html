@@ -1,0 +1,80 @@
+<!-- ** Your eligibility ************************************************************************************************************************ -->
+<h2 class="govuk-heading-l">
+  Your eligibility
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ britishCitizenQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['britishCitizen'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="british-citizen">
+      Change<span class="govuk-visually-hidden">British citizen </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ over18Question }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['over18'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="over-18">
+      Change<span class="govuk-visually-hidden">{{ over18Question }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ whoIsMakingTheApplicationQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['direct-applicant'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="who-is-making-the-application">
+      Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ sexualAbuseQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['sexualAssault'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="sexual-assault-application">
+      Change<span class="govuk-visually-hidden">{{ sexualAbuseQuestion }} </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ yourChoicesHeading }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['yourChoice'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="your-choices">
+      Change<span class="govuk-visually-hidden">{{ yourChoicesHeading }} </span>
+    </a>
+  </dd>
+</div>
+
+
+</dl>
+<!-- ** /Your eligibility ************************************************************************************************************************ -->

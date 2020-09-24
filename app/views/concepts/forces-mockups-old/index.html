@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'We are currently in the Beta phase.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Police Force prototypes - Oct 2019
+      </h1>
+
+      <section>
+        <h2 class="govuk-heading-l">Concept - 1</h2>
+        <img class="responsive" src="/public/images/forces-flow-concept-2.png" />
+        <p class="govuk-body"><a href="/public/images/forces-flow-concept-2.png" target="_blank">Open image in a new tab</a></p>
+        <p class="govuk-body">Use the autocomplete tool to find the investigating force.</p>
+        <p class="govuk-body">Offer a link to a page detailing all the forces for people who need help identifying the force.</p>
+        <a href="forces-mockups/v1/" class="govuk-button">Open prototype</a>
+      </section>
+
+    </div>
+</div>
+
+{% endblock %}

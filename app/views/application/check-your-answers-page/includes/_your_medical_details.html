@@ -1,0 +1,202 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  Your treatment
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Treatment for your physical injuries
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['physicalTreatment'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/treatment-details">
+        Change<span class="govuk-visually-hidden">{{ dmiTreatmentTypesQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['treatmentTypes'] %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Treatment for your mental health
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['treatmentTypes'] }}
+      {% if data['otherTreatment'] %}<br />
+        {{ data['otherTreatment'] }}
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/dmi-treatment-types">
+        Change<span class="govuk-visually-hidden">{{ dmiTreatmentTypesQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Have you finished your treatment?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['finishedTreatment'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/finished-treatment">
+        Change<span class="govuk-visually-hidden">{{ dmiFinsihedTreatmentQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ registeredGPQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['registeredGP'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/gp-registered">
+        Change<span class="govuk-visually-hidden">{{ registeredGPQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ visitedGPQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['visitedGP'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/gp-visited">
+        Change<span class="govuk-visually-hidden">{{ visitedGPQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if (data['registeredGP'] === 'Yes') or (data['visitedGP'] === 'Yes') %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      {{ yourGPDetails }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['gp-practice-name'] }}<br />
+      {{ data['gp-address-line-1'] }}<br />
+      {{ data['gp-address-town'] }}<br />
+      {% if data['gp-address-county'] %}
+      {{ data['gp-address-county'] }}<br />
+      {% endif %}
+      {% if data['gp-address-postcode'] %}
+      {{ data['gp-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/gp-details">
+        Change<span class="govuk-visually-hidden">{{ yourGPDetails }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if data['headFaceNeckInjuredParts'] %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Have you seen a dentist about your injuries?
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['visitedDentist'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/dentist-visited">
+        Change<span class="govuk-visually-hidden">Have you seen a dentist about your injuries?</span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if data['visitedDentist'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Dentist details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['dentist-practice-name'] }}<br />
+      {{ data['dentist-address-line-1'] }}<br />
+      {{ data['dentist-address-town'] }}<br />
+      {% if data['dentist-address-county'] %}
+      {{ data['dentist-address-county'] }}<br />
+      {% endif %}
+      {% if data['dentist-address-postcode'] %}
+      {{ data['dentist-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/dentist-details">
+        Change<span class="govuk-visually-hidden">Dentist details </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+  {% if (data['registeredGP'] === 'No') or (data['visitedGP'] === 'No') %}
+
+    {% if (data['havePhysicalInjuries'] === 'Yes') or (data['haveInfection'] === 'Yes') or (data['pregnancyLoss'] == 'Yes') or (data['pregnancy'] == 'Yes') %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Did you seek medical help?
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['seekMedicalHelp'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/concepts/physical-injuries/one-q-page-v4/hospital-visited">
+          Change<span class="govuk-visually-hidden">Did you seek medical help? </span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
+
+  {% endif %}
+
+  {% if data['seekMedicalHelp'] === 'Yes' %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Treatment provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['medical-practice-name'] }}<br />
+      {{ data['medical-address-line-1'] }}<br />
+      {{ data['medical-address-town'] }}<br />
+      {% if data['medical-address-county'] %}
+      {{ data['medical-address-county'] }}<br />
+      {% endif %}
+      {% if data['medical-address-postcode'] %}
+      {{ data['medical-address-postcode'] }}<br />
+      {% endif %}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="/concepts/physical-injuries/one-q-page-v4/hospital-details">
+        Change<span class="govuk-visually-hidden">Treatment provider </span>
+      </a>
+    </dd>
+  </div>
+
+  {% endif %}
+
+
+</dl>

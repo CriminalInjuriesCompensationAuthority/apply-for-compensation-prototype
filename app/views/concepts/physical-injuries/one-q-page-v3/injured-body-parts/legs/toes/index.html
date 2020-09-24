@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "toeInjuries",
+        name: "toeInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your toes",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Broken big toe",
+          text: "Broken big toe",
+          checked: checked("toeInjuries", "Broken big toe")
+        },
+          {
+            value: "Broken toe",
+            text: "Broken toe",
+            checked: checked("toeInjuries", "Broken toe")
+          },
+          {
+            value: "Amputated big toe",
+            text: "Amputated big toe",
+            checked: checked("toeInjuries", "Amputated big toe")
+          },
+          {
+            value: "1 amputated toe",
+            text: "1 amputated toe",
+            checked: checked("toeInjuries", "1 amputated toe")
+          },
+          {
+            value: "2 or more amputated toes",
+            text: "2 or more amputated toes",
+            checked: checked("toeInjuries", "2 or more amputated toes")
+          },
+          {
+            value: "none",
+            text: "I do not have these injuries",
+            checked: checked("headInjury", "none"),
+            id: "none"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

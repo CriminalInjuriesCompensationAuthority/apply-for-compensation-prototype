@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ previousApplicationsQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {% set referenceHtml %}
+      {{ govukInput({
+            id: "minor-previous-reference",
+            name: "minor-previous-reference",
+            value: data['minor-previous-reference'],
+            classes: "govuk-!-width-full",
+            label: {
+              text: minorPreviousReferenceHint
+            }
+          }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "minor-previous-applications",
+            "name": "minor-previous-applications",
+            value: data['minor-previous-applications'],
+            "fieldset": {
+              "legend": {
+              "text": minorPreviousApplicationsQuestion,
+              "isPageHeading": true,
+              "classes": 'govuk-fieldset__legend--xl'
+              }
+              },
+            "items": [
+            {
+            "value": "Yes",
+            "text": "Yes",
+            checked: checked("minor-previous-applications", "Yes"),
+            conditional: {
+                html: referenceHtml
+              }
+             },
+            {
+            "value": "No",
+            "text": "No",
+            checked: checked("minor-previous-applications", "No")
+            }
+            ]
+            }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+
+</div>
+</main>
+</div>
+{% endblock %}

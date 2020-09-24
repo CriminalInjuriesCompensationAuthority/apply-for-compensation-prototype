@@ -1,0 +1,7 @@
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Keyhole surgery on torso") %}
+  <tr><th class="govuk-table__cell govuk-body">Keyhole surgery on torso</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['abdomenInjuries'] and data['abdomenInjuries'].includes("Stoma") %}
+  <tr><th class="govuk-table__cell govuk-body">Stoma</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

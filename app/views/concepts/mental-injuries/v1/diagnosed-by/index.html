@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ mentalHealthDiagnosedByQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "diagnosedByOther",
+        name: "diagnosedByOther",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Other"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "diagnosedBy",
+        name: "diagnosedBy",
+        fieldset: {
+          legend: {
+            text: mentalHealthDiagnosedByQuestion,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select all options that are relevant to you."
+        },
+        items: [
+          {
+            value: "diagnosedByGP",
+            text: "Your GP",
+            checked: checked("diagnosedBy", "diagnosedByGP")
+          },
+          {
+            value: "diagnosedByClinicalPsychologist",
+            text: "A clinical psychologist",
+            checked: checked("diagnosedBy", "diagnosedByClinicalPsychologist")
+          },
+          {
+            value: "diagnosedByOther",
+            text: "Other",
+            checked: checked("diagnosedBy", "diagnosedByOther"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

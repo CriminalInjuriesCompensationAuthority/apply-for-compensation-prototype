@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "workDetails",
+            "name": "workDetails",
+            "fieldset": {
+              "legend": {
+                "text": "Select the option that applies to you",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "employed",
+                "text": "I had a job when the crime happened",
+                checked: checked("workDetails", "employed")
+              },
+              {
+                "value": "employed-3-years",
+                "text": "I had a job for at least 3 years before the crime",
+                checked: checked("workDetails", "employed-3-years")
+              },
+              {
+                "value": "minor",
+                "text": "I was too young to work",
+                checked: checked("workDetails", "minor")
+              },
+              {
+                value: "education",
+                text: "I was in full-time education",
+                checked: checked("faceSurfaceInjuries", "education")
+              },
+              {
+                value: "carer",
+                text: "I had temporarily stopped working to care for someone",
+                checked: checked("faceSurfaceInjuries", "carer")
+              }
+              ]
+          })
+        }}
+
+        {{ govukButton({
+          "text": "Continue"
+        }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

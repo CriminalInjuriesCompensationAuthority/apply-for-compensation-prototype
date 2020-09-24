@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  var headPageCount = localStorage.getItem('headPages');
+  var newHeadPageCount = (headPageCount*1 + 1);
+  $(".pageNumber").text(newHeadPageCount);
+  localStorage.setItem('headPages', newHeadPageCount);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">
+             <span class="pageNumber"></span> / {{ data['headNeckFaceInjuredPart'] | length + 3 }} questions about your head, face or neck</span>
+          <h1 class="govuk-fieldset__heading">
+            Select any injuries to your neck
+          </h1>
+      </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "neckInjuries",
+        name: "neckInjuries",
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: " Broken hyoid (throat bone)",
+            text: "Broken hyoid (throat bone)",
+            checked: checked("neckInjuries", " Broken hyoid (throat bone)")
+          },
+          {
+            value: " Whiplash",
+            text: "Whiplash",
+            checked: checked("neckInjuries", " Whiplash")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

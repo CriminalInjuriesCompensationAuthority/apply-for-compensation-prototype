@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+        <h1 class="govuk-heading-xl">Upload your child’s full birth certificate</h1>
+
+      <p>If the names on the birth certificate do not match <strong>Joanna Appletree</strong> and <strong>Jessica Appletree</strong> you will have to upload proof that your names have changed.</p>
+
+      {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
+        label: {
+          text: "Choose file"
+        }
+      }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If you do not have a full birth certificate
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+              <p><a href=https://www.gov.uk/order-copy-birth-death-marriage-certificate>Order a copy of a full birth certificate</a>.</p>
+              <p>You cannot upload a short (abbreviated) birth certificate.</p>
+
+            <p>You can upload an adoption order if you adopted your child.</p>
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

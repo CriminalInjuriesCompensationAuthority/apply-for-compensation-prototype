@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ minorBritishCitizenQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <h1 class="govuk-heading-xl">We need proof of your eligibility to apply</h1>
+
+      <p>You should upload a full copy of their birth certificate or the adoption order if you adopted your child.</p>
+
+      <p>We use this to check you have the right to apply for your child. You can upload a scan or a photo.</p>
+
+      <p>If you can't upload them, you can email or post them in within 28 days of submitting the application.</p>
+
+      <p>If either of your names have changed you should also upload proof of the name change.</p>
+
+      <p>If you cannot get one of these documents you can <a href="">apply using another service</a>.</p>
+
+      <a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/concepts/minors/eligibility-to-apply/option-1/upload-choice" role="button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

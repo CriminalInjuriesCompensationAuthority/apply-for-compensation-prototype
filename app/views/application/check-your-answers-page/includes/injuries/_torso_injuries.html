@@ -1,0 +1,163 @@
+{% if data['torsoInjuredParts'] %}
+<!--
+<h3 class="govuk-heading-m">Torso injuries</h3>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+-->
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Shoulder") %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Shoulder injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['shoulderBladeInjuries'] }}
+    {% if data['othershoulderBladeInjury'] %}
+      {{ data['othershoulderBladeInjury']}}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/shoulder">
+      Change<span class="govuk-visually-hidden">Shoulder blade injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Chest") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Chest injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['chestInjuries'] }}
+    {% if data['otherChestInjury'] %}
+      {{ data['otherChestInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/chest">
+      Change<span class="govuk-visually-hidden">Chest injuries </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Abdomen") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Abdomen injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['abdomenInjuries'] }}
+    {% if data['otherAbdomenInjury'] %}
+      {{ data['otherAbdomenInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/abdomen">
+      Change<span class="govuk-visually-hidden">Abdomen injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Back") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Back injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['backInjuries'] }}
+    {% if data['otherBackInjury'] %}
+      {{ data['otherBackInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/back">
+      Change<span class="govuk-visually-hidden">Back injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Pelvis") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Pelvis injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['pelvisInjuries'] }}
+    {% if data['otherPelvisInjury'] %}
+      {{ data['otherPelvisInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/pelvis">
+      Change<span class="govuk-visually-hidden">Pelvis injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Genitals") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Genital injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['genitalsInjuries'] }}
+    {% if data['otherGenitalsInjury'] %}
+      {{ data['otherGenitalsInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/genitals">
+      Change<span class="govuk-visually-hidden">Genital injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Skin") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Skin on your torso injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['torsoSkinInjuries'] }}
+    {% if data['otherTorsoSkinInjury'] %}
+      {{ data['otherTorsoSkinInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/skin">
+      Change<span class="govuk-visually-hidden">Torso skin injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['torsoInjuredParts'] and data['torsoInjuredParts'].includes("Tissue") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Tissue on your torso injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['torsoTissueInjuries'] }}
+    {% if data['otherTorsoTissueInjury'] %}
+      {{ data['otherTorsoTissueInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/torso/tissue">
+      Change<span class="govuk-visually-hidden">Tissue on your torso injuries injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+<!--
+</dl>
+-->
+{% endif %}

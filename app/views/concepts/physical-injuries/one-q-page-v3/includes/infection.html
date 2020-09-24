@@ -1,0 +1,11 @@
+{% if data['infectionType'] and data['infectionType'].includes("HIV") %}
+  <tr><th class="govuk-table__cell govuk-body">HIV</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['infectionType'] and data['infectionType'].includes("Hepatitis B") %}
+  <tr><th class="govuk-table__cell govuk-body">Hepatitis B</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['infectionType'] and data['infectionType'].includes("Hepatitis C") %}
+  <tr><th class="govuk-table__cell govuk-body">Hepatitis C</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

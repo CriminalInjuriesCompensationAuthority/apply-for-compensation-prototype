@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "injuryCheckboxes",
+        name: "armsSurfaceInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your arm",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: armsSurfaceInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Burns to arms",
+            text: "Burns to arms",
+            checked: checked("armsInjuries", " Burns to arms")
+          },
+          {
+            value: " Scarring to arms",
+            text: "Scarring to arms",
+            checked: checked("armsInjuries", " Scarring to arms")
+          },
+          {
+            value: " Cuts to arm",
+            text: "Cuts to arm",
+            checked: checked("armsInjuries", " Cuts to arm")
+          },
+          {
+            value: " Bruises to arm",
+            text: "Bruises to arm",
+            checked: checked("armsInjuries", " Bruises to arm")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury to arm",
+            text: "Muscle, ligament, or tendon injury to arm",
+            checked: checked("armsInjuries", " Muscle, ligament, or tendon injury to arm")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

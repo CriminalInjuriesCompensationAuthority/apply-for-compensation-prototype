@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Error - {{ whatCompensationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+
+            {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+            {{ govukErrorSummary({
+                    titleText: "There is a problem",
+                    errorList: [
+                      {
+                        text: compYesError,
+                        href: "#"
+                      }
+                    ]
+                  }) }}
+
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--xl" for="name">
+                  {{ whatCompensationQuestion }}
+                </label>
+              </h1>
+            </div>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+                    label: {
+                      "text": compWho
+                    },
+                    id: "comp-who",
+                    name: "comp-who",
+                    value: data['comp-who']
+                  }) }}
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+           {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {% set yesHtml %}
+            {{ govukInput({
+              id: "how-much",
+              name: "how-much",
+              type: "Yes",
+              value : data['how-much'],
+              errorMessage: {
+              text: compYesError
+            },
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: compDecYes
+              }
+            }) }}
+            {% endset -%}
+
+            {% set noHtml %}
+            {{ govukInput({
+              id: "when",
+              name: "when",
+              type: "No",
+              value: data['when'],
+              classes: "govuk-!-width-full",
+              label: {
+                text: compDecNo
+              },
+            hint: {
+              text: "Enter an approximate date, for example, December 2019. If you do not know you can say so."
+            }
+            }) }}
+            {% endset -%}
+
+
+            {{ govukRadios({
+              idPrefix: "decision-answer",
+              name: "decision-answer",
+              value : data['decision-answer'],
+              fieldset: {
+                legend: {
+                  text: compDecQuestion,
+                  isPageHeading: true
+                }
+              },
+
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: yesHtml
+                  }
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  conditional: {
+                    html:noHtml
+
+                  }
+                }
+
+
+
+              ]
+            }) }}
+
+            {{ govukButton({
+                      "text": "Continue"
+                      }) }}
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

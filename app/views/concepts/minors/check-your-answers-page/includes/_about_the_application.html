@@ -1,0 +1,98 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  About the application
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ minorSexualAssaultQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minorSexualAssault'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="sexual-assault-application">
+        Change<span class="govuk-visually-hidden">{{ minorSexualAssault }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ whoIsMakingTheApplicationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minor-direct-applicant'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="who-is-making-the-application">
+        Change<span class="govuk-visually-hidden">{{ whoIsMakingTheApplicationQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ minorVictimRelationshipQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minorRelationship'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="who-is-making-the-application">
+        Change<span class="govuk-visually-hidden">{{ minorVictimRelationshipQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Option you've selected
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minorChoice'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="your-choices">
+        Change<span class="govuk-visually-hidden">{{ yourChoicesHeading }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['delay-application'] %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="border:none">
+      {{ minorWhyDelayQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value" style="border:none">
+
+      {% if data['minorApplicationDelay'] === 'I was under 18' %}
+        I was under 18
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'I was advised to wait' %}
+        I was advised to wait
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'Medical reasons' %}
+        I was under 18
+      {% endif %}
+
+      {% if data['minorApplicationDelay'] === 'Other reasons' %}
+        I was under 18
+      {% endif %}
+
+      {{ data['delay-application'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions" style="border:none">
+      <a href="reporting-delay">
+        Change<span class="govuk-visually-hidden"> {{ reportingDelayQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+</dl>

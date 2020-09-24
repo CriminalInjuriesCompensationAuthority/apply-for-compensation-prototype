@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "eyeInjuries",
+        name: "eyeInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your eye or eyesight",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken eye socket",
+            text: "Broken eye socket ",
+            checked: checked("eyeInjuries", "Broken eye socket")
+          },
+          {
+            value: "Temporary blurred vision",
+            text: "Temporary blurred vision",
+            checked: checked("eyeInjuries", "Temporary blurred vision")
+          },
+          {
+            value: "Permanent blurred vision",
+            text: "Permanent blurred vision",
+            checked: checked("eyeInjuries", "Permanent blurred vision")
+          },
+
+          {
+            value: "Black eye",
+            text: "Black eye",
+            checked: checked("eyeInjuries", "Black eye")
+          },
+          {
+            value: "Scratched eye",
+            text: "Scratched eye",
+            checked: checked("eyeInjuries", "Scratched eye")
+          },
+          {
+            value: "Permanent loss of peripheral vision",
+            text: "Permanent loss of peripheral vision",
+            checked: checked("eyeInjuries", "Permanent loss of peripheral vision")
+          },
+          {
+            value: "Bleeding in eye",
+            text: "Bleeding in eye",
+            checked: checked("eyeInjuries", "Bleeding in eye")
+          },
+
+          {
+            value: "Blindess",
+            text: "Blindess",
+            checked: checked("eyeInjuries", "Blindess")
+          },
+          {
+            value: "Sight loss",
+            text: "Sight loss",
+            checked: checked("eyeInjuries", "Sight loss")
+          },
+
+          {
+            value: "Damaged or detached retina",
+            text: "Damaged or detached retina",
+            checked: checked("eyeInjuries", "Damaged or detached retina")
+          },
+          {
+            value: "Object in eye",
+            text: "Object in eye",
+            checked: checked("eyeInjuries", "Object in eye")
+          },
+          {
+            value: "Cataract",
+            text: "Cataract",
+            checked: checked("eyeInjuries", "Cataract")
+          },
+          {
+            value: "Dislocated lens",
+            text: "Dislocated lens",
+            checked: checked("eyeInjuries", "Dislocated lens")
+          },
+          {
+            value: "Glaucoma",
+            text: "Glaucoma",
+            checked: checked("eyeInjuries", "Glaucoma")
+          },
+          {
+            value: "Loss of eye",
+            text: "Loss of eye",
+            checked: checked("eyeInjuries", "Loss of eye")
+          },
+          {
+            value: "Floater",
+            text: "Floater",
+            checked: checked("eyeInjuries", "Floater")
+          },
+          {
+            value: "Damaged eye drain",
+            text: "Damaged eye drain",
+            checked: checked("eyeInjuries", "Damaged eye drain")
+          },
+          {
+            value: "none",
+            text: "I do not have these injuries",
+            checked: checked("eyeInjuries", "none"),
+            id: "none"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,77 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  }) }}
+
+  <a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Enter your date of birth
+            </h1>
+          </legend>
+          <span id="q-applicant-enter-your-date-of-birth-hint" class="govuk-hint">
+            For example, 31 3 2018.
+          </span>
+          <div class="govuk-date-input" id="q-applicant-enter-your-date-of-birth">
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[day]">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[day]" name="q-applicant-enter-your-date-of-birth[day]" type="number" value="1" autocomplete="bday-day" pattern="[0-9]*">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[month]">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[month]" name="q-applicant-enter-your-date-of-birth[month]" type="number" value="1" autocomplete="bday-month" pattern="[0-9]*">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[year]">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="q-applicant-enter-your-date-of-birth-q-applicant-enter-your-date-of-birth[year]" name="q-applicant-enter-your-date-of-birth[year]" type="number" value="1980" autocomplete="bday-year" pattern="[0-9]*">
+                </div>
+              </div>
+
+            </div>
+        </fieldset>
+        </div>
+
+        <a href="check-your-dates" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,25 +1,31 @@
 // Core dependencies
+const fs = require('fs')
 const path = require('path')
 
 // NPM dependencies
 const bodyParser = require('body-parser')
-const browserSync = require('browser-sync')
 const dotenv = require('dotenv')
 const express = require('express')
 const nunjucks = require('nunjucks')
 const sessionInCookie = require('client-sessions')
 const sessionInMemory = require('express-session')
 const cookieParser = require('cookie-parser')
+const proceedingsData = require('./app/data/proceedings');
 
 // Run before other code to make sure variables from .env are available
 dotenv.config()
 
 // Local dependencies
+const middleware = [
+  require('./lib/middleware/authentication/authentication.js'),
+  require('./lib/middleware/extensions/extensions.js')
+]
 const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
 const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
+const extensions = require('./lib/extensions/extensions.js')
 
 // Variables for v6 backwards compatibility
 // Set false by default, then turn on if we find /app/v6/routes.js
@@ -27,11 +33,9 @@ var useV6 = false
 var v6App
 var v6Routes
 
-try {
+if (fs.existsSync('./app/v6/routes.js')) {
   v6Routes = require('./app/v6/routes.js')
   useV6 = true
-} catch (e) {
-  // No routes.js in app/v6 so we can continue with useV6 false
 }
 
 const app = express()
@@ -51,20 +55,13 @@ documentationApp.use(handleCookies)
 
 // Set up configuration variables
 var releaseVersion = packageJson.version
-var username = process.env.USERNAME
-var password = process.env.PASSWORD
-var env = process.env.NODE_ENV || 'development'
-var useAuth = process.env.USE_AUTH || config.useAuth
+var env = (process.env.NODE_ENV || 'development').toLowerCase()
 var useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData
 var useCookieSessionStore = process.env.USE_COOKIE_SESSION_STORE || config.useCookieSessionStore
 var useHttps = process.env.USE_HTTPS || config.useHttps
-var useBrowserSync = config.useBrowserSync
 var gtmId = process.env.GOOGLE_TAG_MANAGER_TRACKING_ID
 
-env = env.toLowerCase()
-useAuth = useAuth.toLowerCase()
 useHttps = useHttps.toLowerCase()
-useBrowserSync = useBrowserSync.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
 
@@ -83,24 +80,29 @@ if (isSecure) {
   app.set('trust proxy', 1) // needed for secure cookies on heroku
 }
 
-// Ask for username and password on production
-if (env === 'production' && useAuth === 'true') {
-  app.use(utils.basicAuth(username, password))
-}
+middleware.forEach(func => app.use(func))
 
 // Set up App
-var appViews = [
-  path.join(__dirname, '/node_modules/govuk-frontend/'),
+var appViews = extensions.getAppViews([
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
-]
+])
 
-var nunjucksAppEnv = nunjucks.configure(appViews, {
+var nunjucksConfig = {
   autoescape: true,
-  express: app,
   noCache: true,
-  watch: true
-})
+  watch: false // We are now setting this to `false` (it's by default false anyway) as having it set to `true` for production was making the tests hang
+}
+
+if (env === 'development') {
+  nunjucksConfig.watch = true
+}
+
+nunjucksConfig.express = app
+
+var nunjucksAppEnv = nunjucks
+    .configure(appViews, nunjucksConfig)
+    .addGlobal('proceedings', proceedingsData);
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
@@ -110,25 +112,23 @@ app.set('view engine', 'html')
 
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
-app.use('/govuk/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'govuk', 'assets')))
 
-// Serve govuk-frontend in /public
+app.use('/node_modules/moj-frontend', express.static(path.join(__dirname, '/node_modules/@ministryofjustice/frontend/')));
+
+// Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
 // Set up documentation app
 if (useDocumentation) {
   var documentationViews = [
     path.join(__dirname, '/node_modules/govuk-frontend/'),
+    path.join(__dirname, '/node_modules/govuk-frontend/components'),
     path.join(__dirname, '/docs/views/'),
     path.join(__dirname, '/lib/')
   ]
 
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
-    autoescape: true,
-    express: documentationApp,
-    noCache: true,
-    watch: true
-  })
+  nunjucksConfig.express = documentationApp
+  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
@@ -149,13 +149,9 @@ if (useV6) {
     path.join(__dirname, '/app/v6/views/'),
     path.join(__dirname, '/lib/v6') // for old unbranded template
   ]
+  nunjucksConfig.express = v6App
+  var nunjucksV6Env = nunjucks.configure(v6Views, nunjucksConfig)
 
-  var nunjucksV6Env = nunjucks.configure(v6Views, {
-    autoescape: true,
-    express: v6App,
-    noCache: true,
-    watch: true
-  })
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksV6Env)
 
@@ -186,6 +182,8 @@ app.locals.cookieText = config.cookieText
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
+// extensionConfig sets up variables used to add the scripts and stylesheets to each page.
+app.locals.extensionConfig = extensions.getAppConfig()
 
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
@@ -343,30 +341,14 @@ app.use(function (err, req, res, next) {
   console.error(err.message)
   res.status(err.status || 500)
   res.send(err.message)
-})
+});
+
+app.use(
+    '/public/javascripts/jquery.hideseek.min.js',
+    express.static(path.join(__dirname, '/node_modules/hideseek/jquery.hideseek.min.js'))
+);
 
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
-
-// Find a free port and start the server
-utils.findAvailablePort(app, function (port) {
-  console.log('Listening on port ' + port + '   url: http://localhost:' + port)
-  if (env === 'production' || useBrowserSync === 'false') {
-    app.listen(port)
-  } else {
-    app.listen(port - 50, function () {
-      browserSync({
-        proxy: 'localhost:' + (port - 50),
-        port: port,
-        ui: false,
-        files: ['public/**/*.*', 'app/views/**/*.*'],
-        ghostmode: false,
-        open: false,
-        notify: false,
-        logLevel: 'error'
-      })
-    })
-  }
-})
 
 module.exports = app

@@ -1,0 +1,11 @@
+{% if data['hipInjuries'] and data['hipInjuries'].includes("Dislocated hip") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated hip</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['hipInjuries'] and data['hipInjuries'].includes("Broken hip") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken hip</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherHipInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherHipInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

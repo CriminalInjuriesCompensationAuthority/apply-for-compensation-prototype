@@ -1,0 +1,27 @@
+{% if data['backInjuries'] and data['backInjuries'].includes("Broken vertebra") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken vertebra</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Slipped disc") %}
+  <tr><th class="govuk-table__cell govuk-body">Slipped disc</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Back strain") %}
+  <tr><th class="govuk-table__cell govuk-body">Back strain</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Broken tailbone") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken tailbone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Hemiplegia (paralysis of one side of the the body)") %}
+  <tr><th class="govuk-table__cell govuk-body">Hemiplegia (paralysis of one side of the the body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Quadriplegia or tetraplegia (paralysis of all 4 limbs)") %}
+  <tr><th class="govuk-table__cell govuk-body">Quadriplegia or tetraplegia (paralysis of all 4 limbs)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherBackInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherBackInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

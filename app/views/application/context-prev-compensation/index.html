@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextPrevCompHeading }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ contextPrevCompHeading }}
+    </h1>
+
+    <p class="govuk-body">We’re going to ask about any other compensation you've been paid for your injuries.</p>
+
+    <p class="govuk-body">This is so we can work out how much compensation you can get.</p>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+{{ compensationQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+
+            {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {% set compNoHtml %}
+            {{ govukInput({
+                  id: "minor-comp-no",
+                  name: "minor-comp-no",
+                  value: data['minor-comp-no'],
+                  classes: "govuk-!-width-two-thirds",
+                  label: {
+                    text: compNoHint
+                  }
+                }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+                  idPrefix: "minor-other-compensation",
+                  name: "minor-other-compensation",
+                  currentValue: data['minor-other-compensation'],
+                  fieldset: {
+                    legend: {
+                      text: minorCompensationQuestion,
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--xl"
+                    }
+                  },
+                  hint: {
+                    text: minorCompensationHint
+                  },
+                  items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("minor-other-compensation", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("minor-other-compensation", "No"),
+                    conditional: {
+                      html: compNoHtml
+                    }
+                  }
+                  ]
+                }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+</div>
+</main>
+</div>
+{% endblock %}

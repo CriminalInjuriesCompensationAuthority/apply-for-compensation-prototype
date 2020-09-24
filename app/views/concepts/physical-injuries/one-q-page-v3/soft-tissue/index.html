@@ -1,0 +1,87 @@
+{% extends "layout.html"%}
+
+{% block pageTitle %}
+Physical injuries - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#"class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk"import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "softTissueInjuries",
+        name: "softTissueInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries you have",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Cuts",
+            text: "Cuts",
+            checked: checked("softTissueInjuries", "Cuts")
+          },
+          {
+            value: "Bruises",
+            text: "Bruises",
+            checked: checked("softTissueInjuries", "Bruises")
+          },
+          {
+            value: "Scarring",
+            text: "Scars",
+            checked: checked("softTissueInjuries", "Scarring")
+          },
+          {
+            value: "Burns",
+            text: "Burns",
+            checked: checked("softTissueInjuries", "Burns")
+          },
+          {
+            value: "Muscle",
+            text: "Muscle, ligament, or tendon injury",
+            checked: checked("softTissueInjuries", "Muscle")
+          },
+          {
+            value: "none",
+            text: "I do not have these injuries",
+            checked: checked("softTissueInjuries", "none"),
+            id: "none"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+    {% include "../includes/answers-template.html"%}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

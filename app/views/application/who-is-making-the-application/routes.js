@@ -7,12 +7,12 @@ module.exports = function (router, content) {
     // Get the answer from the query string
     var directApplicant = req.session.data['direct-applicant']
 
-    if (directApplicant === 'Someone else') {
+    if (directApplicant === 'Myself') {
       // Redirect to the relevant page
-      res.redirect('/application/transition')
+      res.redirect('/application/british-citizen')
     } else {
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/sexual-assault-application')
+      res.redirect('/application/transition')
     }
   })
 

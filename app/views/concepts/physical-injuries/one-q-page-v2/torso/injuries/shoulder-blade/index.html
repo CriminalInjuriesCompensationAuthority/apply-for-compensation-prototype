@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  var torsoPageCount = localStorage.getItem('torsoPages');
+  var newTorsoPageCount = (torsoPageCount*1 + 1);
+  $(".pageNumber").text(newTorsoPageCount);
+  localStorage.setItem('torsoPages', newTorsoPageCount);
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <span class="govuk-caption-xl">
+             <span class="pageNumber"></span> / {{ data['torsoInjuredParts'] | length + 1 }} questions about your torso</span>
+          <h1 class="govuk-fieldset__heading">
+            Select any injuries to your shoulder
+          </h1>
+      </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "shoulderBladeInjuries",
+        name: "shoulderBladeInjuries",
+        hint: {
+          text: shoulderBladeInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Broken shoulder",
+            text: "Broken shoulder",
+            checked: checked("shoulderBladeInjuries", " Broken shoulder")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

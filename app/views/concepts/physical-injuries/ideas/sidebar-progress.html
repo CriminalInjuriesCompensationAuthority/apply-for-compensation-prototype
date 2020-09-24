@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% set armInjuriesPageCount = "1" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Select any minor injuries to your arm
+        </h1>
+    </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "injuryCheckboxes",
+        name: "armsSurfaceInjuries",
+        fieldset: {
+        },
+        hint: {
+          text: armsSurfaceInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Burns to arms",
+            text: "Burns to arms",
+            checked: checked("armsInjuries", " Burns to arms")
+          },
+          {
+            value: " Scarring to arms",
+            text: "Scarring to arms",
+            checked: checked("armsInjuries", " Scarring to arms")
+          },
+          {
+            value: " Cuts to arm",
+            text: "Cuts to arm",
+            checked: checked("armsInjuries", " Cuts to arm")
+          },
+          {
+            value: " Bruises to arm",
+            text: "Bruises to arm",
+            checked: checked("armsInjuries", " Bruises to arm")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury to arm",
+            text: "Muscle, ligament, or tendon injury to arm",
+            checked: checked("armsInjuries", " Muscle, ligament, or tendon injury to arm")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+      <div class="app-step-nav-related app-step-nav-related--singular">
+        <h2 class="app-step-nav-related__heading">
+          You will be asked three questions about your arm injuries
+        </h2>
+      </div>
+
+      <div id="step-by-step-navigation" data-module="gemstepnav" class="app-step-nav  app-step-nav--active" data-id="e01e924b-9c7c-4c71-8241-66a575c2f61f" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+        <ol class="app-step-nav__steps">
+          <li class="app-step-nav__step js-step app-step-nav__step--active step-is-shown" aria-current="step" data-show="" id="check-youre-allowed-to-drive">
+            <div class="app-step-nav__header js-toggle-panel" data-position="1">
+              <h3 class="app-step-nav__title">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 1
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Minor injuries to your arm
+                </span>
+              </h3>
+            </div>
+          </li>
+          <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
+            <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 2
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Injuries to your hand
+                </span>
+            </div>
+
+
+          </li>
+          <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+            <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                <span class="app-step-nav__circle app-step-nav__circle--number">
+                  <span class="app-step-nav__circle-inner">
+                    <span class="app-step-nav__circle-background">
+                      <span class="app-step-nav__circle-step-label govuk-visually-hidden">Step</span> 3
+                      <span class="app-step-nav__circle-step-colon govuk-visually-hidden" aria-hidden="true">:</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="js-step-title">
+                  Injuries to your fingers or thumb
+                </span>
+            </div>
+
+          </li>
+        </ol>
+      </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

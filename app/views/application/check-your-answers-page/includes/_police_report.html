@@ -5,7 +5,7 @@
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ incidentReportedQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
@@ -20,7 +20,7 @@
 
 {% if data['crimeReported'] === 'Yes' %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ crimeReportedDateQuestion }}
   </dt>
   <dd class="govuk-summary-list__value">
@@ -32,26 +32,10 @@
     </a>
   </dd>
 </div>
-{% endif %}
-
-<!-- lang=""{% if data['crimeReported'] === 'Yes' %}
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    {{ policeForceQuestion }}
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {{ data['police-force'] }}
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a href="reporting-details-what-force">
-      Change<span class="govuk-visually-hidden"> {{ policeForceQuestion }}</span>
-    </a>
-  </dd>
-</div> -->
 
 
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     Crime reference number
   </dt>
   <dd class="govuk-summary-list__value">
@@ -59,66 +43,33 @@
   </dd>
   <dd class="govuk-summary-list__actions">
     <a href="crime-reference">
-      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestionCA }}</span>
+      Change<span class="govuk-visually-hidden"> {{ crimeReferenceNumberQuestion }}</span>
+    </a>
+  </dd>
+</div>
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    {{ policeForceQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['investigating-force'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="police-force">
+      Change<span class="govuk-visually-hidden">the police force</span>
     </a>
   </dd>
 </div>
 {% endif %}
-
-  {% if data['incidentlocation'] === 'England' %}
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      {{ englandForceQuestion }}
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['sort'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="england-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
-  {% endif %}
-
-  {% if data['incidentlocation'] === 'Scotland' %}
-    <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      {{ scotlandForceQuestion }}
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {{ data['policeScotland'] }}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a href="scotland-forces">
-        Change<span class="govuk-visually-hidden">the police force</span>
-      </a>
-    </dd>
-  </div>
-    {% endif %}
-
-    {% if data['incidentlocation'] === 'Wales' %}
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        {{ walesForceQuestion }}
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['policeWales'] }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-        <a href="wales-forces">
-          Change<span class="govuk-visually-hidden">the police force</span>
-        </a>
-      </dd>
-    </div>
-      {% endif %}
 
 
   <!-- Reporting delay -->
 
 {% if data['reportingDelay'] %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key" style="border:none">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half" style="border:none">
     Reasons for the delay in reporting the crime to the police
   </dt>
   <dd class="govuk-summary-list__value" style="border:none">
@@ -134,7 +85,7 @@
 
 {% if data['delay-reporting'] %}
 <div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
     {{ delayReportExplanation }}
   </dt>
   <dd class="govuk-summary-list__value">

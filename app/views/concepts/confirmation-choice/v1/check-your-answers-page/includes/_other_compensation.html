@@ -1,0 +1,134 @@
+
+<h2 class="govuk-heading-l">
+  Other compensation
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <!-- Previously applied question --->
+
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ minorPreviousApplicationsQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minor-previous-applications'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="previous-applications">
+        Change<span class="govuk-visually-hidden">{{ minorPreviousApplicationsQuestion }} </span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['minor-previous-applications'] === 'No' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ previousReferenceHint }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minor-previous-reference'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="previous-applications">
+        Change<span class="govuk-visually-hidden"> {{ previousReferenceHint }}</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <!-- Compensation question --->
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compensationQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-other-compensation'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="compensation">
+      Change<span class="govuk-visually-hidden"> compensation</span>
+    </a>
+  </dd>
+</div>
+
+{% if data['minor-other-compensation'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compWho }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-comp-who'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation">
+      Change<span class="govuk-visually-hidden">who you applied to or recieved compensation from</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compDecQuestion }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-comp-decision-answer'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation">
+      Change<span class="govuk-visually-hidden">decision</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['minor-other-compensation'] === 'No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compNoHint }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-comp-no'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="compensation">
+      Change<span class="govuk-visually-hidden"> reason you didn't apply for compensation</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['minor-comp-decision-answer'] === 'Yes' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compDecYes }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-comp-how-much'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation">
+      Change<span class="govuk-visually-hidden">the amount of award</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['minor-comp-decision-answer'] === 'No' %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    {{ compDecNo }}
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['minor-comp-when'] }}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="other-compensation">
+      Change<span class="govuk-visually-hidden">wnen you'll expect to hear</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+</dl>

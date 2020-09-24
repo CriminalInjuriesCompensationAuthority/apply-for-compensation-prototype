@@ -1,0 +1,11 @@
+{% if data['genitalsInjuries'] and data['genitalsInjuries'].includes("Genital injury") %}
+  <tr><th class="govuk-table__cell govuk-body">Genital injury</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['genitalsInjuries'] and data['genitalsInjuries'].includes("Infertility") %}
+  <tr><th class="govuk-table__cell govuk-body">Infertility</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherGenitalInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherGenitalInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

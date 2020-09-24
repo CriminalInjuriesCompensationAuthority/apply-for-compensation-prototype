@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ mentalHealthGPDetails }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+      {% call govukFieldset({
+      legend: {
+      text: yourGPDetails,
+      classes: "govuk-fieldset__legend--xl",
+      isPageHeading: true
+      }
+      }) %}
+
+      {{ govukInput({
+            label: {
+              text: miGPPracticeDetailsLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "gp-practice-name",
+            name: "gp-practice-name",
+            value: data['gp-practice-name']
+          }) }}
+
+
+      {{ govukInput({
+            label: {
+              html: miGPAddressLine1Label
+            },
+            id: "gp-address-line-1",
+            name: "gp-address-line-1",
+            value: data['gp-address-line-1']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: miGPTownOrCityLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "gp-address-town",
+            name: "gp-address-town",
+            value: data['gp-address-town']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: miGPCountyLabel
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "gp-address-county",
+            name: "gp-address-county",
+            value: data['gp-address-county']
+          }) }}
+
+      {{ govukInput({
+            label: {
+              text: miGPAddressPostcodeOptionalLabel
+            },
+            classes: "govuk-input--width-10",
+            id: "gp-address-postcode",
+            name: "gp-address-postcode",
+            value: data['gp-address-postcode']
+          }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+
+    </form>
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

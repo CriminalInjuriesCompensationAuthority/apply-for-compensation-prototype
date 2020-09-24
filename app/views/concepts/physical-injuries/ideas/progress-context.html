@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your face, head and neck injuries
+    </h1>
+    <p class="govuk-body-l">Based on your answers you will be asked three questions about the injuries to your head, face or neck</p>
+
+    <ol class="govuk-list govuk-list--number">
+      <li>Minor injuries to your head, face or neck</li>
+      <li>Injuries to your face</li>
+      <li>Injuries to your nose</li>
+    </ol>
+
+    <form class="form" method="post">
+      {{ govukButton({
+      "text": "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

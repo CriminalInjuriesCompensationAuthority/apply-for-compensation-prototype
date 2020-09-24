@@ -1,0 +1,39 @@
+
+
+{% if data['eyeInjuries'] or data['facialInjuries'] or data['noseInjuries'] or data['teethInjuries'] or data['brainInjuries'] or data['headSurfaceInjuries'] or data['armSurfaceInjuries'] or data['faceSurfaceInjuries'] %}
+
+<table class="govuk-table govuk-!-margin-top-5 your-injuries">
+  <caption class="govuk-heading-m" style="text-align: left;">
+    You have selected these injuries
+    </caption>
+  <tbody class="govuk-table__body">
+
+    {% if data['eyeInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['eyeInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if data['facialInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['facialInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['noseInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['noseInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['teethInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['teethInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['brainInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['brainInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['headSurfaceInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['headSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['armSurfaceInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['armSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    {% if data['faceSurfaceInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">{{ data['faceSurfaceInjuries'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+    </tbody>
+
+  </table>
+{% endif %}

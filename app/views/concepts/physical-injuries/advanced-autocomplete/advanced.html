@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery.hideseek.min.js"></script>
+<script>
+$('#search').hideseek({
+    highlight: true,
+    min_chars: 3,
+    nodata: "No results found.",
+    hidden_mode: true
+});
+
+
+// hide the code for myInjuries list
+$("#injuriesListWrapper").hide();
+
+// Set number of injuries to 0
+var myInjuries = 0;
+
+// Add an injury to the list from the autocomplete
+$('.select-injury').click( function() {
+
+  // show the code for myInjuries list
+  $("#injuriesListWrapper").show();
+
+  // get the injury selected
+  var newInjury = $(this).closest('.injury-list-row').find('h3').text();
+
+  // create the new table row to be inserted
+  var markup = "<tr class='govuk-table__row'><th class='govuk-table__cell govuk-body'>" + newInjury + "</th><td class='govuk-table__cell govuk-body govuk-table__cell--numeric'><a href='#' class='removeInjury'>Remove <span class='govuk-visually-hidden'>" + newInjury + "</span></a></td></tr>";
+
+  // add the new table row
+  $("table#myInjuriesList tbody").append(markup);
+
+  // increment the number of injuries by 1
+  myInjuries ++
+  if (myInjuries >= 2) {
+    $(".injuriesTotal").text(myInjuries + ' injuries');
+  }
+
+  // clear the search box and hide the results
+  var kp = jQuery.Event("keyup"); kp.which = kp.keyCode = 8; jQuery('#search').val('').trigger(kp);
+  $('.injury-list-row').css("display", "none");
+
+})
+
+
+// Remove an injury from the list
+$(document).on('click', '.removeInjury', function() {
+  // remove the table row
+  $(this).closest('tr').remove();
+
+  // remove 1 from the injuries total
+  myInjuries --
+
+  // Update the number of unjuries
+  if (myInjuries >= 2) {
+    $(".injuriesTotal").text(myInjuries + ' injuries');
+
+  } else if (myInjuries === 1) {
+    $(".injuriesTotal").text(myInjuries + ' injury');
+
+  } else if (myInjuries === 0) {
+    // hide the code for myInjuries list
+    $("#injuriesListWrapper").hide();
+  }
+
+});
+
+
+
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  })
+}}
+
+<a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What injuries do you have as a result of the crime?</h1>
+    </div>
+</div>
+
+<div id="injuriesListWrapper">
+  <h2 class="govuk-heading-m">You have selected <span class="injuriesTotal">1 injury</span></h2>
+
+  <table id="myInjuriesList" class="govuk-table govuk-!-margin-bottom-9">
+  <tbody class="govuk-table__body">
+    <!--
+    <tr class="govuk-table__row">
+      <th class="govuk-table__cell govuk-body" scope="row">Example</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+        <a href="search">Remove <span class="govuk-visually-hidden">blank</span></a>
+      </td>
+      </tr>
+      -->
+    </tbody>
+  </table>
+
+</div>
+
+
+<div id="search-field" class="govuk-form-group">
+    <label class="govuk-heading-m" for="search">
+        Search for injuries
+        <span class="govuk-hint">For example by area of the body or the injury name</span>
+    </label>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <input class="govuk-input" id="search" name="search" type="text" data-list="#proceedings-list">
+        </div>
+        <div class="govuk-grid-column-one-third clear-search">
+            <p><a class="govuk-link" href="advanced">Clear search</a></p>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div id="proceedings-list" class="govuk-grid-column-full ">
+
+            {% for proceeding in proceedings -%}
+            <div class="govuk-grid-row injury-list-row govuk-!-padding-top-3 govuk-!-padding-bottom-3" id="offence-item-{{loop.index}}" >
+                <div class="govuk-grid-column-two-thirds">
+                    <h3 class="govuk-body injury-item">{{proceeding.injuryName | capitalize}}</h3>
+                  <!--
+                    <ul class="proceeding-list">
+                        <li class="govuk-caption-m proceeding__list-item">{{proceeding.bodyArea| capitalize}}</li>
+                        <li class="govuk-caption-m proceeding__list-item"> > {{proceeding.typeofInjury | capitalize}}</li>
+                    </ul>
+                    -->
+                </div>
+                <div class="govuk-grid-column-one-third" style="text-align:right;">
+                    <a id="injury-item-button-{{loop.index}}" class="select-injury govuk-button govuk-!-margin-bottom-0" role="button" href="#">
+                        Select
+                    </a>
+                </div>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</div>
+<a class="govuk-button" href="end" role="button">
+    Continue
+</a>
+
+
+{% endblock %}

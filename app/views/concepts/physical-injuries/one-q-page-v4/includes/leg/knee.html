@@ -1,0 +1,15 @@
+{% if data['kneeInjuries'] and data['kneeInjuries'].includes("Dislocated kneecap") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated kneecap</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['kneeInjuries'] and data['kneeInjuries'].includes("Broken kneecap") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken kneecap</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['kneeInjuries'] and data['kneeInjuries'].includes("Removal of kneecap") %}
+  <tr><th class="govuk-table__cell govuk-body">Removal of kneecap</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherKneeInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherKneeInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

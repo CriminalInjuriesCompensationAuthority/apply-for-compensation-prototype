@@ -1,0 +1,162 @@
+{% if data['armsInjuredParts'] %}
+<!--
+<h3 class="govuk-heading-m">Arm or hand injuries</h3>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+-->
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Shoulder") %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Shoulder injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['shoulderInjuries'] }}
+    {% if data['otherShoulderInjury'] %}
+      {{ data['otherShoulderInjury']}}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/shoulder">
+      Change<span class="govuk-visually-hidden">Shoulder injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Arm") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Arm injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['armInjuries'] }}
+    {% if data['otherArmInjury'] %}
+      {{ data['otherArmInjury']}}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/arm">
+      Change<span class="govuk-visually-hidden">Arm injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Elbow") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Elbow injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['elbowInjuries'] }}
+    {% if data['otherElbowInjury'] %}
+      {{ data['otherElbowInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/elbow">
+      Change<span class="govuk-visually-hidden">Elbow injuries </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Wrist") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Wrist injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['wristInjuries'] }}
+    {% if data['otherWristInjury'] %}
+      {{ data['otherWristInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/wrist">
+      Change<span class="govuk-visually-hidden">Wrist injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Hand") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Hand injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['handInjuries'] }}
+    {% if data['otherHandInjury'] %}
+      {{ data['otherHandInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/hand">
+      Change<span class="govuk-visually-hidden">Hand injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Finger and thumb") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Finger and thumb injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['fingerInjuries'] }}
+    {% if data['otherFingerInjury'] %}
+      {{ data['otherFingerInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/finger-thumb">
+      Change<span class="govuk-visually-hidden">Finger and thumb injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Skin") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Skin on your arms or hands injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['armSkinInjuries'] }}
+    {% if data['otherArmSkinInjury'] %}
+      {{ data['otherArmSkinInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/skin">
+      Change<span class="govuk-visually-hidden">Neck injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['armsInjuredParts'] and data['armsInjuredParts'].includes("Tissue") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Arm tissue injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['armTissueInjuries'] }}
+    {% if data['otherArmTissueInjury'] %}
+      {{ data['otherArmTissueInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/arms/tissue">
+      Change<span class="govuk-visually-hidden">Tissue on arm injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+<!--
+</dl>
+-->
+{% endif %}

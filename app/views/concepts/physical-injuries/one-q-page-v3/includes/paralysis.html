@@ -1,0 +1,19 @@
+{% if data['paralysisType'] and data['paralysisType'].includes("Hemiplegia") %}
+  <tr><th class="govuk-table__cell govuk-body">Hemiplegia (one side of your body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['paralysisType'] and data['paralysisType'].includes("Paraplegia") %}
+  <tr><th class="govuk-table__cell govuk-body">Paraplegia (the lower half of your body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['paralysisType'] and data['paralysisType'].includes("Tetraplegia or quadriplegia") %}
+  <tr><th class="govuk-table__cell govuk-body">Tetraplegia or quadriplegia (from the neck down)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['paralysisType'] and data['paralysisType'].includes("Arm") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysis of an arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['paralysisType'] and data['paralysisType'].includes("Leg") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysis of a leg</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

@@ -1,7 +1,21 @@
 {% if shouldShowCookieMessage %}
-  <div class="app-cookie-banner">
-    <p class="app-cookie-banner__message">
-      {{cookieText | safe }}
-    </p>
+  <div class="app-cookie-banner govuk-width-container"">
+      <div class="govuk-grid-row">
+            <div class=" govuk-grid-column-two-thirds">
+              <div class="cookie-banner__message">
+                <span class="govuk-heading-m">Tell us whether you accept cookies</span>
+                <p class="govuk-body">This service uses cookies that are essential for the site to work. We also use non-essential cookies to help us improve your experience.</p>
+                <p class="govuk-body">Do you accept these non-essential cookies?</p>
+              </div>
+              <div class="cookie-banner__buttons">
+                <div class="cookie-banner__button cookie-banner__button-accept govuk-grid-column-full govuk-grid-column-one-half-from-desktop govuk-!-padding-left-0">
+                  <button class="govuk-button button--inline" type="submit" data-module="track-click" data-accept-cookies="true" data-track-category="cookieBanner" data-track-action="Cookie banner accepted">Accept all cookies</button>
+                </div>
+                <div class="cookie-banner__button govuk-grid-column-full govuk-grid-column-one-half-from-desktop govuk-!-padding-left-0">
+                  <a class="govuk-button govuk-button--secondary button--inline" role="button" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked" href="/application/cookies">Set cookie preferences</a>
+                </div>
+              </div>
+            </div>
+          </div>
   </div>
 {% endif %}

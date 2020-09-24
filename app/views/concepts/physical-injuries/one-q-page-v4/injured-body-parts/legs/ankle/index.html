@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the ankle were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherAnkleInjury",
+        name: "otherAnkleInjury",
+        value: data['otherAnkleInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "ankleInjuries",
+        name: "ankleInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the ankle",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Dislocated ankle",
+            text: "Dislocated ankle",
+            checked: checked("ankleInjuries", "Dislocated ankle"),
+            id: "Dislocated ankle"
+          },
+          {
+            value: "Broken ankle",
+            text: "Broken ankle",
+            checked: checked("ankleInjuries", "Broken ankle"),
+            id: "Broken ankle"
+          },
+          {
+            value: "Sprained ankle",
+            text: "Sprained ankle",
+            checked: checked("ankleInjuries", "Sprained ankle"),
+            id: "Sprained ankle"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("ankleInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

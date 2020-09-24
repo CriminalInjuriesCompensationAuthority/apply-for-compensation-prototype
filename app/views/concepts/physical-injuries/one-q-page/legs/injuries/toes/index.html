@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "toesInjuries",
+        name: "toesInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to your toes",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: toesInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Broken big toe",
+            text: "Broken big toe",
+            checked: checked("toesInjuries", " Broken big toe")
+          },
+          {
+            value: " Broken toe (not including big toe)",
+            text: "Broken toe (not including big toe)",
+            checked: checked("toesInjuries", " Broken toe (not including big toe)")
+          },
+          {
+            value: " Amputated big toe",
+            text: "Amputated big toe",
+            checked: checked("toesInjuries", " Amputated big toe")
+          },
+          {
+            value: " Amputated toe",
+            text: "Amputated toe",
+            checked: checked("toesInjuries", " Amputated toe")
+          },
+          {
+            value: " Amputation of part of big toe",
+            text: "Amputation of part of big toe",
+            checked: checked("toesInjuries", " Amputation of part of big toe")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/answers-template.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

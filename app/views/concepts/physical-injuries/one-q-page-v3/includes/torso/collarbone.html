@@ -1,0 +1,7 @@
+{% if data['collarBoneInjuries'] and data['collarBoneInjuries'].includes("Separated shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Separated shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['collarBoneInjuries'] and data['collarBoneInjuries'].includes("Broken collarbone") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken collarbone</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

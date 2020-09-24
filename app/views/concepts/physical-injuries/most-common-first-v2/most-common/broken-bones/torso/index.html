@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "brokenBonesTorso",
+        name: "brokenBonesTorso",
+        fieldset: {
+          legend: {
+            text: "Select the broken bones in your torso",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: " Back or spine",
+            text: "Back or spine",
+            checked: checked("brokenBonesTorso", " Back or spine")
+          },
+          {
+            value: " Breast bone",
+            text: "Breast bone",
+            checked: checked("brokenBonesTorso", " Breast bone")
+          },
+          {
+            value: " Collarbone",
+            text: "Collarbone",
+            checked: checked("brokenBonesTorso", " Collarbone")
+          },
+          {
+            value: " Pelvis",
+            text: "Pelvis",
+            checked: checked("brokenBonesTorsoHeadFaceNeck", " Pelvis")
+          },
+          {
+            value: " Rib",
+            text: "Rib",
+            checked: checked("brokenBonesTorso", " Rib")
+          },
+          {
+            value: " Finger",
+            text: "Finger",
+            checked: checked("brokenBonesTorso", " Finger")
+          },
+          {
+            value: " Shoulder",
+            text: "Shoulder",
+            checked: checked("brokenBonesTorso", " Shoulder")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+    {% include "../../../includes/answers-template.html" %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

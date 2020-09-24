@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Making email address optional (SMS confirmation) - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Making email address optional (SMS confirmation)
+      </h1>
+
+      <p class="govuk-body-l">These prototypes explore ways of making email address optional – asking for a mobile number to send your confirmation to instead.</p>
+
+      <hr><br>
+      <h2 class="govuk-heading-m">Concept 1</h2>
+      <p class="govuk-body">Ask if the person has an email address. Show either email or mobile screens depending what they answer. Questions still appear in the flow at contact details.</p>
+      <p><a href="/concepts/confirmation-choice/v1/address-manually">Concept 1</a></p>
+
+      <hr>
+      <br>
+      <h2 class="govuk-heading-m">Concept 2 (chosen option)</h2>
+
+      <img  class="responsive" src="/public/images/confirmation-message-preference.png" />
+      <p><a href="/public/images/confirmation-message-preference.png" target="_blank">Open this image in a new tab</a></p>
+
+      <p class="govuk-body">Use conditional reveal component to ask how the applicant would like to recieve their confirmation.</p>
+      <p class="govuk-body">Bring this up to the eligibility questions to make sure applicant doesn't get through application to find they can't apply.</p>
+      <p class="govuk-body">Don't ask for the method they have input later in the contact details if they have already provided it.</p>
+
+      <p><a href="/concepts/confirmation-choice/v2/consent">Concept 2</a></p>
+
+
+    </div>
+</div>
+
+{% endblock %}

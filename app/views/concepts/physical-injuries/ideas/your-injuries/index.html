@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Your injuries
+    </h1>
+
+    <table class="govuk-table govuk-!-margin-top-5 your-injuries">
+      <caption class="govuk-heading-m " style="text-align: left;">
+        You have selected these injuries
+        </caption>
+      <tbody class="govuk-table__body">
+          <tr><th class="govuk-table__cell govuk-body">Cuts and grazes to the face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+          <tr><th class="govuk-table__cell govuk-body">Scars on the arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+          <tr><th class="govuk-table__cell govuk-body">Broken arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+      </tbody>
+
+    </table>
+
+   <form class="form" method="post">
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "yourInjuriesCorrect",
+          name: "yourInjuriesCorrect",
+          fieldset: {
+            legend: {
+              text: "What would you like to do now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+          {
+            "value": "Add more",
+            "text": "Add more injuries",
+            checked: checked("yourInjuriesCorrect", "Add more")
+          },
+          {
+            "value": "Continue to next section",
+            "text": "Continue to next section",
+            checked: checked("yourInjuriesCorrect", "Continue to next section")
+          }
+          ]
+        }) }}
+
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

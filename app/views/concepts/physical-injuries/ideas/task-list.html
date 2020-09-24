@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+
+
+
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Claim criminal injuries compensation
+    </h1>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Eligibility
+        </h2>
+        <ul class="app-task-list__items govuk-!-padding-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="read-declaration-completed">
+                Read declaration
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-completed">
+                Your eligibility
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+          </li>
+        </ul>
+      </li>
+<!---->
+      <li>
+        <h2 class="app-task-list__section">
+          Your details
+        </h2>
+        <ul class="app-task-list__items govuk-!-padding-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Your details
+              <br />
+              <a href="#" aria-describedby="company-information-completed">
+                Review or change answers
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+          </li>
+        </ul>
+      </li>
+<!---->
+      <li>
+        <h2 class="app-task-list__section">
+          About the crime
+        </h2>
+        <ul class="app-task-list__items govuk-!-padding-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="company-information-completed">
+                Incident details
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="company-information-completed">
+                About the offender
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+        </ul>
+      </li>
+<!---->
+      <li>
+        <h2 class="app-task-list__section">
+          Your injuries
+        </h2>
+        <ul class="app-task-list__items govuk-!-padding-0  govuk-!-margin-bottom-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                Physical injuries
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="company-information-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                Mental injuries
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task" id="company-information-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                Treatment details
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task" id="company-information-completed">Not started</strong>
+          </li>
+        </ul>
+      </li>
+      <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+        Start section
+      </button>
+
+<!---->
+
+      <li>
+        <h2 class="app-task-list__section">
+          Other compensation
+        </h2>
+        <ul class="app-task-list__items govuk-!-padding-0">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                Previous applications
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task" id="company-information-completed">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+                Other compensation
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__task" id="company-information-completed">Not started</strong>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,99 @@
+<!-- About the crime -->
+<h2 class="govuk-heading-l">
+  About the crime
+</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ singleOrMultipleIncidentsQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Single incident
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="single-or-multiple-incidents">
+        Change<span class="govuk-visually-hidden"> {{ singleOrMultipleIncidentsQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ incidentDateHeading }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 January 2019
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="incident-date">
+        Change<span class="govuk-visually-hidden"> {{ incidentDateHeading }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <!-- Location Questions -->
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ incidentLocationHeading }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Scotland
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="incident-location">
+        Change<span class="govuk-visually-hidden"> where the crime happened</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['incidentlocation'] === 'Scotland' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ scotlandLocationQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Glasgow, Kelvingrove Park
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="scotland-location">
+        Change<span class="govuk-visually-hidden"> {{ incidentLocationRevealOther }}</span>
+      </a>
+    </dd>
+  </div>
+    {% endif %}
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ doYouKnowOffenderQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="do-you-know-offender">
+        Change<span class="govuk-visually-hidden"> {{ doYouKnowOffenderQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Contact with the offender
+    </dt>
+    <dd class="govuk-summary-list__value">
+      I have no contact with the offender
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="what-is-relationship">
+        Change<span class="govuk-visually-hidden"> {{ whatIsRelationshipQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+
+</dl>

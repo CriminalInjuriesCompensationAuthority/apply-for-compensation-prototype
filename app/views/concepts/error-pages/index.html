@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Error pages - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'We are currently in the Beta phase.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Error pages
+      </h1>
+      <p class="govuk-body"><a href="/concepts/error-pages/page-not-found">Page not found</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/unexpected-error">There is a problem with the service (unplanned)</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/service-unavailable">Service unavailable due to planned maintenance</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/timeout">Timeout</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/submission-error-2-days">Submission error - DCS down</a></p>
+          <p class="govuk-body"><a href="/concepts/error-pages/submission-error-30-minutes">Submission error - message bus down</a></p>
+{% endblock %}

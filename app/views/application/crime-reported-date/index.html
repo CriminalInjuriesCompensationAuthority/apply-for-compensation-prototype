@@ -26,16 +26,33 @@
           {{ govukDateInput({
             id: 'incidentReported',
             namePrefix: 'incidentReported',
-          fieldset: {
-          legend: {
-          text: crimeReportedDateQuestion,
-          isPageHeading: true,
-          classes: 'govuk-fieldset__legend--xl'
-          }
-          },
-          hint: {
-          text: 'For example, 31 3 2018. You can enter an approximate date. '
+            fieldset: {
+            legend: {
+            text: crimeReportedDateQuestion,
+            isPageHeading: true,
+            classes: 'govuk-fieldset__legend--xl'
             }
+            },
+            hint: {
+            text: 'For example, 31 3 2018. You can enter an approximate date. '
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: data["incidentReported-day"]
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: data["incidentReported-month"]
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: data["incidentReported-year"]
+                }
+              ]
           }) }}
           {% from "govuk/components/button/macro.njk" import govukButton %}
 

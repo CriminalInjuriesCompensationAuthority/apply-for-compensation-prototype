@@ -15,7 +15,7 @@ module.exports = function (router, content) {
         return res.redirect('/application/check-your-answers-page')
       }
       // If the variable is any other value (or is missing) render the page requested
-      res.redirect('/application/who-is-making-the-application')
+      res.redirect('/application/british-citizen')
     }
   })
 
@@ -26,6 +26,10 @@ module.exports = function (router, content) {
   //error page
   router.get('/application/over-18/error', function (req, res) {
     res.render('application/over-18/error', content)
+  })
+  //error page
+  router.get('/application/over-18/transition', function (req, res) {
+    res.render('application/over-18/transition', content)
   })
   // END__######################################################################################################
 }

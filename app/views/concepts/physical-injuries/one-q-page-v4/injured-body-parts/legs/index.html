@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the leg were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "legInjuredParts",
+        name: "legInjuredParts",
+        fieldset: {
+          legend: {
+            text: "What parts of the legs or feet were injured?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: legInjuredPartsQuestionHint
+        },
+        items: [
+          {
+            value: "Hip",
+            text: "Hip",
+            checked: checked("legInjuredParts", "Hip"),
+            id: "Hip"
+          },
+          {
+            value: "Leg",
+            text: "Leg",
+            checked: checked("legInjuredParts", "Leg"),
+            id: "Leg"
+          },
+          {
+            value: "Knee",
+            text: "Knee",
+            checked: checked("legInjuredParts", "Knee"),
+            id: "Knee"
+          },
+          {
+            value: "Ankle",
+            text: "Ankle",
+            checked: checked("legInjuredParts", "Ankle"),
+            id: "Ankle"
+          },
+          {
+            value: "Foot",
+            text: "Foot",
+            checked: checked("legInjuredParts", "Foot"),
+            id: "Foot"
+          },
+          {
+            value: "Toes",
+            text: "Toes",
+            checked: checked("legInjuredParts", "Toes"),
+            id: "Toes"
+          },
+          {
+            value: "Skin",
+            text: "Skin",
+            hint: {
+              text: "Including cuts, bruises, burns and scars"
+            },
+            checked: checked("legInjuredParts", "Skin"),
+            id: "Skin injuries to the leg or foot"
+          },
+          {
+            value: "Tissue",
+            text: "Tissue",
+            hint: {
+              text: "Including muscles, ligaments, tendons or cartilage"
+            },
+            checked: checked("legInjuredParts", "Tissue"),
+            id: "Tissue injury on leg or foot"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

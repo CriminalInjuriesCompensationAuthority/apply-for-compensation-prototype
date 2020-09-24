@@ -1,0 +1,181 @@
+{% if data['headFaceNeckInjuredParts'] %}
+<!--
+<h3 class="govuk-heading-m">Head, face or neck injuries</h3>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+-->
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Head or brain") %}
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Head or brain injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['headInjuries'] }}
+    {% if data['otherHeadInjury'] %}
+      {{ data['otherHeadInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/head">
+      Change<span class="govuk-visually-hidden">Head or brain injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Face or jaw") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Face or jaw injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['faceInjuries'] }}
+    {% if data['otherFaceInjury'] %}
+      {{ data['otherFaceInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/face/">
+      Change<span class="govuk-visually-hidden">Face or jaw injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Eye or eyesight") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Eye or eyesight injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['eyeInjuries'] }}
+    {% if data['otherEyeInjury'] %}
+      {{ data['otherEyeInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/eye-sight/">
+      Change<span class="govuk-visually-hidden">Eye or eyesight injuries </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Ear or hearing") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Ear or hearing injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['earInjuries'] }}
+    {% if data['otherEarInjury'] %}
+      {{ data['otherEarInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/ear-hearing/">
+      Change<span class="govuk-visually-hidden">Ear or hearing injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Nose") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Nose injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['noseInjuries'] }}
+    {% if data['otherNoseInjury'] %}
+      {{ data['otherNoseInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/nose/">
+      Change<span class="govuk-visually-hidden">Nose injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Mouth") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Mouth injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['mouthInjuries'] }}
+    {% if data['otherMouthInjury'] %}
+      {{ data['otherMouthInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/mouth/">
+      Change<span class="govuk-visually-hidden">Mouth injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Neck") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Neck injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['neckInjuries'] }}
+    {% if data['otherNeckInjury'] %}
+      {{ data['otherNeckInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/neck/">
+      Change<span class="govuk-visually-hidden">Neck injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Skin") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Skin on your head, face or neck injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['headSkinInjuries'] }}
+    {% if data['otherHeadSkinInjury'] %}
+      {{ data['otherHeadSkinInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/skin/">
+      Change<span class="govuk-visually-hidden">Skin on head, face or neck injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Tissue") %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+    Tissue on head, face or neck injuries
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{ data['headTissueInjuries'] }}
+    {% if data['otherHeadTissueInjury'] %}
+      {{ data['otherHeadTissueInjury'] }}
+    {% endif %}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/concepts/physical-injuries/one-q-page-v4/injured-body-parts/head-face-neck/tissue">
+      Change<span class="govuk-visually-hidden">Tissue on head, face or neck injuries</span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+<!--
+</dl>
+-->
+{% endif %}

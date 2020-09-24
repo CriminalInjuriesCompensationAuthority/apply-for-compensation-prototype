@@ -1,0 +1,75 @@
+
+
+{% if data['mostCommonInjuries'] %}
+
+<table class="govuk-table govuk-!-margin-top-5 your-injuries">
+  <caption class="govuk-heading-m" style="text-align: left;">
+    You have selected these injuries
+    </caption>
+  <tbody class="govuk-table__body">
+
+    {% if 'Black eye' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">Black eye</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Blurred vision' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">Blurred vision</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Brain damage' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">Brain damage</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Broken bones' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">
+          Broken bones{% if data['brokenBonesHeadFaceNeck'] or data['brokenBonesArms'] or data['brokenBonesTorso'] or data['brokenBonesLegs'] %}:{% endif %}
+
+        {% if data['brokenBonesHeadFaceNeck'] %}
+           {{data['brokenBonesHeadFaceNeck'] }}
+          {% endif %}
+        {% if data['brokenBonesArms'] %}
+           {{data['brokenBonesArms'] }}
+          {% endif %}
+        {% if data['brokenBonesTorso'] %}
+           {{data['brokenBonesTorso'] }}
+          {% endif %}
+        {% if data['brokenBonesLegs'] %}
+           {{data['brokenBonesLegs'] }}
+        {% endif %}
+
+      </th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Broken tooth' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">Broken tooth</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Bruising' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">
+          Bruising {% if data['bruisedInjuries'] %}on:{% endif %}
+           {{data['bruisedInjuries'] }}
+      </th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Cuts or grazes' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">
+          Cuts or grazes {% if data['cutsInjuries'] %}on:{% endif %}
+           {{data['cutsInjuries'] }}
+      </th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Scarring' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">
+          Scarring {% if data['scarsInjuries'] %}on:{% endif %}
+           {{data['scarsInjuries'] }}
+      </th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    {% if 'Whiplash' in data['mostCommonInjuries']%}
+      <tr><th class="govuk-table__cell govuk-body">Whiplash</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Change</a></td><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+    {% endif %}
+
+    </tbody>
+
+  </table>
+{% endif %}

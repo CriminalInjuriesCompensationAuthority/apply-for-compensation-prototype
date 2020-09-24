@@ -1,0 +1,511 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which police force is investigating the crime? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="https://www.surveymonkey.co.uk/r/YourFeedbackPB" target="_blank">feedback <span class="govuk-visually-hidden">(opens in new window)</span></a> will help us to improve it.'
+  }) }}
+
+  <a href="#" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--xl" for="police-forces">
+          Which police force is investigating the crime?
+        </label>
+      </h1>
+
+
+        <div class="autocomplete__wrapper govuk-form-group">
+            {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+            {{ govukSelect({
+              id: "investigating-force",
+              value: "investigating-force",
+              name: "investigating-force",
+              items: [
+                {
+                  value: "",
+                  text: ""
+              },
+                {
+                  value: "Avon And Somerset Constabulary",
+                  text: "Avon And Somerset Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Avon And Somerset Constabulary"
+                },
+                {
+                  value: "Bedfordshire Police",
+                  text: "Bedfordshire Police",
+                  selected: true if data["minor-investigating-force"] == "Bedfordshire Police"
+                },
+                {
+                  value: "British Transport Police",
+                  text: "British Transport Police",
+                  selected: true if data["minor-investigating-force"] == "British Transport Police"
+                },
+                {
+                  value: "Cambridgeshire Constabulary",
+                  text: "Cambridgeshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Cambridgeshire Constabulary"
+                },
+                {
+                  value: "Cheshire Constabulary",
+                  text: "Cheshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Cheshire Constabulary"
+                },
+                {
+                  value: "City Of London Police",
+                  text: "Cheshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Cheshire Constabulary"
+                },
+                {
+                  value: "Cleveland Police",
+                  text: "Cleveland Police",
+                  selected: true if data["minor-investigating-force"] == "Cleveland Police"
+                },
+                {
+                  value: "Cumbria Constabulary",
+                  text: "Cumbria Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Cumbria Constabulary"
+                },
+                {
+                  value: "Derbyshire Constabulary",
+                  text: "Derbyshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Derbyshire Constabulary"
+                },
+                {
+                  value: "Devon &amp; Cornwall Police",
+                  text: "Devon &amp; Cornwall Police",
+                  selected: true if data["minor-investigating-force"] == "Devon &amp; Cornwall Police"
+                },
+                {
+                  value: "Dorset Police",
+                  text: "Dorset Police",
+                  selected: true if data["minor-investigating-force"] == "Dorset Police"
+                },
+                {
+                  value: "Durham Constabulary",
+                  text: "Durham Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Durham Constabulary"
+                },
+                {
+                  value: "Essex Police",
+                  text: "Essex Police",
+                  selected: true if data["minor-investigating-force"] == "Essex Police"
+                },
+                {
+                  value: "Gloucestershire Constabulary",
+                  text: "Gloucestershire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Gloucestershire Constabulary"
+                },
+                {
+                  value: "Greater Manchester Police",
+                  text: "Greater Manchester Police",
+                  selected: true if data["minor-investigating-force"] == "Greater Manchester Police"
+                },
+                {
+                  value: "Hampshire Constabulary",
+                  text: "Hampshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Hampshire Constabulary"
+                },
+                {
+                  value: "Hertfordshire Constabulary",
+                  text: "Hertfordshire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Hertfordshire Constabulary"
+                },
+                {
+                  value: "Humberside Police",
+                  text: "Humberside Police",
+                  selected: true if data["minor-investigating-force"] == "Humberside Police"
+                },
+                {
+                  value: "Kent Police",
+                  text: "Kent Police",
+                  selected: true if data["minor-investigating-force"] == "Kent Police"
+                },
+                {
+                  value: "Lancashire Constabulary",
+                  text: "Lancashire Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Lancashire Constabulary"
+                },
+                {
+                  value: "Leicestershire Police",
+                  text: "Leicestershire Police",
+                  selected: true if data["minor-investigating-force"] == "Leicestershire Police"
+                },
+                {
+                  value: "Lincolnshire Police",
+                  text: "Lincolnshire Police",
+                  selected: true if data["minor-investigating-force"] == "Lincolnshire Police"
+                },
+                {
+                  value: "Merseyside Police",
+                  text: "Merseyside Police",
+                  selected: true if data["minor-investigating-force"] == "Merseyside Police"
+                },
+                {
+                  value: "Metropolitan Barking",
+                  text: "Metropolitan Barking",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Barking"
+                },
+                {
+                  value: "Metropolitan Barnet",
+                  text: "Metropolitan Barnet",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Barnet"
+                },
+                {
+                  value: "Metropolitan Bexley",
+                  text: "Metropolitan Bexley",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Bexley"
+                },
+                {
+                  value: "Metropolitan Brent",
+                  text: "Metropolitan Brent",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Brent"
+                },
+                {
+                  value: "Metropolitan Bromley",
+                  text: "Metropolitan Bromley",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Bromley"
+                },
+                {
+                  value: "Metropolitan Camden",
+                  text: "Metropolitan Camden",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Camden"
+                },
+                {
+                  value: "Metropolitan Croydon",
+                  text: "Metropolitan Croydon",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Croydon"
+                },
+                {
+                  value: "Metropolitan Ealing",
+                  text: "Metropolitan Ealing",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Ealing"
+                },
+                {
+                  value: "Metropolitan Enfield",
+                  text: "Metropolitan Enfield",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Enfield"
+                },
+                {
+                  value: "Metropolitan Greenwich",
+                  text: "Metropolitan Greenwich",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Greenwich"
+                },
+                {
+                  value: "Metropolitan Hackney",
+                  text: "Metropolitan Hackney",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Hackney"
+                },
+                {
+                  value: "Metropolitan Hammersmith",
+                  text: "Metropolitan Hammersmith",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Hammersmith"
+                },
+                {
+                  value: "Metropolitan Haringey",
+                  text: "Metropolitan Haringey",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Haringey"
+                },
+                {
+                  value: "Metropolitan Harrow",
+                  text: "Metropolitan Harrow",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Harrow"
+                },
+                {
+                  value: "Metropolitan Havering",
+                  text: "Metropolitan Havering",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Havering"
+                },
+                {
+                  value: "Metropolitan Hillingdon",
+                  text: "Metropolitan Hillingdon",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Hillingdon"
+                },
+                {
+                  value: "Metropolitan Hounslow",
+                  text: "Metropolitan Hounslow",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Hounslow"
+                },
+                {
+                  value: "Metropolitan Islington",
+                  text: "Metropolitan Islington",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Islington"
+                },
+                {
+                  value: "Metropolitan Kensington",
+                  text: "Metropolitan Kensington",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Kensington"
+                },
+                {
+                  value: "Metropolitan Kingston",
+                  text: "Metropolitan Kingston",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Kingston"
+                },
+                {
+                  value: "Metropolitan Lambeth",
+                  text: "Metropolitan Lambeth",
+                  selected: true if data["minor-investigating-force"] == "Avon And Somerset Constabulary"
+                },
+                {
+                  value: "Metropolitan Lewisham",
+                  text: "Metropolitan Lewisham",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Lambeth"
+                },
+                {
+                  value: "Metropolitan Merton",
+                  text: "Metropolitan Merton",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Merton"
+                },
+                {
+                  value: "Metropolitan Newham",
+                  text: "Metropolitan Newham",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Newham"
+                },
+                {
+                  value: "Metropolitan Redbridge",
+                  text: "Metropolitan Redbridge",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Redbridge"
+                },
+                {
+                  value: "Metropolitan Richmond",
+                  text: "Metropolitan Richmond",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Richmond"
+                },
+                {
+                  value: "Metropolitan Southwark",
+                  text: "Metropolitan Southwark",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Southwark"
+                },
+                {
+                  value: "Metropolitan Sutton",
+                  text: "Metropolitan Sutton",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Sutton"
+                },
+                {
+                  value: "Metropolitan Tower Hamlets",
+                  text: "Metropolitan Tower Hamlets",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Tower Hamlets"
+                },
+                {
+                  value: "Metropolitan Waltham Forest",
+                  text: "Metropolitan Waltham Forest",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Waltham Forest"
+                },
+                {
+                  value: "Metropolitan Wandsworth",
+                  text: "Metropolitan Wandsworth",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Wandsworth"
+                },
+                {
+                  value: "Metropolitan Westminster",
+                  text: "Metropolitan Westminster",
+                  selected: true if data["minor-investigating-force"] == "Metropolitan Westminster"
+                },
+                {
+                  value: "Norfolk Constabulary",
+                  text: "Norfolk Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Norfolk Constabulary"
+                },
+                {
+                  value: "North Yorkshire Police",
+                  text: "North Yorkshire Police",
+                  selected: true if data["minor-investigating-force"] == "North Yorkshire Police"
+                },
+                {
+                  value: "Northamptonshire Police",
+                  text: "Northamptonshire Police",
+                  selected: true if data["minor-investigating-force"] == "Northamptonshire Police"
+                },
+                {
+                  value: "Northumbria Police",
+                  text: "Northumbria Police",
+                  selected: true if data["minor-investigating-force"] == "Northumbria Police"
+                },
+                {
+                  value: "Nottinghamshire Police",
+                  text: "Nottinghamshire Police",
+                  selected: true if data["minor-investigating-force"] == "Nottinghamshire Police"
+                },
+                {
+                  value: "South Yorkshire Police",
+                  text: "South Yorkshire Police",
+                  selected: true if data["minor-investigating-force"] == "South Yorkshire Police"
+                },
+                {
+                  value: "Staffordshire Police",
+                  text: "Staffordshire Police",
+                  selected: true if data["minor-investigating-force"] == "Staffordshire Police"
+                },
+                {
+                  value: "Suffolk Constabulary",
+                  text: "Suffolk Constabulary",
+                  selected: true if data["minor-investigating-force"] == "Suffolk Constabulary"
+                },
+                {
+                  value: "Surrey Police",
+                  text: "Surrey Police",
+                  selected: true if data["minor-investigating-force"] == "Surrey Police"
+                },
+                {
+                  value: "Sussex Police",
+                  text: "Sussex Police",
+                  selected: true if data["minor-investigating-force"] == "Sussex Police"
+                },
+                {
+                  value: "Thames Valley Police",
+                  text: "Thames Valley Police",
+                  selected: true if data["minor-investigating-force"] == "Thames Valley Police"
+                },
+                {
+                  value: "Warwickshire Police",
+                  text: "Warwickshire Police",
+                  selected: true if data["minor-investigating-force"] == "Warwickshire Police"
+                },
+                {
+                  value: "West Mercia Police",
+                  text: "West Mercia Police",
+                  selected: true if data["minor-investigating-force"] == "West Mercia Police"
+                },
+                {
+                  value: "West Midlands Police",
+                  text: "West Midlands Police",
+                  selected: true if data["minor-investigating-force"] == "West Midlands Police"
+                },
+                {
+                  value: "West Yorkshire Police",
+                  text: "West Yorkshire Police",
+                  selected: true if data["minor-investigating-force"] == "West Yorkshire Police"
+                },
+                {
+                  value: "Wiltshire Police",
+                  text: "Wiltshire Police",
+                  selected: true if data["minor-investigating-force"] == "Wiltshire Police"
+                },
+                {
+                  value: "Dyfed-Powys",
+                  text: "Dyfed-Powys",
+                  selected: true if data["minor-investigating-force"] == "Dyfed-Powys"
+                },
+                {
+                  value: "Gwent",
+                  text: "Gwent",
+                  selected: true if data["minor-investigating-force"] == "Gwent"
+                },
+                {
+                  value: "North Wales",
+                  text: "North Wales",
+                  selected: true if data["minor-investigating-force"] == "North Wales"
+                },
+                {
+                  value: "South Wales",
+                  text: "South Wales",
+                  selected: true if data["minor-investigating-force"] == "South Wales"
+                },
+                {
+                  value: "Police Scotland Argyll and West Dunbartonshire",
+                  text: "Police Scotland Argyll and West Dunbartonshire",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Argyll and West Dunbartonshire"
+                },
+                {
+                  value: "Police Scotland Ayrshire",
+                  text: "Police Scotland Ayrshire",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Ayrshire"
+                },
+                {
+                  value: "Police Scotland Dumfries and Galloway",
+                  text: "Police Scotland Dumfries and Galloway",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Dumfries and Galloway"
+                },
+                {
+                  value: "Police Scotland Edinburgh",
+                  text: "Police Scotland Edinburgh",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Edinburgh"
+                },
+                {
+                  value: "Police Scotland Fife",
+                  text: "Police Scotland Fife",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Fife"
+                },
+                {
+                  value: "Police Scotland Forth Valley",
+                  text: "Police Scotland Forth Valley",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Forth Valley"
+                },
+                {
+                  value: "Police Scotland Greater Glasgow",
+                  text: "Police Scotland Greater Glasgow",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Greater Glasgow"
+                },
+                {
+                  value: "Police Scotland Highland and Islands",
+                  text: "Police Scotland Highland and Islands",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Highland and Islands"
+                },
+                {
+                  value: "Police Scotland Lanarkshire",
+                  text: "Police Scotland Lanarkshire",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Lanarkshire"
+                },
+                {
+                  value: "Police Scotland North East",
+                  text: "Police Scotland North East",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland North East"
+                },
+                {
+                  value: "Police Scotland Renfrewshire and Inverclyde",
+                  text: "Police Scotland Renfrewshire and Inverclyde",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Renfrewshire and Inverclyde"
+                },
+                {
+                  value: "Police Scotland Tayside",
+                  text: "Police Scotland Tayside",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland Tayside"
+                },
+                {
+                  value: "Police Scotland The Lothians and Scottish Borders",
+                  text: "Police Scotland The Lothians and Scottish Borders",
+                  selected: true if data["minor-investigating-force"] == "Police Scotland The Lothians and Scottish Borders"
+                }
+
+               ]
+             }) }}
+        </div>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with police forces
+                </span>
+            </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">See a list of all <a href="/concepts/minors/police-force/list-of-forces.html" target="_blank">police forces in England, Scotland and Wales</a> (opens in a new tab)</p>
+                </div>
+          </details>
+
+          {{ govukButton({
+                "text": "Continue"
+          }) }}
+
+          </form>
+
+    </div>
+</div>
+
+{% endblock %}

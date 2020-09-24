@@ -1,0 +1,23 @@
+{% if data['headSkinInjuries'] and data['headSkinInjuries'].includes("Cuts") %}
+  <tr><th class="govuk-table__cell govuk-body">Cuts on head, face or neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headSkinInjuries'] and data['headSkinInjuries'].includes("Bruises") %}
+  <tr><th class="govuk-table__cell govuk-body">Bruises on head, face or neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headSkinInjuries'] and data['headSkinInjuries'].includes("Scars") %}
+  <tr><th class="govuk-table__cell govuk-body">Scars on head, face or neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headSkinInjuries'] and data['headSkinInjuries'].includes("Burns") %}
+  <tr><th class="govuk-table__cell govuk-body">Burns on head, face or neck</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherHeadSkinInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherHeadSkinInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['headFaceNeckInjuredParts'] and data['headFaceNeckInjuredParts'].includes("Muscle, ligament or tendon") %}
+  <tr><th class="govuk-table__cell govuk-body">Muscle, ligament, or tendon injury on head, neck or face</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

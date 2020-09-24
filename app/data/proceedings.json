@@ -1,0 +1,672 @@
+[
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Skin",
+   "injuryName": "Burns on head, neck, or face"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Skin",
+   "injuryName": "Scars on head"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Skin",
+   "injuryName": "Scars on neck"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Skin",
+   "injuryName": "Scars on face"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Brain",
+   "injuryName": "Brain damage"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Brain",
+   "injuryName": "Epilepsy"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Brain",
+   "injuryName": "Nerve damage"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Broken ear bone"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Deafness"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Loss of ear"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "One perforated eardrum"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Two perforated eardrums"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Ringing in ears"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Ear",
+   "injuryName": "Dizziness"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Broken eye socket"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Temporary blurred vision"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Permanent blurred vision"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Cataract"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Scratched eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Permanent loss of peripheral vision"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Dislocated lens"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Glaucoma"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Bloodshot eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Bloodshot eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Loss of eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Blindess"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Sight loss"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Floater"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Damaged or detatched retina"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Object in eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Eye",
+   "injuryName": "Damaged eye drain"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Clicking jaw"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Dislocated jaw"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Broken nose"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Broken jaw"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Face fractures"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Face numbness"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Face",
+   "injuryName": "Broken cheekbone"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Neck",
+   "injuryName": "Broken hyoid (throat bone)"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Neck",
+   "injuryName": "Whiplash"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Nose",
+   "injuryName": "Loss of smell or taste"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Nose",
+   "injuryName": "Loss of nose"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Skull",
+   "injuryName": "Fractured skull"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Teeth",
+   "injuryName": "Broken teeth"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Teeth",
+   "injuryName": "Loose teeth"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Tongue",
+   "injuryName": "Difficulty speaking"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Tongue",
+   "injuryName": "Loss of speech"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Tongue",
+   "injuryName": "Loss of tongue"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Cuts or grazes"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Bruises"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Muscle, ligament, or tendon injury"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Black eye"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Bloody nose"
+ },
+ {
+   "bodyArea": "Face, head or neck",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Hair pulled out"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Burns on arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Scars on arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Loss of arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Paralysed arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Broken arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Arm",
+   "injuryName": "Damaged arm tendon, ligament, or cartilage"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Elbow",
+   "injuryName": "Dislocated elbow"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Elbow",
+   "injuryName": "Broken elbow"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Finger and Thumb",
+   "injuryName": "Dislocated finger"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Finger and Thumb",
+   "injuryName": "Broken thumb"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Finger and Thumb",
+   "injuryName": "Broken finger"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Finger and Thumb",
+   "injuryName": "Loss of finger"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Finger and Thumb",
+   "injuryName": "Loss of part of finger"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Hand",
+   "injuryName": "Broken hand"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Hand",
+   "injuryName": "Use of hand"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Hand",
+   "injuryName": "Loss of grip"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Shoulder",
+   "injuryName": "Dislocated shoulder"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Shoulder",
+   "injuryName": "Frozen shoulder"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Shoulder",
+   "injuryName": "Keyhole surgery on shoulder"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Wrist",
+   "injuryName": "Broken wrist"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Wrist",
+   "injuryName": "Sprained wrist"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Loss of fingernail"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Cuts to arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Bruises to arm"
+ },
+ {
+   "bodyArea": "Arm and hand",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Muscle, ligament, or tendon injury to arm"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Skin",
+   "injuryName": "Burns on torso or body"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Skin",
+   "injuryName": "Scar on torso or body"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Abdomen",
+   "injuryName": "Keyhole surgery on torso"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Abdomen",
+   "injuryName": "Chest incision"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Abdomen",
+   "injuryName": "Keyhole surgery on torso"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Abdomen",
+   "injuryName": "Keyhole surgery on torso"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Abdomen",
+   "injuryName": "Stoma"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Loss of kidney"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Kidney injury"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Punctured lung"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Collapsed lung"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Lung damage from smoke or chemicals"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Loss of pancreas"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Internal organs",
+   "injuryName": "Loss of spleen"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Back",
+   "injuryName": "Broken back"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Back",
+   "injuryName": "Slipped disc"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Back",
+   "injuryName": "Back strain"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Chest",
+   "injuryName": "Chest incision"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Collar bone",
+   "injuryName": "Separated shoulder"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Collar bone",
+   "injuryName": "Broken collarbone"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Tailbone",
+   "injuryName": "Broken tailbone"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Genitals",
+   "injuryName": "Genital injury"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Genitals",
+   "injuryName": "Infertitlity"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Hernia",
+   "injuryName": "Hernia"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Pelvis",
+   "injuryName": "Broken pelvis"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Rib",
+   "injuryName": "Broken rib"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Shoulder blade",
+   "injuryName": "Broken shoulder"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Breast bone",
+   "injuryName": "Broken breast bone"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Cuts to torso or body"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Bruised torso or body"
+ },
+ {
+   "bodyArea": "Torso",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Muscle, ligament, or tendon injury to torso or body"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Skin",
+   "injuryName": "Burns on leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Skin",
+   "injuryName": "Scars on leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Leg",
+   "injuryName": "Damaged tendon, ligament, or cartilage"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Leg",
+   "injuryName": "Amputated leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Leg",
+   "injuryName": "Paralysed leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Leg",
+   "injuryName": "Broken leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Ankle",
+   "injuryName": "Dislocated ankle"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Ankle",
+   "injuryName": "Broken ankle"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Ankle",
+   "injuryName": "Sprained ankle"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Foot",
+   "injuryName": "Broken foot"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Heel",
+   "injuryName": "Broken heel"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Hip",
+   "injuryName": "Dislocated hip"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Hip",
+   "injuryName": "Broken hip"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Knee",
+   "injuryName": "Keyhole surgery to leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Knee",
+   "injuryName": "Dislocated kneecap"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Knee",
+   "injuryName": "Broken kneecap"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Knee",
+   "injuryName": "Removal of kneecap"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Toes",
+   "injuryName": "Broken big toe"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Toes",
+   "injuryName": "Broken toe (not including big toe)"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Toes",
+   "injuryName": "Amputated big toe"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Toes",
+   "injuryName": "Amputated toe"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Toes",
+   "injuryName": "Amputation of part of big toe"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Cuts to leg"
+ },
+ {
+   "bodyArea": "Leg and foot",
+   "typeofInjury": "Minor injuries",
+   "injuryName": "Bruises to legs"
+ }
+]

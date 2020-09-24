@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select any injuries to the tissue on your head, face or neck - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherHeadTissueInjury",
+        name: "otherHeadTissueInjury",
+        value: data['otherHeadTissueInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "headTissueInjuries",
+        name: "headTissueInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the tissue on your head, face or neck",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+        {
+          value: "Muscle",
+          text: "Muscle",
+          checked: checked("headTissueInjuries", "Muscle"),
+          id: "Muscle damage on head, face or neck"
+        },
+        {
+          value: "Ligament",
+          text: "Ligament",
+          checked: checked("headTissueInjuries", "Ligament"),
+          id: "Ligament damage on head, face or neck"
+        },
+        {
+          value: "Tendon",
+          text: "Tendon",
+          checked: checked("headTissueInjuries", "Tendon"),
+          id: "Tendon damage on head, face or neck"
+        },
+          {
+            value: "Cartilage",
+            text: "Cartilage",
+            checked: checked("headTissueInjuries", "Cartilage"),
+            id: "Cartilage damage on head, face or neck"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("headTissueInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

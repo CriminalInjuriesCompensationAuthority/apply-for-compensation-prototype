@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select any injuries to the hand - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherHandInjury",
+        name: "otherHandInjury",
+        value: data['otherHandInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "handInjuries",
+        name: "handInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the hand",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Broken hand",
+            text: "Broken hand",
+            checked: checked("handInjuries", "Broken hand"),
+            id: "Broken hand"
+          },
+          {
+            value: "Loss of use of hand",
+            text: "Loss of use of hand",
+            checked: checked("handInjuries", "Loss of use of hand"),
+            id: "Loss of use of hand"
+          },
+          {
+            value: "Loss of grip",
+            text: "Loss of grip",
+            checked: checked("handInjuries", "Loss of grip"),
+            id: "Loss of grip"
+          },
+          {
+            value: "Nerve damage",
+            text: "Nerve damage",
+            checked: checked("handInjuries", "Nerve damage"),
+            id: "Nerve damage"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("handInjuries", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

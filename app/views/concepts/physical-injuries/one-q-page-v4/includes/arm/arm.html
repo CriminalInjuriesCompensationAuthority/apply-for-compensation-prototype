@@ -1,0 +1,19 @@
+{% if data['armInjuries'] and data['armInjuries'].includes("Broken arm") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armInjuries'] and data['armInjuries'].includes("Loss of arm") %}
+  <tr><th class="govuk-table__cell govuk-body">Loss of arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armInjuries'] and data['armInjuries'].includes("Paralysed arm") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysed arm</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['armInjuries'] and data['armInjuries'].includes("Hemiplegia (paralysis of one side of the the body)") %}
+  <tr><th class="govuk-table__cell govuk-body">Hemiplegia (paralysis of one side of the the body)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['otherArmInjury'] %}
+  <tr><th class="govuk-table__cell govuk-body">{{ data['otherArmInjury'] }}</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

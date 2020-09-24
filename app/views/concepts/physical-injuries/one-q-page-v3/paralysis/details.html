@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from 'govuk/components/checkboxes/macro.njk' import govukCheckboxes %}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukCheckboxes({
+            "classes": "govuk-checkboxes",
+            "idPrefix": "paralysisType",
+            "name": "paralysisType",
+            "fieldset": {
+              "legend": {
+                "text": "What paralysis do you have?",
+                "isPageHeading": true,
+                "classes": 'govuk-fieldset__legend--xl'
+              }
+            },
+            "items": [
+              {
+                "value": "Hemiplegia",
+                "text": "Hemiplegia (one side of your body)",
+                checked: checked("paralysisType", "Hemiplegia")
+              },
+              {
+                "value": "Paraplegia",
+                "text": "Paraplegia (the lower half of your body)",
+                checked: checked("paralysisType", "Paraplegia")
+              },
+              {
+                "value": "Tetraplegia or quadriplegia",
+                "text": "Tetraplegia or quadriplegia (from the neck down)",
+                checked: checked("paralysisType", "Tetraplegia or quadriplegia")
+              },
+              {
+                "value": "Arm",
+                "text": "Paralysis of an arm",
+                checked: checked("paralysisType", "Arm")
+              },
+              {
+                "value": "Leg",
+                "text": "Paralysis of a leg",
+                checked: checked("paralysisType", "Leg"),
+                hint:"hshsh"
+              },
+              {
+                value: "none",
+                text: "I do not have paralysis",
+                checked: checked("faceSurfaceInjuries", "none"),
+                id: "none"
+              }
+              ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+
+    {% include "../includes/answers-template.html" %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

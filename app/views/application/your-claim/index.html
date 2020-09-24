@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ yourClaimQuestion }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+
+      <h1 class="govuk-heading-xl">{{ yourClaimQuestion }}</h1>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>injuries</li>
+        <li>loss of earnings of more than 28 weeks</li>
+        <li>extra costs, like special equipment or changes to your house</li>
+        <li>sexually transmitted infection</li>
+        <li>pregnancy</li>
+        <li>loss of a baby</li>
+
+      </ul>
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios",
+            "idPrefix": "yourClaimOption2s",
+            "name": "yourClaimOption2s",
+            "items": [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("yourClaimOption2s", "Yes")
+              },
+              {
+                "value": "No",
+                "text": "No",
+                checked: checked("yourClaimOption2s", "No")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+            "text": "Continue"
+            }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

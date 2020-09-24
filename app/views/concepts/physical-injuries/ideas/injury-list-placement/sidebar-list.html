@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Physical injuries  - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% set armInjuriesPageCount = "1" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Select any injuries to your arm
+        </h1>
+    </legend>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukCheckboxes({
+        idPrefix: "injuryCheckboxes",
+        name: "armsSurfaceInjuries",
+        fieldset: {
+        },
+        hint: {
+          text: armsSurfaceInjuriesQuestionHint
+        },
+        items: [
+          {
+            value: " Burns to arms",
+            text: "Burns to arms",
+            checked: checked("armsInjuries", " Burns to arms")
+          },
+          {
+            value: " Scarring to arms",
+            text: "Scarring to arms",
+            checked: checked("armsInjuries", " Scarring to arms")
+          },
+          {
+            value: " Cuts to arm",
+            text: "Cuts to arm",
+            checked: checked("armsInjuries", " Cuts to arm")
+          },
+          {
+            value: " Bruises to arm",
+            text: "Bruises to arm",
+            checked: checked("armsInjuries", " Bruises to arm")
+          },
+          {
+            value: " Muscle, ligament, or tendon injury to arm",
+            text: "Muscle, ligament, or tendon injury to arm",
+            checked: checked("armsInjuries", " Muscle, ligament, or tendon injury to arm")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+        <h2 class="govuk-heading-m">You have selected 6 injuries</h2>
+
+        <h2 class="govuk-heading-s">Face</h2>
+
+        <ul class="govuk-list">
+          <li>Blurred vision</li>
+          <li>Loss of vision</li>
+          <li>Scarring to the face</li>
+        </ul>
+
+        <h2 class="govuk-heading-s">Head</h2>
+
+        <ul class="govuk-list ">
+          <li>Cuts and grazes to the head or neck</li>
+          <li>Scarring to the head</li>
+          <li>Soft tissue injuries to the head</li>
+        </ul>
+        <p><a href="" class="govuk-link">Go to beginning of injuries section</a></p>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

@@ -1,0 +1,15 @@
+{% if data['shoulderBladeInjuries'] and data['shoulderBladeInjuries'].includes("Broken shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['shoulderBladeInjuries'] and data['shoulderBladeInjuries'].includes("Dislocated shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Dislocated shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['shoulderBladeInjuries'] and data['shoulderBladeInjuries'].includes("Frozen shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Frozen shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['shoulderBladeInjuries'] and data['shoulderBladeInjuries'].includes("Keyhole surgery on shoulder") %}
+  <tr><th class="govuk-table__cell govuk-body">Keyhole surgery on shoulder</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

@@ -33,7 +33,6 @@
 
     <p class="govuk-body">Any compensation we pay acknowledges the emotional distress the crime caused you.</p>
     <p class="govuk-body">We normally make a decision based on your application and the information we get from the police.</p>
-    <p class="govuk-body">We will usually make a decision within 4 months.  This is because we do not normally need to see your medical records.</p>
 
     <h2 class="govuk-heading-m">
       Option 2: Sexual assault or abuse and other injuries or losses
@@ -43,8 +42,9 @@
     <ul class="govuk-list govuk-list--bullet">
       <li>lost earnings because you were unable to work</li>
       <li>physical injuries</li>
-      <li>pregnancy, sexually transmitted disease or loss of foetus</li>
-      <li>disabling mental injuries that are additional to the emotional distress you already suffered</li>
+      <li>pregnancy, sexually transmitted disease, or loss of foetus</li>
+      <li><a href=https://www.gov.uk/guidance/criminal-injuries-compensation-a-guide#special-expenses>some extra costs</a> you've had due to your injuries</li>
+      <li>disabling mental injuries that are additional to the emotional distress you've already suffered</li>
     </ul>
 
     <form class="form" method="post">
@@ -71,12 +71,10 @@
         </summary>
         <div class="govuk-details__text">
           <p class="govuk-body">You can contact us for help with your application on 0300 003 3601. Select option 8.</p>
-          <p class="govuk-body">Our phone lines are open Monday to Friday 8.30am to 5pm except Wednesday when they open at 10am.</p>
-          <p class="govuk-body">You can get practical or emotional support depending on where you live:</p>
-            <ul class="govuk-list govuk-list--bullet">
-             <li>in England and Wales <a href="https://www.victimandwitnessinformation.org.uk/">visit the Victim and Witness Information website</a></li>
-             <li>in Scotland <a href="https://www.mygov.scot/victim-witness-support/">visit the mygov.scot website</a></li>
-            </ul>
+          <p class="govuk-body">Our phone lines are open Monday to Friday 8:30am to 5pm except Wednesday when they open at 10am.</p>
+          <p class="govuk-body">You can <a href="https://www.victimandwitnessinformation.org.uk/">get practical or emotional support</a> after a crime.
+          <p class="govuk-body">There is different practical or emotional support <a href="https://www.mygov.scot/victim-witness-support/">if you live in Scotland</a>.
+
         </div>
       </details>
 
@@ -98,13 +96,15 @@
             {
               value: "Option 1: Sexual assault or abuse",
               text: "Option 1: Sexual assault or abuse",
+              checked: checked("yourChoice", "Option 1: Sexual assault or abuse"),
               label: {
                 classes: "govuk-label--s"
               }
             },
             {
-              "value": "Sexual assault or abuse and other injuries or losses",
+              "value": "Option 2: Sexual assault or abuse and other injuries or losses",
               "text": "Option 2: Sexual assault or abuse and other injuries or losses",
+              checked: checked("yourChoice", "Option 2: Sexual assault or abuse and other injuries or losses"),
               label: {
                 classes: "govuk-label--s"
               }

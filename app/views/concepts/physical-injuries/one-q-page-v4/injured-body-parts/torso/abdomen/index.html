@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What parts of the abdomen were injured? - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This website is for research use only'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      {% from "govuk/components/input/macro.njk"import govukInput %}
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "otherAbdomenInjury",
+        name: "otherAbdomenInjury",
+        value: data['otherAbdomenInjury'],
+        type: "text",
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Type of injury"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "abdomenInjuries",
+        name: "abdomenInjuries",
+        fieldset: {
+          legend: {
+            text: "Select any injuries to the abdomen",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "Kidney damage",
+            text: "Kidney damage",
+            checked: checked("abdomenInjuries", "Kidney damage"),
+            id: "Kidney damage"
+          },
+          {
+            value: "Loss of kidney",
+            text: "Loss of kidney",
+            checked: checked("abdomenInjuries", "Loss of kidney"),
+            id: "Loss of kidney"
+          },
+          {
+            value: "Loss of pancreas",
+            text: "Loss of pancreas",
+            checked: checked("abdomenInjuries", "Loss of pancreas"),
+            id: "Loss of pancreas"
+          },
+          {
+            value: "Loss of spleen",
+            text: "Loss of spleen",
+            checked: checked("abdomenInjuries", "Loss of spleen"),
+            id: "Loss of spleen"
+          },
+          {
+            value: "Hernia",
+            text: "Hernia",
+            checked: checked("abdomenInjuries", "Hernia"),
+            id: "Hernia"
+          },
+          {
+            value: "Keyhole surgery on torso",
+            text: "Keyhole surgery on torso",
+            checked: checked("abdomenInjuries", "Keyhole surgery on torso"),
+            id: "Keyhole surgery on torso"
+          },
+          {
+            value: "Stoma",
+            text: "Stoma",
+            checked: checked("abdomenInjuries", "Stoma"),
+            id: "Stoma"
+          },
+          {
+            value: "Hemiplegia (paralysis of one side of the the body)",
+            text: "Hemiplegia (paralysis of one side of the the body)",
+            checked: checked("abdomenInjuries", "Hemiplegia (paralysis of one side of the the body)"),
+            id: "Hemiplegia"
+          },
+          {
+            value: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            text: "Quadriplegia or tetraplegia (paralysis of all 4 limbs)",
+            checked: checked("abdomenInjuries", "Quadriplegia or tetraplegia (paralysis of all 4 limbs)"),
+            id: "Quadriplegia or tetraplegia"
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("abdomenInjuriesOther", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+      }) }}
+      {{ govukButton({
+        "text": "Continue"
+      }) }}
+
+      {% include "../../../includes/simple-injury-list.html" %}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

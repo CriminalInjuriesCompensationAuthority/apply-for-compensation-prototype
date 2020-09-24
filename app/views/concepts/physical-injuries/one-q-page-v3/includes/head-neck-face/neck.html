@@ -1,0 +1,7 @@
+{% if data['neckInjuries'] and data['neckInjuries'].includes("Broken hyoid (throat bone)") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken hyoid (throat bone)</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['neckInjuries'] and data['neckInjuries'].includes("Whiplash") %}
+  <tr><th class="govuk-table__cell govuk-body">Whiplash</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

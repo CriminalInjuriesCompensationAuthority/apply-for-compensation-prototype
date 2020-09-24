@@ -13,7 +13,7 @@ module.exports = function (router, content) {
     } else {
       // If the variable is any other value (or is missing) render the page requested
 
-      res.redirect('/application/transition')
+      res.redirect('/application/your-choices/transition')
     }
   })
 
@@ -25,5 +25,10 @@ module.exports = function (router, content) {
   router.get('/application/your-choices/error', function (req, res) {
     res.render('application/your-choices/error', content)
   })
+  // Error state
+  router.get('/application/your-choices/transition', function (req, res) {
+    res.render('application/your-choices/transition', content)
+  })
+
   // END__######################################################################################################
 }

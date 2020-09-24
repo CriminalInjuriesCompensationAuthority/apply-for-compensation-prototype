@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{minorProofEligibilityNamesQuestion}} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+
+      <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">{{minorProofEligibilityNamesQuestion}}</h1>
+      </legend>
+
+      <!--
+      <p>If the names on the birth certificate are different to {{ data['title'] }}&nbsp;{{ data['first-name'] }}&nbsp;{{ data['last-name'] }} and {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}, you will have to provide proof of your change of name(s).</p>
+      -->
+
+      {% from 'govuk/components/radios/macro.njk' import govukRadios %}
+
+      {{ govukRadios({
+            "classes": "govuk-radios--inline",
+            "idPrefix": "minorConfirmNames",
+            "name": "minorConfirmNames",
+            currentValue: data['minorConfirmNames'],
+            items: [
+              {
+                "value": "Yes",
+                "text": "Yes",
+                checked: checked("minorConfirmNames", "Yes")
+              },
+              {
+                "value": "No, my name has changed",
+                "text": "No",
+                checked: checked("minorConfirmNames", "No")
+              }
+            ]
+          })
+        }}
+      </fieldset>
+
+          {{ govukButton({
+            "text": "Continue"
+          }) }}
+
+    </form>
+
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+
+<!-- NOTE: do people understand the context of this question? -->

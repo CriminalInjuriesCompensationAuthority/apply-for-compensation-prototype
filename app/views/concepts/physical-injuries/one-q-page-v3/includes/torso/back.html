@@ -1,0 +1,11 @@
+{% if data['backInjuries'] and data['backInjuries'].includes("Broken vertebrae") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken vertebrae</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Slipped disc") %}
+  <tr><th class="govuk-table__cell govuk-body">Slipped disc</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['backInjuries'] and data['backInjuries'].includes("Back strain") %}
+  <tr><th class="govuk-table__cell govuk-body">Back strain</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

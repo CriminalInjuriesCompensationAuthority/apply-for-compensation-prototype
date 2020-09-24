@@ -1,0 +1,15 @@
+{% if data['legInjuries'] and data['legInjuries'].includes("Broken leg") %}
+  <tr><th class="govuk-table__cell govuk-body">Broken leg</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['legInjuries'] and data['legInjuries'].includes("Keyhole surgery to leg") %}
+  <tr><th class="govuk-table__cell govuk-body">Keyhole surgery to leg</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['legInjuries'] and data['legInjuries'].includes("Amputated leg") %}
+  <tr><th class="govuk-table__cell govuk-body">Amputated leg</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}
+
+{% if data['legInjuries'] and data['legInjuries'].includes("Paralysed leg") %}
+  <tr><th class="govuk-table__cell govuk-body">Paralysed leg</th><td class="govuk-table__cell govuk-body govuk-table__cell--numeric"><a href="#" class="removeInjury">Remove</a></td></tr>
+{% endif %}

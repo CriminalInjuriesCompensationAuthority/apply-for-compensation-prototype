@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ contextYourDetailsHeading   }} - {{ serviceName }} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'govuk/components/phase-banner/macro.njk' import govukPhaseBanner %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+  }) }}
+
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ contextYourDetailsHeading }}
+    </h1>
+
+    <p class="govuk-body">We’re going to ask for some details about you.</p>
+
+    <p class="govuk-body">We’ll use these to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+       <li>contact you</li>
+       <li>get a report about the crime from the police</li>
+
+      </ul>
+
+    <form class="form" method="post">
+      {{ govukButton({
+          "text": "Continue"
+          }) }}
+    </form>
+  </div>
+</div>
+
+</main>
+
+</div>
+
+{% endblock %}

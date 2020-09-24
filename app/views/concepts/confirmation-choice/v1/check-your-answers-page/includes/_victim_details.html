@@ -1,0 +1,115 @@
+<!-- ** Your details including eligibility ************************************************************************************************************************ -->
+
+<h2 class="govuk-heading-l">
+  Child's details
+</h2>
+
+<!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+<!--   * `app-check-your-answers--short` for short questions -->
+<!--   * `govuk-summary-list__keys-long` for long questions -->
+<!--   * none for single group of q&a -->
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key ">
+      Child's name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['victim-title'] }}&nbsp;{{ data['victim-first-name'] }}&nbsp;{{ data['victim-last-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="victim-name">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{nameOtherQuestion}}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['victimHaveOtherName'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="victim-name-have-other">
+        Change<span class="govuk-visually-hidden">have you ever been known by any other names</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['victimHaveOtherName'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['victimNameOther'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="victim-name-other">
+        Change<span class="govuk-visually-hidden"> other name</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minor-dob-day'] }}/{{ data['minor-dob-month'] }}/{{ data['minor-dob-year'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="date-of-birth">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{ minorBritishCitizenQuestion }}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['minorBritishCitizen'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="british-citizen">
+        Change<span class="govuk-visually-hidden"> {{ minorBritishCitizenQuestion }}</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      {{minorCareOrderQuestion}}
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['care-order'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="care-order">
+        Change <span class="govuk-visually-hidden">{{minorCareOrderQuestion}}</span>
+      </a>
+    </dd>
+  </div>
+
+  {% if data['care-order'] === 'Yes' %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Care order details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['care-order-details'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a href="care-order-details">
+        Change<span class="govuk-visually-hidden"> care order details</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+</dl>
+<!-- ** /Your eligibility ************************************************************************************************************************ -->
